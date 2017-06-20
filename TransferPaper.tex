@@ -1,0 +1,695 @@
+\documentclass[10pt, twocolumn]{llncs}
+
+
+
+% This is LLNCS.DEM the demonstration file of
+% the LaTeX macro package from Springer-Verlag
+% for Lecture Notes in Computer Science,
+% version 2.4 for LaTeX2e as of 16. April 2010
+%
+%
+
+% ADDED CUSTOM PACKAGES
+% Fonts
+\usepackage{mathptmx}
+% Layout
+\usepackage[margin=20mm]{geometry}
+\usepackage{multicol}
+\usepackage{bbm}
+\usepackage{url}
+\bibliographystyle{splncs03}
+
+
+\usepackage{amssymb,array}
+\usepackage{enumitem}
+
+
+% Maths
+\usepackage{amsmath}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+
+% Graphics
+\usepackage{placeins}
+\usepackage{graphicx}
+\graphicspath{{../../Papers/ECML/Images/}}
+\usepackage{caption}
+\captionsetup{compatibility=false}
+\usepackage{subcaption}
+\usepackage{tikz} % Essential for Neural Network diagrams
+
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=black, bookmarksdepth=2]{hyperref}
+\usepackage{bookmark}
+% Custom environments
+
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
+
+%\usepackage{natbib}   
+%\newcommand{\citep}{\cite} % remove me when the natbib issue is resolved
+%\newcommand{\citet}{\cite} % remove me when the natbib issue is resolved
+%\newcommand{\citeyear}[1]{YEAR } % remove me when the natbib issue is resolved
+
+% END CUSTOM PACKAGES
+
+\usepackage{makeidx}  % allows for indexgeneration
+\usepackage[draft]{todonotes}
+% dav's notes
+\newcommand{\dzN}[1]{\todo[inline, size=\small, color=yellow!30]{[dz] #1}}
+\newcommand{\dzn}[1]{\todo[color=yellow!30]{[dz] #1}}
+% ivan's notes
+\newcommand{\ikN}[1]{\todo[inline, size=\small, color=orange!30]{[ik] #1}}
+\newcommand{\ikn}[1]{\todo[color=orange!30]{[ik] #1}}
+% steve's notes
+\newcommand{\srN}[1]{\todo[inline, size=\small, color=cyan!30]{[sr] #1}}
+\newcommand{\srn}[1]{\todo[color=cyan!30]{[sr] #1}}
+% ber's notes
+\newcommand{\bpN}[1]{\todo[inline, size=\small, color=purple!30]{[bp] #1}}
+\newcommand{\bpn}[1]{\todo[color=purple!30]{[bp] #1}}
+% theo's notes
+\newcommand{\twN}[1]{\todo[inline, size=\small, color=green!30]{[tw] #1}}
+\newcommand{\twn}[1]{\todo[color=green!30]{[tw] #1}}
+% yunpeng's notes
+\newcommand{\ylN}[1]{\todo[inline, size=\small, color=blue!30]{[yl] #1}}
+\newcommand{\yln}[1]{\todo[color=blue!30]{[yl] #1}}
+
+% ms's notes
+\newcommand{\msN}[1]{\todo[inline, size=\small, color=gray!30]{[ms] #1}}
+\newcommand{\msn}[1]{\todo[color=gray!30]{[ms] #1}}
+
+\begin{document}
+%
+%\setcounter{tocdepth}{4}
+%\tableofcontents
+
+
+%
+\pagestyle{headings}  % switches on printing of running heads
+
+%
+\mainmatter              % start of the contributions
+
+
+\title{Mosquito Detection with Neural Networks: The Buzz of Deep Learning}
+%
+
+%\titlerunning{Hamiltonian Mechanics}  % abbreviated title (for running head)
+%                                     also used for the TOC unless
+%                                     \toctitle is used
+%
+\author{Ivan Kiskin\inst{1,2}  \and Bernardo P\'erez Orozco\inst{1,2} \and Theo Windebank\inst{1,3} \and Davide Zilli\inst{1,2} \and Marianne Sinka\inst{4,5}, Kathy Willis\inst{4,5,6}  \and Stephen Roberts\inst{1,2}}
+%
+% \authorrunning{Ivar Ekeland et al.} % abbreviated author list (for running head)
+%
+%%%% list of authors for the TOC (use if author list has to be modified)
+% \tocauthor{Ivar Ekeland, Roger Temam, Jeffrey Dean, David Grove,
+% Craig Chambers, Kim B. Bruce, and Elisa Bertino}
+%
+\institute{University of Oxford, Department of Engineering, Oxford OX1 3PJ, UK, \\
+\and
+\email{\textrm{\{}ikiskin, ber, dzilli, sjrob\textrm{\}}@robots.ox.ac.uk}, \and \email{theo.windebank@stcatz.ox.ac.uk},  \\
+\and University of Oxford, Department of Zoology, Oxford OX2 6GG, UK, \\
+\and \email{\{marianne.sinka, kathy.willis\}@zoo.ox.ac.uk} \\
+\and Royal Botanic Gardens, Kew, Richmond, Surrey, TW9 3AE, UK.
+}
+% \and
+% \email{\textrm{\{}ikiskin, ber, dzilli, sjrob\textrm{\}}@robots.ox.ac.uk}, 
+% % \and
+% % \email{ber@robots.ox.ac.uk}\\
+% \institute{test, \\
+% \and
+% \email{theo.windebank@stcatz.ox.ac.uk}}\\
+% \and
+% \email{dzilli@robots.ox.ac.uk}\\
+% \and
+% \email{marianne.sinka@zoo.ox.ac.uk}
+% % \and
+% \email{sjrob@robots.ox.ac.uk}
+%\and
+%\institute{University of Oxford, Department of Zoology, Oxford OX2 6GG, UK}}
+
+
+\maketitle              % typeset the title of the contribution
+\begin{abstract}
+%Many real-world time-series analysis problems are characterised by sparse, rather than abundant data. Solutions typically rely on hand-crafted features extracted from the time or frequency domain allied with classification or regression engines which condition on this (often low-dimensional) feature vector. The huge advances enjoyed by computer vision in recent years have been fuelled by the use of deep learning architectures. This paper presents an application of deep learning for acoustic event detection in a challenging, data-sparse, real-world problem. Our candidate challenge is to accurately detect the presence of a mosquito from its acoustic signature. We develop convolutional neural networks (CNNs) operating on wavelet transformations of audio recordings. \ikn{Could be worded better (1)} Detection is achieved with performance metrics significantly surpassing existing algorithmic methods, as well as marginally outperforming [matching, and even exceeding,] individual human expert hand labelling. Furthermore, we interrogate the network's predictive power by visualising network weights and the statistics of network-excitatory samples. These visualisations offer a deep insight into the relative informativeness of components in the detection problem. \ikn{Final sentence does not flow, can we connect it to 1st note/scrap?} We include comparisons with conventional classifiers, conditioned on both hand-tuned and generic features, to stress the strength of automatic deep feature learning.
+
+Many real-world time-series analysis problems are characterised by scarce data. Solutions typically rely on hand-crafted features extracted from the time or frequency domain allied with classification or regression engines which condition on this (often low-dimensional) feature vector. The huge advances enjoyed by many application domains in recent years have been fuelled by the use of deep learning architectures trained on large data sets. This paper presents an application of deep learning for acoustic event detection in a challenging, data-scarce, real-world problem. Our candidate challenge is to accurately detect the presence of a mosquito from its acoustic signature. We develop convolutional neural networks (CNNs) operating on wavelet transformations of audio recordings. Furthermore, we interrogate the network's predictive power by visualising statistics of network-excitatory samples. These visualisations offer a deep insight into the relative informativeness of components in the detection problem. We include comparisons with conventional classifiers, conditioned on both hand-tuned and generic features, to stress the strength of automatic deep feature learning. Detection is achieved with performance metrics significantly surpassing those of existing algorithmic methods, as well as marginally exceeding those attained by individual human experts. The data and software related to this paper are available at \url{http://humbug.ac.uk/kiskin2017/}.
+
+\keywords{Convolutional neural networks, Spectrograms, Short-time Fourier transform, Wavelets, Acoustic Signal Processing}
+\end{abstract}
+
+\section{Introduction}
+Mosquitoes are responsible for hundreds of thousands of deaths every year due to their capacity to vector lethal parasites and viruses, which cause diseases such as malaria, lymphatic filariasis, zika, dengue and yellow fever \cite{WHO2016,WHO2014factsheet}. Their ability to transmit diseases has been widely known for over a hundred years, and several practices have been put in place to mitigate their impact on human life. Examples of these include insecticide-treated mosquito nets \cite{lengeler2004insecticide,bhatt2015} and sterile insect techniques \cite{alphey2010sterile}. However, further progress in the battle against mosquito-vectored disease requires a more accurate identification of  species and their precise location -- not all mosquitoes are vectors of disease, and some non-vectors are morphologically identical to highly effective vector species.
+%complete understanding of their \msn{and more simply - correctly identifying the right species in the right location ('know your enemy') - not all mosquitoes are vectors of disease - and some non-vectors are morphologically identical to highly effective vector species.
+%(about the only thing we do know is the life-cycle so i would remove that)} lifecycle, 
+%population relationships to external variables such as vegetation and environmental variables. 
+%
+Current surveys rely either on human-landing catches or on less effective light traps. In part this is due to the lack of cheap, yet accurate, surveillance sensors that can aid mosquito detection.
+%What is needed are cheap, widespread passive surveillance sensors
+% To date, monitoring these inter-relationships \msn{'inter-relationships' - normally only in niche-modelling studies of occurrence data. Occurrence data is notoriously biased (samples the location of entomologists rather than the location of mosquitoes )} has been costly and sparse. In part this is due to the lack of cheap, yet accurate, mosquito detection. \msn{Current vector surveys either rely on human-landing catches or the less effective CDC light trap. What is needed are cheap, widespread passive surveillance sensors...} 
+Our work uses the acoustic signature of mosquito flight as the trigger for detection. Acoustic monitoring of mosquitoes proves compelling, as the insects produce a sound both as a by-product of their flight and as a means for communication and mating. Detecting and recognising this sound is an effective method to locate the presence of mosquitoes and even offers the potential to categorise by species. Nonetheless, automated mosquito detection presents a fundamental signal processing challenge, namely the detection of a weak signal embedded in noise. Current detection mechanisms rely heavily on domain knowledge, such as the likely fundamental frequency and harmonics, and extensive hand-crafting of features -- often similar to traditional speech representation. With impressive performance gains achieved by a paradigm shift to deep learning in many application fields, including bioacoustics \cite{joly2016lifeclef}, an opportunity emerges to leverage these advances to tackle this problem.
+
+Deep learning approaches, however, tend to be effective only once a critical number of training samples has been reached \cite{chen2014flying}. Consequently, data-scarce problems are not well suited to this paradigm. As with many other domains, the task of data labelling is expensive in both time requirement for hand labelling and associated ambiguity -- namely that multiple human experts will not be perfectly concordant in their labels. Furthermore, recordings of free-flying mosquitoes in realistic environments are scarce \cite{Mukundarajan2017} and hardly ever labelled.
+
+This paper presents a novel approach for classifying mosquito presence using scarce training data. Our approach is based on a convolutional neural network classifier conditioned on wavelet representations of the raw data. The network architecture and associated hyperparameters are strongly influenced by constraints in dataset size. To assess our performance, we compare our methods with well-established classifiers, as well as with simple artificial neural networks, trained on both hand-crafted features and the short-time Fourier transform. We show that our classifications are made more accurately and confidently, resulting in a precision-recall curve area of 0.909, compared to 0.831 and 0.875 for the highest scoring traditional classifier and dense-layer neural network respectively. This performance is achieved on a classification task where only 70\,\% of labels are in full agreement amongst four domain experts. We achieve results matching, and even surpassing, human expert level accuracy. The performance of our approach allows realistic field deployments to be made as a smartphone app or on bespoke embedded systems.
+
+%\ikN{``Summary'' section needs re-writing nearer completion}
+This paper is structured as follows. Section \ref{sec:Context} addresses related work, explaining the motivation and benefits of our approach. Section \ref{sec:method} details the method we adopt. Section \ref{sec:ExperDetails} describes the experimental setup, in particular emphasising data-driven architectural design decisions. Section \ref{sec:results} highlights the value of the method. We visualise and interpret the predictions made by our algorithm on unseen data in Section \ref{subsec:visual} to help reveal informative features learned from the representations and verify the method.  Finally, we suggest further work and conclude in Section \ref{sec:Conclusion}.
+
+% deleted from summary: Additionally, building a representative sample of what activates the neural network most, allows the user to confirm that the network has learned the mosquito sound, rather than characteristics of recordings such as noise that would not  generalise to test data. Further, we provide insight guiding model architecture design based on these visualisations.
+\section{Related Work}
+\label{sec:Context}
+%
+%\dzN{Where do we position our lit review? I would say NN for bioacoustics. In that case, the starting paragraph should introduce that context.\\
+%I propose the following structure:\\
+%1. acoustic detection/classification of species \\
+%2. automated \^{}\^{} \\
+%3. \^{}\^{} of mosquitoes \\
+%4. \^{}\^{} with neural networks\\
+%5. \^{}\^{} with wavelets}
+%%
+The use of artificial neural networks in acoustic detection and classification of species dates back to at least the beginning of the century, with the first approaches addressing the identification of bat echolocation calls \cite{parsons2000}. Both manual and algorithmic techniques have subsequently been used to identify insects \cite{chesmore2004automated,zilli2014hidden}, elephants \cite{clemins2002automatic}, delphinids \cite{oswald2003}, and other animals. The benefits of leveraging the sound animals produce -- both actively as communication mechanisms and passively as a results of their movement -- is clear: animals themselves use sound to identify prey, predators, and mates. Sound can therefore be used to locate individuals for biodiversity monitoring, pest control, identification of endangered species and more.
+
+This section will therefore review the use of machine learning approaches in bioacoustics, in particular with respect to insect recognition. We describe the traditional feature and classification approaches to acoustic signal detection. In contrast, we also present the benefit of feature extraction methods inherent to current deep learning approaches. Finally, we narrow our focus down to the often overlooked wavelet transform, which offers significant performance gains in our pipeline.
+
+%The HumBug\footnote{\url{http://humbug.ac.uk/}} project works to provide valuable data to help in the fight against mosquito-borne diseases that have a major impact on human health, income and mortality (WHO report \citeyear{who-2015}). The project aims to deploy a sensor network consisting of portable devices, such as low-cost mobile phones and other monitoring devices. The sensors are used to detect mosquitoes, and may communicate in either a centralised or decentralised fashion. Reliable detection is critical to the success of the overall project.
+%Mosquito detection additionally is beneficial to the signal processing, machine learning and ecological communities. This is due to the fundamental challenge of time-series forecasting in noisy environments -- a problem which generalises to virtually any field. 
+
+\subsection{Insect Detection}
+\label{subsec:InsectDetect}
+%\dzN{How about the following:\\
+%0. Real-time detection to save the world\\
+%1. Certain insects are very loud (e.g. orthoptera---crickets and the like)\\
+%2. Mosquitoes are particularly quiet, and their sounds vary dramatically\\
+%3. Main factor are species, gender, age, temperature and humidity \\
+%4. Main datasets are of tethered mosquitoes --$>$ not free-flying and distressed --$>$ not representative of real sound --$>$ Data scarcity\\
+%5. Previous/current work has used microphones (cheaper, easier deployment) and phototransistors (reduced noise)}
+Real-time mosquito detection provides a method to combat the transmission of lethal diseases, mainly malaria, yellow fever and dengue fever. Unlike \textit{Orthoptera} (crickets and grasshoppers) and \textit{Hempitera} (e.g. cicadas), which produce strong locating and mating calls, mosquitoes (\textit{Diptera, Culicidae}) are much quieter. The noise they emit is produced by their wingbeat, and is affected by a range of different variables, mainly species, gender, age, temperature and humidity. In the wild, wingbeat sounds are often overwhelmed by ambient noise. For these reasons, laboratory recordings of mosquitoes are regularly taken on tethered mosquitoes in quiet or even soundproof chambers, and therefore do not represent realistic conditions. 
+
+Even in this data-scarce scenario, the employment of artificial neural networks has been proven successful for a number of years. In \cite{chesmore2004automated} a neural network classifier was used to discriminate four species of grasshopper recorded in northern England, with accuracy surpassing 70\,\%. Other classification methods include Gaussian mixture models \cite{Potamitis2007,Pinhas2008} and hidden Markov models \cite{leqing2010insect,zilli2014hidden}, applied to a variety of different features extracted from recordings of singing insects.
+
+Chen et al. \cite{chen2014flying} attribute the stagnation of automated insect detection accuracy to the mere use of acoustic devices, which are allegedly not capable of producing a signal sufficiently clean to be classified correctly. As a consequence, they replace microphones with pseudo-acoustic optical sensors, recording mosquito wingbeat through a laser beam hitting a phototransistor array -- a practice already proposed by Moore et al. \cite{moore1986automated}. This technique however relies on the ability to lure a mosquito through the laser beam. 
+
+Independently of the technique used to record a mosquito wingbeat frequency, the need arises to be able to identify the insect's flight in a noisy recording. The following section reviews recent achievements in the wider context of acoustic signal classification. 
+
+% Using Neural networks for classifying insects dates back to work in \citeyear{moore1986automated} (Moore et al.). \dzn{In the abstract there is no reference to  NN. It looks like it's device to record flight frequency with light}1 Common configurations consist of training an artificial neural network on spectrogram bins or features directly related to the wingbeat frequency \cite{moore2002automated,li2005automated}.
+
+
+% Later work offered an insight into improving features based on the availability of an extremely clean source, using frequency spectrum harmonic and inter-harmonic peaks \cite{raman2007detecting}. In practice we are unable to measure harmonics so cleanly. In certain cases the fundamental frequency itself may even be inaudible, as is the case for the dataset used in this paper. This can be verified by frequency spectrum analysis of audibly clean sections. 
+
+% In recent works, it was suggested by Chen et. al (\citeyear{chen2014flying}) that neural networks as configured commonly \bpN{Do you mean non-deep aka shallow networks/MLPs?} are unreliable for insect classifications specifically on low-dimensional datasets. The authors instead opted for a Bayes Classifier which worked well for their dataset.
+%{}
+
+\subsection{Feature Representation and Learning}
+%\ikN{
+%Need link with prev section --- DONE\\
+%We have lost focus on sparse data somewhat}
+
+%{New structure: 
+%\begin{itemize}
+%	\item handcrafted
+%	\begin{itemize}
+%		\item wavelet
+%		\item STFT
+%		\item LPCC
+%		\item MFCC
+%	\end{itemize}
+%	\item MIREX
+%	\item learnt features
+%	\begin{itemize}
+%		\item exa. vision
+%		\item exa. speech
+%	\end{itemize}
+%	\item BIRDCLEF brings together both
+%	\item Conclusion with wav+learning: to the best of our knowledge
+%\end{itemize}}
+% As the feature representation is fundamental to each method, we review manual and automated extraction
+\label{sub:dl}
+The process of automatically detecting an acoustic signal in noise typically consists of an initial preprocessing stage, which involves cleaning and denoising the signal itself, followed by a feature extraction process, in which the signal is transformed into a format suitable for a classifier, followed by the final classification stage. 
+Historically, audio feature extraction in signal processing employed domain knowledge and intricate understanding of digital signal theory \cite{humphrey2013feature}, leading to hand-crafted feature representations. 
+%We describe some of these in approximate order from most general to most complex. 
+
+Many of these representations often recur in the literature. A powerful, though often overlooked, technique is the wavelet transform, which has the ability to represent multiple time-frequency resolutions \cite[Ch. 9]{akay1998time}. An instantiation with a fixed time-frequency resolution thereof is the Fourier transform. The Fourier transform can be temporally windowed with a smoothing window function to create a Short-time Fourier transform (STFT). Mel-frequency cepstral coefficients (MFCCs) create lower-dimensional representations by taking the STFT, applying a non-linear transform (the logarithm), pooling, and a final affine transform. A further example is presented by Linear Prediction Cepstral Coefficients (LPCCs), which pre-emphasise low-frequency resolution, and thereafter undergo linear predictive and cepstral analysis \cite{ai2012classification}.  
+
+Detection methods have fed generic STFT representations to standard classifiers \cite{potamitis2014classifying}, but more frequently complex features and feature combinations are used, applying dimensionality reduction to combat the curse of dimensionality \cite{lee2009unsupervised}. Complex features (e.g. MFCCs and LPCCs) were originally developed for specific applications, such as speech recognition, but have since been used in several audio domains \cite{li2001classification}.
+
+%Humphrey et al. conclude that manually optimising a feature representation does not fit every problem and may be unnecessarily constraining the solution space. In particular, it was suggested that deep learning can help overcome three deficiencies associated with traditional methods: hand-crafted feature design is not sustainable, shallow processing architectures struggle with latent complexity of real-world phenomena, short-time analysis cannot naturally capture higher-level information.
+
+% deleted from paragraph : (or none whatsoever in rare data-rich cases such as Wavenet \citeyear{van2016wavenet})
+On the contrary, the deep learning approach usually consists of applying a simple, general transform to the input data, and allowing the network to both learn features and perform classification. This enables the models to learn salient, hierarchical features from raw data. The automated deep learning approach has recently featured prominently in the machine learning literature, showing impressive results in a variety of application domains, such as computer vision \cite{krizhevsky2012imagenet} and speech recognition \cite{lee2009unsupervised}. However, deep learning models such as convolutional and recurrent neural networks are known to have a large number of parameters and hence typically require large data and hardware resources. 
+Despite their success, these techniques have only recently received more attention in time-series signal processing.
+
+
+% We begin by explaining the motivation for our approach. To do so, we draw parallels with related fields. In acoustic signal processing, there exists a natural relationship between mosquito detection and music recognition challenges. 
+
+% A study of the MIREX (Music Information Retrieval Evaluation eXchange) concluded that the state-of-art stagnated in relevant classification and detection tasks (Humphrey et al. \citeyear{humphrey2013feature}) between 2007 and 2012. This was attributed to the use of traditional methods for feature extraction and classification. It was suggested deep learning can help overcome three deficiencies associated with traditional methods: hand-crafted feature design is not sustainable, shallow processing architectures struggle with latent complexity of real-world phenomena, short-time analysis cannot naturally capture higher-level information.
+
+%For example, recognising musical chords requires detecting a specific composition of frequencies localised in time. Classifying musical instruments that play the same fundamental notes requires detection of the harmonic structure of those notes. Based on a study of the MIREX (Music Information Retrieval Evaluation eXchange) it was concluded that the state of art in music informatics has seen decelerating progress in a wide range of classification and detection tasks (Humphrey et al. \citeyear{humphrey2013feature}) between 2007 and 2012. This was attributed to the use of traditional methods for feature extraction and classification. It was suggested deep learning can help overcome three deficiencies associated with traditional methods: hand-crafted feature design is not sustainable, shallow processing architectures struggle with latent complexity of real-world phenomena, short-time analysis cannot naturally capture higher level information. \dzn{MIREX stuff is too long winded and only very marginally relevant. It should be reduced to a couple of sentences}
+%\bpN{Maybe this is paragraph is a bit too detailed?}
+
+%Indeed since the assessment, there has been a paradigm shift. As an example, in the results of \cite{mirex2016}, every (all-time) top performer in the four chord recognition challenges (Korzienowski, Widmer \citeyear{mirex2016chord}) featured forms of deep networks operating on simple feature representations. 
+
+%Drawing parallels with ImageNet, a distinct example presents itself in the bird recognition challenge (BirdCLEF). %% Never mentioned ImageNet
+A prominent example of this shift in methodology is the BirdCLEF bird recognition challenge. The challenge consists of the classification of bird songs and calls into up to 1500 bird species from tens of thousands of crowd-sourced recordings. The introduction of deep learning has brought drastic improvements in mean average precision (MAP) scores. The best MAP score of 2014 was 0.45 \cite{goeau2015lifeclef}, which was improved to 0.69 the following year when deep learning was introduced, outperforming the closest scoring hand-crafted method that scored 0.58 \cite{joly2016lifeclef}. The impressive performance gain came from the utilisation of well-established convolutional neural network practice from image recognition. By transforming the signals into STFT spectrogram format, the input is represented by 2D matrices, which are used as training data. Alongside this example, the most widely used base method to transform the input signals is the STFT  \cite{sainath2015deep,gwardys2014deep,potamitis2016deep}.
+
+However, to the best of our knowledge, the more flexible wavelet transform is hardly ever used as the representation domain for a convolutional neural network. As a result, in the following section we present our methodology, which leverages the benefits of the wavelet transform demonstrated in the signal processing literature, as well as the ability to form hierarchical feature representations for deep learning.
+
+% As the STFT also forms the basis for lower dimensional feature representations such as MFCCs, challenging a fundamental, often taken for granted, transform in the deep learning context can serve as a useful contribution to the signal processing and neural network communities. Our choice to focus specifically on wavelet transforms is justified as follows.
+
+% The STFT computes the Fourier transform of temporal signal windows at fixed time-frequency resolution. The wavelet transform employs a fully scalable modulated window which provides a principled solution to the windowing function selection problem (Valens \citeyear{valens1999really}). The window is slid across the signal, and for every position a spectrum is calculated. The procedure is then repeated at a multitude of scales, providing a signal representation with multiple time-frequency resolutions. This allows the provision of good time resolution for high-frequency events, as well as good frequency resolution for low-frequency events, which in practice is a combination best suited to real signals [reference: got this from wiki, update].
+%This important property is commonly utilised in [sig proc references], but only in rare occurrences in neural networks to the best of our knowledge [refs?]. 
+
+
+%
+\section{Method}
+\label{sec:method}
+We present a novel wavelet-transform-based convolutional neural network architecture for the detection of mosquitoes' flying tone in a noisy audio recording. We explain the wavelet transform in the context of the algorithm, thereafter describing the neural network configurations and a range of traditional classifiers against which we assess performance. The key steps of the feature extraction and classification pipeline are given in Algorithm \ref{alg:Detection}.  
+
+\subsection{The Wavelet Transform}
+\label{subsec:wavSTFT}
+%\srN{For space saving, if needed, this section could go to supplementary material}
+%
+%
+\begin{algorithm}[]
+	
+	\caption{Detection Pipeline}
+	\label{alg:Detection}
+	\begin{algorithmic}[1]
+	\State Load $N$ labelled microphone recordings $x_1(t), x_2(t), \ldots, x_N(t)$.
+    \State Take{} transform with $h_1$ features such that we form a feature tensor $\mathbf{X_\text{train}}$ and corresponding label vector $\mathbf{y}_\text{train}$:
+       
+    $$\mathbf{X}_\textrm{train} \in \mathbb{R}^{N_S
+ 			\times h_1 \times w_1}, \mathbf{y}_\textrm{train} \in \mathbb{R}^{N_S \times 2},$$
+    where $N_s$ is the number of training samples formed by splitting the transformed recordings into 2D `images' with dimensions $h_1 \times w_1$. 
+    \label{algline:transform}
+    %$$\mathbf{X}_\textrm{train} \in \mathbb{R}^{N_S
+ 	%		\times h_1 \times w_1}, \mathbf{y}_\textrm{train} \in \mathbb{R}^{N_S \times 2},$$
+ 	%where $N_S$ is the number of training samples formed by splitting the recordings into 2D `images' with dimensions $h_1 \times w_1$.
+
+
+	\label{line:method:stft}
+  	\State Train classifier on $\mathbf{X}_\textrm{train}, \mathbf{y}_\textrm{train}$.
+	\State For test data, $\mathbf{X}_\textrm{test}$, neural network outputs a prediction $y_{i,\textrm{pred}}$ for each class $C_i$: \{$C_0 = \textrm{non-mosquito}$, $C_1 = \textrm{mosquito}$\}, where
+			 $$ 0 \leq y_{i,\textrm{pred}}(\mathbf{x}) \leq 1, \quad \textrm{such that} \quad \sum_{i=1}^{n} y_{i,\textrm{pred}}(\mathbf{x}) = 1. $$
+	\end{algorithmic}
+\end{algorithm}
+
+As an initial step, we extract the training data into a format suitable for the classifier. We choose to use the continuous wavelet transform (CWT) due to its successful application in time-frequency analysis \cite{daubechies2011synchrosqueezed} (Step \ref{algline:transform} of Algorithm \ref{alg:Detection}). Given the direct relationship between the wavelet scale and centre frequency, we use the bump wavelet \cite{vialatte2009bump}, expressed in the Fourier domain as:
+\begin{equation} 
+\Psi(s\omega) = \exp \left(1 - \frac{1}{1 - (s\omega - \mu)^2/\sigma^2}\right) 
+   \mathbbm{I}[(\mu - \sigma)/s, (\mu + \sigma)/s],
+\label{eq:bump}   
+\end{equation}
+where $\mathbbm{I}[\cdot]$ is the indicator function and $s$ is the wavelet scale. High values of $\mu$, as well as small values of $\sigma$, result in a wavelet with superior frequency localisation but poorer time localisation. 
+
+%
+\subsection{Neural Network Configurations}
+% We define a neural network architecture that extracts features from the wavelet representation of the signal and then classifies them as a mosquito or non-mosquito. Our convolutional network model thus comprises an input layer sequentially connected to a convolutional layer, followed by two fully connected layers. Our reference artificial neural network omits the convolutional layer, taking the form of an input layer followed by two fully connected layers. 
+%
+
+%In this subsection we give definitions for the layers used in our neural network model. Thereafter, we describe how they were used in the mosquito detection setting.
+
+A convolutional layer $H_{\text{conv}}:\mathbb{R}^{h_1\times w_1 \times c} \rightarrow \mathbb{R}^{h_2\times w_2 \times N_k}$ with input tensor $\mathbf{X} \in\mathbb{R}^{h_1\times w_1 \times c}$ and output tensor $\mathbf{Y} \in \mathbb{R}^{h_2\times w_2 \times N_k}$ is given by the sequential application of $N_k$ learnable convolutional kernels $\mathbf{W}_{p} \in \mathbb{R}^{k\times k}, p < N_k$ to the input tensor. Given our single-channel $(c=1$) input representation of the signal $\mathbf{X} \in\mathbb{R}^{h_1\times w_1 \times 1}$ and a single kernel $\mathbf{W}_{p}$, their 2D convolution $\mathbf{Y}_k$ is given by \cite[Ch. 9]{Goodfellow-et-al-2016}:
+\begin{equation} 
+    \mathbf{Y}_k(i, j) = \mathbf{X}\ast\mathbf{W}_p = \sum_{i'}\sum_{j'}\mathbf{X}(i-i',j-j')\mathbf{W}_p(i',j').
+\end{equation}
+The $N_k$ individual outputs are then passed through a non-linear function $\phi$ and stacked as a tensor $\mathbf{Y}$. Conventional choices for the activation $\phi$ include the sigmoid function, the hyperbolic tangent and the rectified linear unit (ReLU).
+
+A fully connected layer $H_{\text{FC}}:\mathbb{R}^m \rightarrow \mathbb{R}^n$ with input $\mathbf{x}\in\mathbb{R}^m$ and output $\mathbf{y}\in\mathbb{R}^n$ is given by $\mathbf{y} = H_{\text{FC}}(\mathbf{x}) = \phi(\mathbf{Wx} + \mathbf{b})$, where $\{\mathbf{W}, \mathbf{b}\}$ are the learnable parameters of the network and $\phi$ is the activation function of layer, often chosen to be non-linear.
+
+\begin{figure}[t]
+\centering
+ \begin{subfigure}[]{.2\columnwidth}
+    \includegraphics[page = 1, width=1.0\columnwidth]{SpectrogramChunk.pdf}
+    %\caption{Spectrogram partitioning}
+    \label{fig:subfig:convspec}
+  \end{subfigure}%
+  \begin{subfigure}[]{.8\columnwidth}
+    \includegraphics[page = 1, width=1.0\columnwidth]{convnet_fig_test.pdf}
+    %\caption{median filtered}  
+  %\caption{Convnet architecture} 
+  \label{fig:subfig:convdiagram}
+   \end{subfigure}
+
+\caption{The CNN pipeline. 1.5 s wavelet spectrogram of mosquito recording is partitioned into images with $c=1$ channels, of dimensions $h_1 \times w_1$. This serves as input to a convolutional network with $N_k$  filters with kernel $\mathbf{W}_p \in \mathbb{R}^{k\times k}$.  Feature maps are formed with dimensions reduced to $h_2 \times w_2$ following convolution. These maps are fully connected to $N_d$ units in the dense layer, fully connected to 2 units in the output layer.}
+\label{fig:CNN}
+\end{figure}
+
+The data size constraint results in an architecture choice (Figure \ref{fig:CNN}) of few layers and free parameters. To prevent overfitting, our network comprises an input layer connected sequentially to a single convolutional layer and a fully connected layer, which is connected to the two output classes with dropout \cite{srivastava2014dropout} with $p=0.5$. Rectified Linear Units (ReLU) activations are employed based on their desirable training convergence properties \cite{krizhevsky2012imagenet}. Finally, potential candidate hyperparameters are cross-validated to determine an appropriate model, as detailed in Section \ref{subsec:xvalparams}.
+
+Using conventional multi-layer perceptrons (MLPs) one may simply collapse the matrix $\mathbf{X}$ into a single column vector $\mathbf{x}$. Unlike their convolutional counterparts, MLPs are not explicitly asked to seek relationships among adjacent neurons. Whereas this may provide the model with more flexibility to find relationships between seemingly distant nodes, convolutional layers formally make the model acknowledge that units are correlated in space. Without this assumption, MLPs will look for sets of weights in a space in which this constraint has not been made explicit. Our MLP architecture, chosen for comparison with the CNN, is illustrated in Figure \ref{fig:NN}. The network omits the convolutional layer, taking the form of an input layer followed by two fully connected layers, with dropout with $p=0.5$ on the connections to the output nodes.
+
+%% Simple MLP diagram %%
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+[   cnode/.style={draw=black,fill=#1,minimum width=3mm,circle},
+]
+
+    \node[cnode=black,label=0:$y_2$] (sK) at (7,-4) {};
+    \node[cnode=black,label=0:$y_1$] (s1) at (7,-2) {};
+    \node[label=0:$\mathrm{outputs}$] at (7,-3) {};
+    \node at (0,-3) {$\vdots$};
+    \node at (2.5,-3) {$\vdots$};
+    \node at (5,-3) {$\vdots$};
+
+    
+
+    \foreach \x in {1,...,3}
+    {   \pgfmathparse{\x<3 ? \x : "D"} 
+    %\node[cnode=<colour>,label=<position in degrees of label>:<label text>] (<node reference for paths>) at (<x coord>, <y coord>){};
+        \node[cnode=blue,label=180:$x_{\pgfmathresult}$] (x-\x) at (0,{-\x/0.75)}) {};
+        \pgfmathparse{\x<3 ? \x : "L"} % Change result to print N for hidden layer
+        \node[cnode=gray,label=90:$z^{(1)}_{\pgfmathresult}$] (z-\x) at (2.5,{-\x/0.75)}) {};
+
+
+        \pgfmathparse{\x<3 ? \x : "M"} % Change result to print M for hidden layer
+        \node[cnode=gray,label=90:$z^{(2)}_{\pgfmathresult}$] (p-\x) at (5,{-\x/0.75)}) {};
+        \draw (p-\x) -- node[above,sloped,pos=0.3] {${\scriptstyle w^{(3)}_{1\pgfmathresult}}$} (s1);
+
+    } % Bracket for loop
+
+
+
+    \foreach \x in {1,...,3}
+    {   \foreach \y in {1}
+        {   
+    \pgfmathparse{\x<3 ? \x : "D"}        
+        \draw (x-\x) --  node[above,sloped,pos=0.3] {$ {\scriptstyle w^{(1)}_{1\pgfmathresult}}$} (z-\y);
+        }
+    }
+
+
+    \foreach \x in {1,...,3}
+    {   \foreach \y in {1}
+        {   
+    \pgfmathparse{\x<3 ? \x : "L"}        
+        \draw (z-\x) --  node[above,sloped,pos=0.3] {$ {\scriptstyle w^{(2)}_{1\pgfmathresult}}$} (p-\y);
+        }
+    }
+\end{tikzpicture}
+\end{center}
+\caption{MLP architecture. For clarity the diagram displays connections for a few units. Each layer is fully connected with ReLU activations. Input dimensions $D = h_1 \times w_1 $. Number of hidden units in the first and second layers labelled $L$ and $M$ respectively.}
+\label{fig:NN}
+
+\end{figure}
+
+
+
+\subsection{Traditional Classifier Baseline}
+As a baseline, we compare the neural network models with more traditional classifiers that require explicit feature design. We choose three candidate classifiers widely used in machine learning with audio: random forests (RFs), naive Bayes' (NBs), and support vector machines using a radial basis function kernel (RBF-SVMs). Their popularity stems from ease of implementation, reasonably quick training, and competitive performance \cite{silva2013applying}, especially in data-scarce problems. 
+
+We have selected ten features: mel-frequency cepstrum slices, STFT spectrogram slices,  mel-frequency cepstrum coefficients, entropy, energy entropy, spectral entropy, flux, roll-off, spread, centroid, and the zero crossing rate (for a detailed explanation of these features, see for example the open-source audio signal analysis toolkit by \cite{giannakopoulos2015pyaudioanalysis}). To select features optimally, we have applied both recursive feature elimination (RFE) and principal component analysis (PCA), and also cross-validated each feature individually. By reducing redundant descriptors we can improve classification performance in terms of both speed and predictive ability, confirmed by the cross-validation results in Section \ref{subsec:xvalparams}.
+
+
+\section{Experimental Details}
+\label{sec:ExperDetails}
+\subsection{Data Annotation}
+%Deleted by sjrob: The signal is embedded in noise that is mostly uniform in mean and variance across frequency. The frequency representation is not unique, as it is dependent on the window parameters chosen to compute the Fourier transform over. We choose to use $h_1 = 256 $ spectrogram bins based on the previous works of \cite{moore1986automated,raman2007detecting}, as well as empirical results.
+The data used here were recorded in January 2016 within culture cages containing both male and female \emph{Culex quinquefasciatus} \cite{bhattacharya2016southern}. The females were not blood-fed and both sexes were maintained on a diet of 10\,\%\,w/v sucrose solution. Figure \ref{fig:DataLabel} shows a frequency domain excerpt of a particularly faint recording in the windowed frequency domains. 
+For comparison we also illustrate the wavelet scalogram taken with the same number of scales as frequency bins, $h_1$, in the STFT. We plot the logarithm of the absolute value of the derived coefficients against the spectral frequency of each feature representation.
+
+The signal is sampled at $F_s = 8 $\,kHz, which limits the highest theoretically resolvable frequency to $4$\,kHz due to the Nyquist limit. Figure \ref{fig:DataLabel} (lower) shows the classifications within $y_i = \{0,1\}$: absence, presence of mosquito, as labelled by four individual human experts. Of these, one particularly accurate label set is taken as a gold-standard reference to both train the algorithms and benchmark with the remaining experts. The resulting label rate is given as $F_l = 10$\,Hz. The labels are up-sampled to match the spectral feature frequency, $F_\textrm{spec}$, which is calculated as $F_\textrm{spec} = F_s /h_1 $, provided the overlap between windowed Fourier transforms in samples is half the number of Fourier coefficients.
+
+%\ikn{Might be tricky to explain clearly, this may differ on specific algorithm implementation.}
+
+%\ikn{Could cut the waffle:}[Due to limitations of hearing and recording quality, at certain times it becomes difficult to distinguish the signal. This leads to disagreement between annotations, and poses an interesting question in how to select an optimal policy for labelling the training data. One may pose an objective function based on the needs of the user. As an example, for deployment on smartphones, one would wish to avoid unnecessary false positives to preserve battery power and user patience. This could skew the training procedure in favour of selecting more conservative policies, e.g. classify as mosquito given a sufficient percentage of annotations agree. Errors in labelling also arise as a result of human-imposed priors. Given the assertion that a mosquito is heard for a significant number of past samples, it is more likely that a following section is labelled as positive. Additionally, after perceiving sustained signal the tone becomes embedded in the auditory system [citation needed], creating an auditory illusion. It thereby becomes difficult to correctly assess the presence of a mosquito without shuffling the temporal order of the data and resorting to many randomised listening test restarts.]
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=1\columnwidth]{DataLabel.pdf}
+\caption{STFT (top) and wavelet (middle) representations of signal with $h_1 = 256$ frequency bins and wavelet scales respectively. Corresponding varying class labels (bottom) as supplied by human experts. The wavelet representation shows greater contrast in horizontal constant frequency bands that correspond to the mosquito tone.}
+\label{fig:DataLabel}
+\end{figure}
+
+\subsection{Parameter Cross-Validation}
+\label{subsec:xvalparams}
+In this section we report the design and parameter considerations that we used cross-validation to estimate. The available 57 recordings were split into 37 training and 20 test signals, creating approximately 6,000 to 60,000 training samples, for window widths $w_1 = 10$ and $w_1 = 1$ samples, respectively. Both neural networks were trained with a batch size of 256 for 20 epochs, according to validation accuracy in conjunction with early stopping criteria.
+
+We start with the CNN and note that the characteristic length scale of the signal determines the choice of slice width. For musical extracts, or bird songs, it is crucial to capture temporal structure. This favours taking longer sections, allowing an appropriate convolutional receptive field in the time domain (along the $x$-axis). A mosquito tone is relatively consistent in frequency over time, so shorter slices are likely to provide a larger training set without loss of information per section. We thus restrict ourselves to dividing the training data into 320\,ms fixed width samples ($w_1 = 10$). When choosing the filter widths to trial, we note that spectrogram samples are correlated in local regions and will contain harmonics that are non-local. The locality is confined to narrow frequency bands, as well as through time (along the $y$ and $x$-axes respectively). Taking this into account, we arrive at the cross-validation grid and results of Table \ref{tab:xval}.
+%architectures commonly use square kernel sizes of $3\times 3$ to $5 \times 5$ at the input layer [references to prev spec/CNN papers].
+%sjrobedit:deletedThis may negate benefits of using convolution filters that span a large region in frequency\footnote{As a long-term objective it is worth considering other data representations or neural architectures that may be more appropriate.}.
+
+For the MLP, we choose to cross-validate the narrowest training sample width $w_1 = 1$, and the CNN architecture sample width $w_1 = 10$ forming a column vector $\mathbf{x}_\mathrm{train} \in \mathbb{R}^{h_1  w_1 \times 1}$ for each training sample.
+We then estimate the optimal number of hidden units as given in Table \ref{tab:xval}.
+
+The traditional classifiers are cross-validated with PCA and RFE dimension reduction as given by $n, m$ in Table \ref{tab:xval}. The best performing feature set for all traditional classifiers is the set extracted by cross-validated recursive feature elimination as in \cite{guyon2002gene}, outperforming all PCA reductions for every classifier-feature pair. The result is a feature set that we denote as $\text{RFE}_{88}$ which retains 88 dimensions from the ten original features which spanned 304 dimensions ($F_{10}  \in \mathbb{R}^{304} $).
+
+\begin{table}[t]
+\centering
+\caption{Cross-validation results. Optimal hyperparameters given in bold.}
+\label{tab:xval}
+\begin{tabular}{lll}
+\hline\noalign{\smallskip}
+Classifier & Features  & Cross-validation grid         \\ 
+\noalign{\smallskip}
+\hline
+\noalign{\smallskip}
+CNN          & STFT   & $k \in \{2,\mathbf{3},4,5\}, N_k \in \{8,16,\mathbf{32}\}, N_d \in \{16,64,\mathbf{128},256\}$ \\
+CNN          & Wavelet & $k \in \{2,3,4,\mathbf{5}\}, N_k \in \{8,16,\mathbf{32}\}, N_d \in \{16,64,\mathbf{128},256\}$\\
+MLP          & STFT   & $ w_1 \in \{1,\mathbf{10}\}, L \in \{8, 256, 1028, \mathbf{2056}\}, M \in \{\mathbf{64}, 512, 1024\} $ \\
+MLP          & Wavelet & $w_1 \in \{1,\mathbf{10}\}, L \in \{8, \mathbf{256}, 1028, 2056\}, M \in \{64, 512, \mathbf{1024}\} $ \\ 
+\hline
+\noalign{\smallskip}
+NB, RF, SVM          & $F_{10}  \in \mathbb{R}^{304} $  & $ \text{PCA} \in \mathbb{R}^{N}, N \in 0.8^n \times 304, n \in \{0,1,\ldots,12\},$ \\
+&& $\text{RFE} \in \mathbb{R}^{M}, M \in 304 - 8m, m \in \{0, 1, \ldots, \mathbf{27}, \ldots  35\}.  $\\
+
+\hline
+\end{tabular}
+\end{table}
+
+%\ikN{Could list xval grids AND results in Table 1, remove listing from text}
+
+\section{Classification Performance}
+\label{sec:results}
+
+% \subsection{Fixed Parameters}
+% \ikN{Fixed parameters in Theo's pipeline}
+% Our choice of the wavelet parameters, $\mu = 3, \sigma= 0.1$, configures the bump wavelet with maximum frequency resolution [cit maybe needed] in order to accurately capture the low frequency fundamental and first harmonic to minimise false positive detections. [Depending on the device and situational needs, one may alter the parameters to favour greater time resolution]. 
+The performance metrics are defined at the resolution of the extracted features and presented in Table \ref{tab:results}. We emphasise that the ultimate goal is deployment in fieldwork on smartphones or embedded devices. The device will be in constant \emph{listening} mode, and mainly consume power during the data \emph{write} mode that is initiated by signal detections. A high true negative rate (TNR) is very desirable for this application, as preventing false positive detections leads to critical conservation of battery power. Taking this into account, we highlight four key results. 
+
+\begin{table}[t]
+\centering
+\caption{Summary classification metrics. The metrics are evaluated from a single run on test data, following 10-fold cross-validation of features and hyperparameters on training dataset.}
+\label{tab:results}
+\begin{tabular}{lllllll}
+%\toprule
+\hline\noalign{\smallskip}
+Classifier & Features & $F_1$ score & TPR & TNR & ROC area & PR area \\ %\midrule
+\noalign{\smallskip}
+\hline\hline
+\noalign{\smallskip}
+MLP        & STFT     & 0.751  		& 0.65                & 0.96   	&  0.858		  & 0.830  \\
+MLP        & Wavelet  &  0.745       &    0.63        &    0.97  &    0.921		  & 0.875     \\
+CNN        & STFT     &   0.779   &    0.69     		    & 0.96	&  0.871	      &   0.853    \\
+CNN        & Wavelet  &   \textbf{0.817}      &      0.73       & \textbf{0.97} &    \textbf{0.952}    &       \textbf{0.909}  \\
+Naive Bayes      & STFT  &   0.521    &    0.65       & 0.74 &    0.743  &     0.600  \\
+Naive Bayes      & RFE\textsubscript{88}  &   0.484     &     0.51        & 0.83 &   0.732  &     0.414   \\
+Random Forest        & STFT &   0.674    &      0.69    & 0.89 &   0.896   &       0.733  \\
+Random Forest        & RFE\textsubscript{88}  &   0.710      &    0.68      & 0.93 &    0.920   &       0.800   \\
+SVM       & STFT  &   0.685      &      \textbf{0.83}     & 0.81 &   0.902   &      0.775     \\
+SVM       & RFE\textsubscript{88}     &      0.745    & 0.73 & 0.93 &    0.928   &       0.831    \\
+\hline\hline
+CNN, median filter     & Wavelet  &   0.854      &      0.78     & 0.98 &    0.970   &       0.939    \\
+\hline
+Expert 1       & N/A  &   0.819      &      0.89    & 0.85 &    0.873   &       0.843    \\
+Expert 2       & N/A  &   0.856      &      0.92     & 0.88 &    0.901   &       0.873    \\
+Expert 3       & N/A  &   0.852      &      0.77     & 0.98 &    0.874   &       0.901    \\
+\hline
+\end{tabular}
+\end{table}
+
+Firstly, training the neural networks on wavelet features shows a consistent relative improvement compared to training on STFT features. We attribute the improved receiver operating characteristic curve (ROC) area to the network producing better estimates of the uncertainty of each prediction. As a result, a greater range of the detector output $0\leq y_i \leq1$ is utilised. This is best represented by the contrast in smoothness of the ROC curves, as well as the spread of predictions visible for the classifier test output in Figure \ref{fig:results}. 
+
+\begin{figure}
+  \begin{subfigure}[t]{1.\columnwidth}
+    \centering
+    \includegraphics[width=1.\linewidth]{metric_humbug_conv_512_256_32_128_3_3_high_dz.pdf}
+    %\caption{Receiver operating characteristic curve, with corresponding area. Random guess trajectory (dotted). Confusion matrix constructed with decision boundary set midway between the softmax output (0.5).}
+    %\caption{raw}
+    \caption{Spectrogram}
+  \end{subfigure}
+  \begin{subfigure}[t]{1.\columnwidth}
+  \centering
+    \includegraphics[width=1.\linewidth]{metric_humbug_conv_wavelet_247_32_128_5_5_dz_interp_high.pdf}
+    \caption{Wavelet}
+    %\caption{median filtered}  
+      %\label{fig:WavResults2}
+  \end{subfigure}
+\end{figure}
+\begin{figure}
+  \begin{subfigure}[t]{1.\columnwidth}
+    \centering
+    \includegraphics[width=1.0\linewidth]{softmax_humbug_conv_512_256_32_128_3_3_dz.pdf}
+    %\label{fig:WavResults2}
+    \caption{Spectrogram}
+    \label{fig:subfig:a}
+  \end{subfigure}
+  \begin{subfigure}[t]{1.\columnwidth}
+  \centering
+    \includegraphics[width=1.\linewidth]{softmax_humbug_conv_wavelet_247_32_128_5_5_dz_interp_high.pdf}
+    %\label{fig:WavResults2}
+    \caption{Wavelet}
+    \label{fig:subfig:b}
+  \end{subfigure}
+  \caption{ROC, precision-recall, and classifier outputs over test data for \ref{fig:subfig:a}: STFT with 256 Fourier coefficients and \ref{fig:subfig:b}: wavelet with 256 scales. Target prediction for a range of signal windows is given by the blue dotted line, with actual predictions denoted by green dots. Each prediction is generated over $w_1 = 10$  samples -- a window  of 320\,ms.%
+  %The large boost in detection performance stems from utilisation of wavelet features over the STFT. Predictions are made with more effective, and accurate, use of the classifier output, resulting in higher ROC and precision-recall areas.
+  } 
+
+    \label{fig:results}
+
+\end{figure}
+
+
+Secondly, the addition of the convolutional layer provides a significant increase in every performance metric compared to the MLPs. Therefore, omitting the specific locality constraint of the CNN degrades performance.
+
+Thirdly, the CNN trained on wavelet features is able to perform classifications  with $F_1$ score, precision-recall (PR) and ROC areas, far exceeding the results obtained with traditional classifiers. This is despite using an elaborate hand-tuned feature selection scheme that cross-validates both PCA and RFE to extract salient features. By also comparing the lower achieving CNN conditioned on STFT features, we note that both the feature representation and architecture add critical value to the detection process. 
+
+Finally, median filtering the CNN's predictions conditioned on the wavelet features considerably boosts performance metrics, allowing our algorithm to outperform human experts. By using a median filter kernel (of 1 second) that represents the smoothness over which human labelling approximately occurred, we are able to compare performance with human expert labelling. Since human labels were supplied as absolute (either  $y_i = 1, y_i = 0$), an incorrect label incurs a large penalty on the ROC and precision-recall curve areas. This results in a far exceeding ROC area of 0.970 for the CNN-wavelet network, compared to 0.873, 0.901 and 0.874 of the three human experts respectively. However, even raw accuracies are comparable, as indicated by the near identical $F_1$ score of the best hand label attempt and our filtered algorithm. Further algorithmic improvements are readily attainable (e.g. classifier aggregation and temporal pooling), but fall beyond the scope of this paper.
+
+
+% \begin{figure}
+% \includegraphics[page=1, width=1.0\textwidth]{humbug_conv_wavelet_247_1_1_dz_interp_filt.pdf}
+% \caption{Convnet output over test dataset. STFT with \texttt{NFFT} of , \texttt{noverlap} of. Each prediction corresponds to a 256 sample window (0.032 s). Result median filtered with kernel size 21, or $21 \times 0.032 = 0.672$ seconds}
+% \label{fig:SpecResults1}
+% \end{figure}
+
+
+\subsection{Visualising Discriminative Power}
+\label{subsec:visual}
+In the absence of data labels, visualisations can be key to understanding how neural networks obtain their discriminative power. To ensure that the characteristics of the signal have been learnt successfully, we compute the frequency spectra $\mathbf{X}_i(f)$ of samples that maximally activate the network's units. We collect the highest $N$ predictions for the mosquito class, $\hat{y}_1$, and non-mosquito class, $\hat{y}_0$, respectively.
+The high-scoring test data forms a tensor $\mathbf{X}_{i,\text{test}} \in \mathbb{R}^{N\times 256  \times 10}, i = \{0,1\}$, which is the concatenation of $N$ spectrogram patches. The frequency spectra are then computed by taking the ensemble average across the patches and individual columns as follows:
+\begin{equation}
+\mathbf{x}_{i,\text{test}}(f) = \frac{1}{10}\frac{1}{N}\sum_{j=1}^{10} \sum_{k=1}^{N} X_{ijk}, \ \mbox{where} \ X_{ijk} \in \mathbb{R}^{256}.
+\end{equation}
+Similarly, we compute spectra $\mathbf{x}_{i,\text{train}}(f)$ for the two classes from the $N_s$ labelled training samples.
+%\begin{equation}
+%\mathbf{x}_{i,\text{train}}(f) = \frac{1}{10}\frac{1}{N_s}\sum_{j=1}^{10} \sum_{k=1}^{N_s} X_{ijk}, \ \mbox{where} \ X_{ijk} \in \mathbb{R}^{256}.
+%\end{equation}
+We make our spectra zero-mean and unit-variance in order to make direct comparisons between the high-scoring test spectra for each class $\mathbf{x}_{i,\text{test}}(f)$, and their reference from the training set $\mathbf{x}_{i,\text{train}}(f)$. The resulting test spectrum for the mosquito class ($\mathbf{x}_{1}(f)$, Figure \ref{fig:Resultsmeans}) shows a distinct frequency peak around 650\,Hz. This peak clearly matches the audible frequency of the mosquito, confirming that the network is making predictions based on learnt features of the true signal. The same holds true for the noise spectra ($\mathbf{x}_{0}(f)$), which is dominated by a component around 300\,Hz. A mismatch between learnt and labelled spectra would raise warning flags to the user, suggesting the network may for example be learning to detect the noise profile of the microphones used for data collection rather than the mosquito flight tones.
+
+
+\begin{figure}[t]
+\centering
+
+    \includegraphics[page = 1, width=1.\linewidth]{MeanMosquito.pdf}
+\caption{Plot of standardised wavelet coefficient amplitude against centre frequency of each wavelet scale for the top 10\,\% predicted outputs over a test dataset. The learned spectra $\mathbf{x}_{i,\text{test}}(f)$ for the highest $N$ scores closely match the frequency characteristics of the labelled class samples $\mathbf{x}_{i, \textrm{train}}(f)$.}
+\label{fig:Resultsmeans}
+\end{figure}
+
+
+%It is notable that the fundamental frequency is absent in this `spectrum' plot, [literature mosq]. A prior for detecting this mosquito would involve detecting the fundamental frequency and its harmonics -- which would actually not work well for this species due to the inaudibility of the fundamental. Such characteristics are best learnt with data, where our interpretation gives information for constructing and tuning filters for detection. \dzn{I would remove this last paragraph. Where should the fundamental be? If you want to claim this you have to report the fund., and are not really sure if we don't find out what species it is.}
+
+%Side note: There are also additional scenarios where the fundamental harmonic is audible (this recording scenario consisted of an inaudible fundamental, but strongly audible odd harmonics, and weakly audible even harmonics). The two scenarios are distinct in the neural network, so correct classification into a species would rely on obtaining sufficient training samples. Alternatively, perhaps one could simulate the scenario by rescaling frequency spectrum bands? [really don't know about this one].
+
+% \subsection{Improving classifier performance}
+% The attention of this paper was focused towards baseline comparison and as a result, a large number of possibilities for detection performance improvement were left untouched. These include aggregating multiple classifiers, particularly classifiers whose ROC curves show resolving power in different parts of the graph.
+
+% The mean interpolation to aggregate information in the time domain for the wavelet was as basic as possible. We could instead regress over the data points and downsample using for example a Gaussian Process.
+
+\section{Conclusions}
+\label{sec:Conclusion}
+
+% \emph{skeleton}:
+
+% \begin{enumerate}
+% 	\item Successful application
+% 	\begin{enumerate}
+% 		\item small dataset
+% 		\item real-world data
+% 	\end{enumerate}
+% 	\item Outperforming state-of-art with wavelets
+% 	\begin{enumerate}
+% 		\item Plethora of current methods based on spectrogram
+% 		\item Of those that are not, many features are derived from the STFT (e.g. MFCC)
+% 	\end{enumerate}
+
+% 	\item Visualised:
+% 	\begin{enumerate}
+% 		\item Network weights: MLP learns weights with frequencies corresponding to mosquito tones
+% 		\item Network-exciting samples:
+% 			\begin{enumerate}
+% 				\item Wavelet means: more prominent peak, correctly learned frequencies 
+% 				\item anything else?
+%       \end{enumerate}
+%   \end{enumerate}
+%   \end{enumerate}
+
+%\ikN{Conclusion needs work} 
+This paper presents a novel approach for acoustic classification of free-flying mosquitoes in a real-world, data-scarce scenario. We show that a convolutional neural network outperforms generic classifiers such as random forests and support vector machines commonly used in the field. The neural network, trained on a raw wavelet spectrogram, also outperforms traditional, hand-crafted feature extraction techniques, surpassing any combination of alternative feature-algorithm pairs. Moreover, we conclude that the addition of a convolutional layer results in performance gains over non-convolutional neural networks with both Fourier and wavelet representations. With the further addition of rolling median filtering, the approach is able to improve on human expert labelling.
+
+% This paper showcases a successful application of deep learning to a challenging, low-dimensional, real-world dataset. Our final algorithm is a convolutional neural network trained on a generic wavelet spectrogram. We conclude that the addition of a convolutional layer results in performance gains over conventional multi-layer perceptrons with both generic short-time Fourier transform and wavelet features. Despite learning from only 37 examples, generic deep learning approaches match traditional classifiers conditioned on carefully hand-crafted and cross-validated feature sets. Our wavelet-trained convolutional neural network offers a very significant further performance boost. With the further addition of simple median filtering, we are able to even outperform individual human experts.
+
+Furthermore, our generic feature transform allows us to visualise the learned class representation by back-propagating predictions made by the network. We thus verify that the network correctly infers the frequency characteristics of the mosquito, rather than a peculiarity of the recording such as the microphone noise profile. Future work will generalise our model to multiple classes, such as individual mosquito species, and deploy our algorithm in a physical device to allow for large-scale collection of data. 
+
+%When testing the model on a new mosquito species the model overwhelmingly predicts the absence of the mosquito. This is because the CNN learned to detect a specific frequency characteristic of the mosquito. Consistently detecting other species as noise may be invaluable to the ultimate aim: extension to multiple species. Given good availability of class-labelled data, we only require labelling in the time-domain to allow construction of datasets. 
+
+
+
+\subsubsection{Acknowledgements.}
+This work is part-funded by a Google Impact Challenge award. Ivan Kiskin is sponsored by the the AIMS CDT (\url{aims.robots.ox.ac.uk}). This work is part of the HumBug project (\url{humbug.ac.uk}), a collaborative project between the University of Oxford and Kew Gardens.
+
+%
+% ---- Bibliography ----
+%
+
+\bibliography{TransferBib}
+
+%\begin{thebibliography}{5}
+%
+% \bibitem {who-2015}
+% World Health Organisation:
+% World Malaria Report 2015
+% Nonlinear oscillations and
+% boundary-value problems for Hamiltonian systems.
+% Arch. Rat. Mech. Anal. 78, 315--333 (1982)
+
+% \bibitem {clar:eke:2}
+% Clarke, F., Ekeland, I.:
+% Solutions p\'{e}riodiques, du
+% p\'{e}riode donn\'{e}e, des \'{e}quations hamiltoniennes.
+% Note CRAS Paris 287, 1013--1015 (1978)
+
+% \bibitem {mich:tar}
+% Michalek, R., Tarantello, G.:
+% Subharmonic solutions with prescribed minimal
+% period for nonautonomous Hamiltonian systems.
+% J. Diff. Eq. 72, 28--55 (1988)
+
+% \bibitem {tar}
+% Tarantello, G.:
+% Subharmonic solutions for Hamiltonian
+% systems via a $\bbbz_{p}$ pseudoindex theory.
+% Annali di Matematica Pura (to appear)
+
+% \bibitem {rab}
+% Rabinowitz, P.:
+% On subharmonic solutions of a Hamiltonian system.
+% Comm. Pure Appl. Math. 33, 609--633 (1980)
+
+% \end{thebibliography}
+
+
+% \clearpage
+% \addtocmark[2]{Author Index} % additional numbered TOC entry
+% \renewcommand{\indexname}{Author Index}
+% \printindex
+% \clearpage
+% \addtocmark[2]{Subject Index} % additional numbered TOC entry
+% \markboth{Subject Index}{Subject Index}
+% \renewcommand{\indexname}{Subject Index}
+% \input{subjidx.ind}
+
+
+
+
+
+
+
+
+\end{document}

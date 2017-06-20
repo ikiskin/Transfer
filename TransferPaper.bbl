@@ -1,0 +1,189 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem{ai2012classification}
+Ai, O.C., Hariharan, M., Yaacob, S., Chee, L.S.: Classification of speech
+  dysfluencies with {MFCC} and {LPCC} features. Expert Systems with
+  Applications  39(2),  2157--2165 (2012)
+
+\bibitem{akay1998time}
+Akay, M.: Time Frequency and Wavelets in Biomedical Signal Processing. IEEE
+  press series in Biomedical Engineering (1998)
+
+\bibitem{alphey2010sterile}
+Alphey, L., Benedict, M., Bellini, R., Clark, G.G., Dame, D.A., Service, M.W.,
+  Dobson, S.L.: Sterile-insect methods for control of mosquito-borne diseases:
+  an analysis. Vector-Borne and Zoonotic Diseases  10(3),  295--311 (2010)
+
+\bibitem{bhatt2015}
+Bhatt, S., Weiss, D.J., Cameron, E., Bisanzio, D., Mappin, B., Dalrymple, U.,
+  Battle, K.E., Moyes, C.L., Henry, A., Eckhoff, P.A., Wenger, E.A., Briet, O.,
+  Penny, M.A., Smith, T.A., Bennett, A., Yukich, J., Eisele, T.P., Griffin,
+  J.T., Fergus, C.A., Lynch, M., Lindgren, F., Cohen, J.M., Murray, C.L.J.,
+  Smith, D.L., Hay, S.I., Cibulskis, R.E., Gething, P.W.: The effect of malaria
+  control on {Plasmodium} falciparum in {Africa} between 2000 and 2015. Nature
+  526(7572),  207--211 (10 2015)
+
+\bibitem{bhattacharya2016southern}
+Bhattacharya, S., Basu, P.: The southern house mosquito, {Culex}
+  quinquefasciatus: profile of a smart vector. J Entomol Zoo Stud  4,  73--81
+  (2016)
+
+\bibitem{chen2014flying}
+Chen, Y., Why, A., Batista, G., Mafra-Neto, A., Keogh, E.: Flying insect
+  classification with inexpensive sensors. Journal of insect behavior  27(5),
+  657--677 (2014)
+
+\bibitem{chesmore2004automated}
+Chesmore, E., Ohya, E.: Automated identification of field-recorded songs of
+  four {British} grasshoppers using bioacoustic signal recognition. Bulletin of
+  Entomological Research  94(04),  319--330 (2004)
+
+\bibitem{clemins2002automatic}
+Clemins, P.J., Johnson, M.T.: Automatic type classification and speaker
+  identification of {African} elpehant vocalizations  (2002)
+
+\bibitem{daubechies2011synchrosqueezed}
+Daubechies, I., Lu, J., Wu, H.T.: Synchrosqueezed wavelet transforms: An
+  empirical mode decomposition-like tool. Applied and computational harmonic
+  analysis  30(2),  243--261 (2011)
+
+\bibitem{giannakopoulos2015pyaudioanalysis}
+Giannakopoulos, T.: py{A}udio{A}nalysis: An open-source {Python} library for
+  audio signal analysis. PloS one  10(12),  e0144610 (2015)
+
+\bibitem{goeau2015lifeclef}
+Go{\"e}au, H., Glotin, H., Vellinga, W.P., Planqu{\'e}, R., Rauber, A., Joly,
+  A.: {LifeCLEF} bird identification task 2015. In: CLEF2015 (2015)
+
+\bibitem{Goodfellow-et-al-2016}
+Goodfellow, I., Bengio, Y., Courville, A.: Deep Learning. MIT Press (2016),
+  \url{http://www.deeplearningbook.org}
+
+\bibitem{guyon2002gene}
+Guyon, I., Weston, J., Barnhill, S., Vapnik, V.: Gene selection for cancer
+  classification using support vector machines. Machine learning  46(1),
+  389--422 (2002)
+
+\bibitem{gwardys2014deep}
+Gwardys, G., Grzywczak, D.: Deep image features in music information retrieval.
+  International Journal of Electronics and Telecommunications  60(4),  321--326
+  (2014)
+
+\bibitem{humphrey2013feature}
+Humphrey, E.J., Bello, J.P., LeCun, Y.: Feature learning and deep
+  architectures: new directions for music informatics. Journal of Intelligent
+  Information Systems  41(3),  461--481 (2013)
+
+\bibitem{joly2016lifeclef}
+Joly, A., Go{\"e}au, H., Glotin, H., Spampinato, C., Bonnet, P., Vellinga,
+  W.P., Champ, J., Planqu{\'e}, R., Palazzo, S., M{\"u}ller, H.: {LifeCLEF}
+  2016: multimedia life species identification challenges. In: International
+  Conference of the Cross-Language Evaluation Forum for European Languages. pp.
+  286--310. Springer (2016)
+
+\bibitem{krizhevsky2012imagenet}
+Krizhevsky, A., Sutskever, I., Hinton, G.E.: Imagenet classification with deep
+  convolutional neural networks. In: Advances in neural information processing
+  systems. pp. 1097--1105 (2012)
+
+\bibitem{lee2009unsupervised}
+Lee, H., Pham, P., Largman, Y., Ng, A.Y.: Unsupervised feature learning for
+  audio classification using convolutional deep belief networks. In: Advances
+  in neural information processing systems. pp. 1096--1104 (2009)
+
+\bibitem{lengeler2004insecticide}
+Lengeler, C.: Insecticide-treated nets for malaria control: real gains.
+  Bulletin of the World Health Organization  82(2),  84--84 (2004)
+
+\bibitem{leqing2010insect}
+Leqing, Z., Zhen, Z.: Insect sound recognition based on sbc and hmm. In:
+  Intelligent Computation Technology and Automation (ICICTA), 2010
+  International Conference on. vol.~2, pp. 544--548. IEEE (2010)
+
+\bibitem{li2001classification}
+Li, D., Sethi, I.K., Dimitrova, N., McGee, T.: Classification of general audio
+  data for content-based retrieval. Pattern recognition letters  22(5),
+  533--544 (2001)
+
+\bibitem{moore1986automated}
+Moore, A., Miller, J.R., Tabashnik, B.E., Gage, S.H.: Automated identification
+  of flying insects by analysis of wingbeat frequencies. Journal of Economic
+  Entomology  79(6),  1703--1706 (1986)
+
+\bibitem{Mukundarajan2017}
+Mukundarajan, H., Hol, F.J.H., Castillo, E.A., Newby, C., Prakash, M.: Using
+  mobile phones as acoustic sensors for high-throughput surveillance of
+  mosquito ecology. bioRxiv  (2017),
+  \url{http://www.biorxiv.org/content/early/2017/03/25/120519}
+
+\bibitem{oswald2003}
+Oswald, J.N., Barlow, J., Norris, T.F.: Acoustic identification of nine
+  delphinid species in the eastern tropical pacific ocean. Marine Mammal
+  Science  19(1),  20--037 (2003),
+  \url{http://dx.doi.org/10.1111/j.1748-7692.2003.tb01090.x}
+
+\bibitem{parsons2000}
+Parsons, S., Jones, G.: Acoustic identification of twelve species of
+  echolocating bat by discriminant function analysis and artificial neural
+  networks. Journal of Experimental Biology  203(17),  2641--2656 (2000)
+
+\bibitem{Pinhas2008}
+Pinhas, J., Soroker, V., Hetzoni, A., Mizrach, A., Teicher, M., Goldberger, J.:
+  {Automatic acoustic detection of the red palm weevil}. Computer and
+  Electronics in Agriculture  63,  131--139 (2008),
+  \url{http://www.sciencedirect.com/science/article/pii/S0168169908000628}
+
+\bibitem{potamitis2014classifying}
+Potamitis, I.: Classifying insects on the fly. Ecological Informatics  21,
+  40--49 (2014)
+
+\bibitem{potamitis2016deep}
+Potamitis, I.: Deep learning for detection of bird vocalisations. arXiv
+  preprint arXiv:1609.08408  (2016)
+
+\bibitem{Potamitis2007}
+Potamitis, I., Ganchev, T., Fakotakis, N.: {Automatic acoustic identification
+  of crickets and cicadas}. In: Nineth International Symposium on Signal
+  Processing and Its Applications, 2007. ISSPA 2007. pp. 1--4 (2007),
+  \url{http://ieeexplore.ieee.org/document/4555462/}
+
+\bibitem{sainath2015deep}
+Sainath, T.N., Kingsbury, B., Saon, G., Soltau, H., Mohamed, A.r., Dahl, G.,
+  Ramabhadran, B.: Deep convolutional neural networks for large-scale speech
+  tasks. Neural Networks  64,  39--48 (2015)
+
+\bibitem{silva2013applying}
+Silva, D.F., De~Souza, V.M., Batista, G.E., Keogh, E., Ellis, D.P.: Applying
+  machine learning and audio analysis techniques to insect recognition in
+  intelligent traps. In: Machine Learning and Applications (ICMLA), 2013 12th
+  International Conference on. vol.~1, pp. 99--104. IEEE (2013)
+
+\bibitem{srivastava2014dropout}
+Srivastava, N., Hinton, G.E., Krizhevsky, A., Sutskever, I., Salakhutdinov, R.:
+  Dropout: a simple way to prevent neural networks from overfitting. Journal of
+  Machine Learning Research  15(1),  1929--1958 (2014)
+
+\bibitem{vialatte2009bump}
+Vialatte, F.B., Sol{\'e}-Casals, J., Dauwels, J., Maurice, M., Cichocki, A.:
+  Bump time-frequency toolbox: a toolbox for time-frequency oscillatory bursts
+  extraction in electrophysiological signals. BMC neuroscience  10(1), ~46
+  (2009)
+
+\bibitem{WHO2014factsheet}
+{World Health Organization}, et~al.: {W}orld {H}ealth {O}rganization fact sheet
+  387, vector-borne diseases (2014),
+  \url{http://www.who.int/kobe_centre/mediacentre/vbdfactsheet.pdf}, accessed:
+  2017-04-21
+
+\bibitem{WHO2016}
+{World Health Organization}, et~al.: World malaria report 2016. Geneva: WHO.
+  Embargoed until  13 (2016)
+
+\bibitem{zilli2014hidden}
+Zilli, D., Parson, O., Merrett, G.V., Rogers, A.: A hidden {Markov} model-based
+  acoustic cicada detector for crowdsourced smartphone biodiversity monitoring.
+  Journal of Artificial Intelligence Research  51,  805--827 (2014)
+
+\end{thebibliography}
