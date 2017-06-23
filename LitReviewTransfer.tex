@@ -70,12 +70,13 @@
 
 \usepackage{makeidx}  % allows for indexgeneration
 \usepackage[draft]{todonotes}
+\setlength{\marginparwidth}{1.5cm} % Not a lot of space for notes in margin
 % dav's notes
 \newcommand{\dzN}[1]{\todo[inline, size=\small, color=yellow!30]{[dz] #1}}
 \newcommand{\dzn}[1]{\todo[color=yellow!30]{[dz] #1}}
 % ivan's notes
 \newcommand{\ikN}[1]{\todo[inline, size=\small, color=orange!30]{[ik] #1}}
-\newcommand{\ikn}[1]{\todo[color=orange!30]{[ik] #1}}
+\newcommand{\ikn}[1]{\todo[size = \small, color=orange!30]{[ik] #1}}
 % steve's notes
 \newcommand{\srN}[1]{\todo[inline, size=\small, color=cyan!30]{[sr] #1}}
 \newcommand{\srn}[1]{\todo[color=cyan!30]{[sr] #1}}
@@ -145,140 +146,30 @@
 \maketitle              % typeset the title of the contribution
 
 
-\section*{Structure help}
-A literature review should be structured like any other essay: it should have an introduction, a middle or main body, and a conclusion.
-
-\subsubsection*{Introduction}
-
-\color{red} 
-
-Might be worth starting from the key papers: Independent components of natural scenes are edge filters, and 
-
-
-The introduction should:
-\begin{itemize}
-	\item {define your topic and provide an appropriate context for reviewing the literature;}
-	
-	\textcolor{red}{My answer here [from research proposal]}
-	\item establish your reasons – i.e. point of view – for
-	reviewing the literature;
-	\textcolor{red}{Identify and progress current state-of-art signal detection by making use of and learning from recent deep learning, (reinforcement learning and control theory) progress. Or: Identify and unify specific quality research in specific fields for the creation of a robust general purpose detector. Bring automation, a step closer to intelligence, to the detection framework to remove the human-in-the-loop element that is frequently present when designing detectors.}
-	\item explain the organisation – i.e. sequence – of the review;
-	state the scope of the review – i.e. what is included and what isn’t included. For example, if you were reviewing the literature on obesity in children you might say something like: There are a large number of studies of obesity trends in the general population. However, since the focus of this research is on obesity in children, these will not be reviewed in detail and will only be referred to as appropriate.
-\end{itemize}
-
-
-
-\subsubsection*{Main body}
-
-The middle or main body should:
-\begin{itemize}
-	\item organise the literature according to common themes;
-\color{red}	
-	\begin{itemize}
-
-			\item Traditional approaches to Acoustic Event Detection
-			\item Deep Learning:
-			\begin{itemize}
-				\item LSTMs
-				\item Other NNs
-				\item CNNs
-				\begin{itemize}
-					\item Spectrogram data
-					\item Raw/combined/other
-
-				\end{itemize}
-			\end{itemize}	
-	\end{itemize} 
-\color{black}
-	\item provide insight into the relation between your chosen topic and the wider subject area e.g. between obesity in children and obesity in general;
-	
-	\textcolor{red}{.. answer}
-	\item move from a general, wider view of the literature being reviewed to the specific focus of your research.
-	\textcolor{red}{General wide view: signal detection options, historical uses of techniques. More specific: deep learning advances, Bayesian involvement/improvements, focus on integrating best approaches. Most specific: More theoretical approach to choosing weights with information-theoretic criteria}
-\end{itemize}
-\color{black}
-\subsubsection*{Conclusion}
-
-The conclusion should:
-
-\begin{itemize}
-	\item summarise the important aspects of the existing body of literature;
-	\item evaluate the current state of the literature reviewed;
-	\item identify significant flaws or gaps in existing knowledge;
-	\item outline areas for future study;
-	\item link your research to existing knowledge.
-\end{itemize}
-
-Other helpful material found here: \href{http://ecp.engineering.utoronto.ca/online-handbook/components-of-documents/literature-reviews/}{Toronto Eng Lit Review Guidance}
-
-
-\section{Comments from Steve}
-\begin{itemize}
-	\item Harmonic detection
-	\item Detecting weak signals embedded in noise
-	\item Structure in time series
-	\item HMMs? More complex alternative to traditional HMMs: LSTMs?
-	\item CNNs, Deep Learning? Critical? Failings? How do we address those?
-	\item CNN: static. Hybrid LSTM-CNNs. Optimising architecture? Agile automated way of adapting model structure: growing to be more complex to keep solving problem or shrink when it is easier?
-	\item Fusing with probabilistic reasoning: deep kernel methods: major methodological challenge
-
-
-	\item Data-analytic side of the HumBug: spatio-temporal distributions: working dynamically with real data from sensors on field
-	\item State of the art?
-	\item What models are out there?
-	\item Are there alternate approaches for discovering weak signals in noise that are not based on neural networks?
-	\item Increasing work on seeing CNNs as deep kernel learning methods?
-	\item Convolutional GPs?
-	\item Recurrent GPs as replacement to LSTMs?
-\end{itemize}
-
-
-\section{Hitlist of 3 things to really do/address: by next week: for work on coming year.}
-\begin{enumerate}
-	\item Hypothesise that wavelet does better than STFT in data-scare scenario. Test, and if true, focus on improving computational efficiency of wavelet algorithm or replace with DWT. Does DWT loss of information degrade performance on a) our data and b) other applications due to poor generalisability (as was found to be the case with MFCC/related transforms in speech recognition applications)?
-	\item Investigate neural network/Bayesian hybrid approaches for more principled uncertainty handling and model learning. Deep kernel methods (CNN/DKL joint parameter inference) have been supposedly shown to significantly improve performance over regular GPs, GPs on the outer layer of a DNN, and marginally surpassed performance of an equivalent standalone CNN on MNIST data, as well as in a multitude of regression tasks. Apply to our tried and tested dataset (code is available, although not trivial to implement)
-	\item Novelty measure with neural networks: how confident is network about predictions made on new data? Perhaps gateway work before entering deep kernel methods/more principled methods of uncertainty propagation
-
-\end{enumerate}
-Other points:
-\begin{itemize}
-	\item Hypothesise that wavelet does better in data-scarce scenario: test
-	\item If true, important to focus on improving wavelet algorithm for computational efficiency/replace with DWT? Is loss of information worth it?
-	\item Novelty measure: how confident is network about predictions made on new data?
-	\item Bring probabilistic reasoning into decision-making
-	\item Really want to try deep kernel method e.g. Deep GP on dataset \cite{wilson2016deep}
-\end{itemize}
-
 
 
 \section{Introduction}
 
-Signal detection is a very broad research area with contributions from a wide range of academic disciplines. The aim of the DPhil is to progress the state-of-art by working on specific real-world applications.  The motivation to excel in the application aligns with the need to innovate algorithms or architectures. 
-
-Our first application is mosquito detection, which falls within the scope of noisy audio signal detection.
+Signal detection is a very broad research area with contributions from a wide range of academic disciplines. We define signal detection theory as \emph{``a means to quantify the ability to discern between information-bearing patterns and random patterns that distract from the information (called noise, consisting of background stimuli and random activity of the detection machine)"}\ikn{Write own def/find good source}. The aim of the DPhil is to progress the state-of-art by working on specific real-world applications.  The motivation to excel in the application aligns with the need to innovate algorithms or architectures.
 
 This literature review critically covers contributions to signal processing and deep learning in the context of signal detection.
+The research is thus  examined in chronological order, examining the progression of the state of the art in specific fields. We narrow down our focus to audio signals and highlight the potential areas in need of further improvements, forming the basis of our research efforts. Section \ref{sec:speechrecognition} focuses specifically on the speech recognition field, due to its competitive nature and associated rich publication record. The progress in speech recognition state of art was fuelled by both industry and academia due to its importance in human-machine interaction systems, that arguably are essential to general artificial intelligence [cit].
+
+Section \ref{sec:imagerecognition} focuses on image recognition, the most competitive field and resultant driver in the scientific literature.
+Our focus then shifts to bird recognition and acoustic event detection in Sections \ref{sec:birdrecognition} and \ref{sec:AED} as fields where innovation was driven by progress in both speech and image recognition.
+
+We further highlight detection methods from traditional signal  processing literature  that show most potential promise of transferability to our application in Section  \ref{sec:traditional}.
+
+Finally, we outline how reviewed methodology directly applies to our application of mosquito detection, which falls within the scope of noisy audio signal detection.
 
 
-Definition of signal detection (from wiki):
-
-\emph{``Detection theory or signal detection theory is a means to quantify the ability to discern between information-bearing patterns (called stimulus in living organisms, signal in machines) and random patterns that distract from the information (called noise, consisting of background stimuli and random activity of the detection machine and of the nervous system of the operator)"}
-
- The research is examined in chronological order, examining the progression of the state of the art in related fields. We narrow down our focus to audio signals and highlight the potential areas in need of further improvements, forming the basis of our research efforts.
-
-To focus the discussion we break down signal detection loosely into two categories -- traditional and deep learning.
-
-
-\section{Traditional Classification}
-
-Primitive methods: simple filters, extended to filterbanks: origin from digital electronic instrumentation
+The literature review is followed by the research proposal which includes a concise summary of completed work, future work, and a risk assessment. Future work is broken down into short, medium and long-term goals in Section \ref{sec:proposal}. We conclude with .... in Section \ref{sec:conclusion}.
 
 
 
-Perhaps structure by application, talk about traditional -> deep learning. OR, collate fields and talk traditional -> deep learning with paragraphs/subsections for each application.
-\subsection{Speech Recognition}
-We further break down signal detection by considering speech recognition. Speech recognition has been a prominently researched field due to its critical role in human-machine interactions. The ability to accurately transcribe spoken text would influence a diverse range of applications, and hence has been the subject of prominent study. 
+\section{Speech Recognition}
+\label{sec:speechrecognition}
+Due to its significance in academia and industry [cite], major attention is given to the field of speech recognition. Speech recognition has been a prominently researched field due to its critical role in human-machine interactions. The ability to accurately transcribe spoken text would influence a diverse range of applications, and hence has been the subject of prominent study. 
 
 We choose to concentrate on work succeeding 1990s, as it forms the basis of modern methods which are more applicable to our/current research. Major breakthroughs in early methods came from a paradigm shift to more statistics-based methods, such as the Hidden Markov Model (HMM) \cite{juang2005automatic}. An HMM is a statistical model, where the system is modelled as a Markov process with discrete latent variables. An HMM can be interpreted as an extension of a mixture model in which latent variables are related by a Markov process \cite{bishop2006pattern}. The discrete multinomial latent variables describe which component of the mixture is responsible for generating the corresponding observation.
 
@@ -397,7 +288,7 @@ Historically, the use of rectified linear units to train large networks in compu
 
 
 
-\subsubsection{Final move from DNN to CNN}
+\subsubsection{Final move from DNN to CNN/LSTM}
 
 
 \subsubsection*{Deep Convolutional Neural Networks for Large-scale Speech Tasks \cite{sainath2015deep}}
@@ -409,16 +300,17 @@ Historically, the use of rectified linear units to train large networks in compu
 	\item Pooling in time with overlap can thought of as a way to smooth out the signal in time, another form of regularization.
 \end{itemize}
 
+\subsubsection{Include LSTM paper}
 
-
-\subsubsection{Relevance to signal detection}
-MFCCs used in 
-
-
+\subsubsection{Relevance to our application?}\ikn{Not sure if necessary}
 
 
 
-\subsection{Bird recognition}
+
+
+
+\section{Bird recognition}
+\label{sec:birdrecognition}
 BirdCLEF case study. Flesh out main points made in paper lit review. Move from traditional classifiers to Deep Learning
 
 A prominent example of this shift in methodology is the BirdCLEF bird recognition challenge. The challenge consists of the classification of bird songs and calls into up to 1500 bird species from tens of thousands of crowd-sourced recordings. The introduction of deep learning has brought drastic improvements in mean average precision (MAP) scores. The best MAP score of 2014 was 0.45 \cite{goeau2015lifeclef}
@@ -468,10 +360,24 @@ Deep Learning Techniques \cite{sprengel2016audio}}
 	\item Each chunk around 3 seconds in length, acting as a unique training sample for the NN
 \end{itemize}
 
+\section{Image recognition}
+\label{sec:imagerecognition}
+Strong parallels with deep learning methods on sound (spectrogram representation simply an image). More active research area. State-of-art potentially ahead than sound detection [evidence].
 
 
 
-\subsection{Acoustic Event Detection}
+\subsection{Deep Kernel Learning}
+
+From Wilson et. al \cite{wilson2016deep}
+\emph{In the experiments, we show that jointly learning all deep kernel parameters has advantages over training a GP applied to the output layer of a trained deep neural network.}
+
+\begin{itemize}
+	\item DKL does as well/slightly better than pure CNN for learning MNIST dataset. The CNN significantly outperforms GP, DBN + GP and CNN + GP. Definitely worth investigating using for my own task
+\end{itemize}
+
+
+\section{Acoustic Event Detection}
+\label{sec:AED}
 (Use this to introduce AED as relevant to our research)
 
 From \cite{espi2015exploiting}:
@@ -555,8 +461,6 @@ Benefits include:
 \end{itemize}
 
 
-\subsubsection{Final move}
-towards raw data: next potential research challenge. Performance not as good yet. Successful applications have arisen in raw audio generation (wavenet paper \cite{van2016wavenet}) (speech/music)
 
 \subsubsection*{End-to-end Learning for Music Audio \cite{dieleman2014end}}
 Raw audio CNN: did not reach spectrogram performance, however:
@@ -575,13 +479,6 @@ Raw audio CNN: did not reach spectrogram performance, however:
 
 
 
-
-\subsubsection*{Convoluted Feelings -- Convolutional and recurrent nets for detecting emotions from audio data \cite{anandconvoluted}}
-\begin{itemize}
-	\item shit paper
-\end{itemize}
-
-
 Other:
 
 \subsubsection*{Deep learning for detection of bird vocalisations \cite{potamitis2016deep}}
@@ -596,6 +493,8 @@ Other:
 
 
 
+\subsubsection{Final move}
+towards raw data? next potential research challenge. Performance not as good yet. Successful applications have arisen in raw audio generation (wavenet paper \cite{van2016wavenet}) (speech/music)
 
 
 
@@ -685,26 +584,21 @@ General:
 \end{comment}
 
 
-\section{Image recognition}
-Strong parallels with deep learning methods on sound (spectrogram representation simply an image). More active research area. State-of-art potentially ahead than sound detection [evidence].
-
-LSTMs: important, hybrid CNN/LSTM
-Fusing with probabilistic reasoning: find current state-of-art: really address potential further research points, but also caveats of papers (identify dead ends maybe?)
-- addresses Steve's comment about seeing CNN as a deep kernel learning method
 
 
-\section{Deep Kernel Learning}
+\section{Traditional Classification}
+\label{sec:traditional}
 
-From Wilson et. al \cite{wilson2016deep}
-\emph{In the experiments, we show that jointly learning all deep kernel parameters has advantages over training a GP applied to the output layer of a trained deep neural network.}
+Primitive methods: simple filters, extended to filterbanks: origin from digital electronic instrumentation
 
-\begin{itemize}
-	\item DKL does as well/slightly better than pure CNN for learning MNIST dataset. The CNN significantly outperforms GP, DBN + GP and CNN + GP. Definitely worth investigating using for my own task
-\end{itemize}
+
+
+Perhaps structure by application, talk about traditional -> deep learning. OR, collate fields and talk traditional -> deep learning with paragraphs/subsections for each application.
 
 
 \section{Conclusion}
-Paradigm shift from hand-crafted to DNN to CNN. Image analysis moving towards RNNs/hybrid LSTM/CNN. Work seeing CNNs as deep kernel methods. Our target for future research. Furthermore, all signal detection performed in frequency domain with simple STFTs, we can use a more general transform with wavelets [need something about wavelets in lit review]. Perhaps there is a move towards raw data: unlikely to happen in future x years because [evidence of poor raw performance, despite small success stories]. Deepmind finds a way to get shit to work where it doesn't make sense. Non-intuitive methodology, unclear how architectures came to light etc.
+\label{sec:litreviewconclusion}
+Paradigm shift from hand-crafted to DNN to CNN. Image analysis moving towards RNNs/hybrid LSTM/CNN. Work seeing CNNs as deep kernel methods. Our target for future research. Furthermore, all signal detection performed in frequency domain with simple STFTs, we can use a more general transform with wavelets [need something about wavelets in lit review]. Perhaps there is a move towards raw data: unlikely to happen in future x years because [evidence of poor raw performance, despite small success stories]. Deepmind finds a way to get stuff to work where it doesn't make sense. Non-intuitive methodology, unclear how architectures came to light etc.
 
 
 \section{Extra literature}
@@ -826,17 +720,40 @@ However, to the best of our knowledge, the more flexible wavelet transform is ha
 
 
 
-
 \section{Proposal}
-General overview:
+\label{sec:proposal}
+\subsection{Completed Work}
+Our completed work presents an application of deep learning for acoustic event detection in a challenging, data-scare, real-world problem. Our candidate challenge was to accurately detect the presence of a mosquito from its acoustic signature. We developed convolutional neural networks (CNNs) operating on wavelet transformations of audio recordings. This was accomplished with the aid of a continuous wavelet transform with the bump mother wavelet -- a popular choice in traditional time-frequency analysis methods in signal processing [cite]. Furthermore, we interrogated network predictive power by visualising the statistics of network-excitatory samples. The visualisations offered insights into relative informativeness of components in the detection problem. It was shown that the network correctly learned acoustic properties of the mosquito, rather than peculiarities of the recording (such as microphone noise). Detection was achieved with performance metrics significantly surpassing those of existing algorithmic methods, as well as marginally exceeding those attained by individual human experts. The existing algorithmic methods included Support Vector Machines, Random Forests, Naive Bayes classifiers, and Gaussian processes.
 
-To work on/expand:
-\subsection{long-term} Porting onto phone:
-Neural network compression
-Algorithm efficiency of continuous wavelet transform/replacement with DWT?
-Bringing in more principled methods to decision-making: perhaps keep only feature extraction from deep learning, and use Bayesian layer for new predictions? (read about this, does this even make sense?)
-\subsection{medium-term} multi-class, semi-supervised learning (bootstrapping).
-\subsection{short-term} novelty: how much of spectrum can be explained by the weights of the gif? What is new in pictures that cannot be explained by basis functions (from Kohonen)
+
+\subsection{Further Work}
+The proposal is structured by approximate timelines. We define short-term goals as targets to address in two to three months, medium-term as three to nine months, and long-term as over nine months.
+\subsubsection{Short-term}
+\begin{enumerate}
+\item Following the work on mosquito detection with the use of wavelet-conditioned Convolutional Neural Networks, it is hypothesised that the wavelet transform is more effective than the STFT from an information-theoretic viewpoint. We wish to explore this hypothesis formally. 
+\begin{enumerate}
+\item If proven true, this may have a profound effect on the deep learning literature, where the baseline state-of-art method involves taking the STFT before further learning. [A possible way to test this would involve taking a pre-trained network from a paper, repeating all the steps with both STFT as a baseline, as well as the wavelet transform
+\item In the abundance of data, if it turns out that deep networks automatically learn more salient representations neglecting the benefits of wavelets, there is still valuable research to be made for data-scarce scenarios. As applications in the real world often involve expensive data collection and labelling, we consider this research avenue worthy of pursuit. 
+\end{enumerate}
+Should benefits be demonstrated in either scenario, the focus of work will be to improve on computational efficiency of the CWT algorithm implementation. A suitable alternative may be to use a discrete wavelet transform (DWT) that can be executed at the same computational complexity as the FFT [cit needed].
+\item A further short term goal involves utilising data augmentation for training neural networks. In our mosquito detection application data is very expensive, so being able to generate data probabilistically using a scaffold model may help scale performance for multiple species and remain competitive with traditional classification methods, even in extremely data-limited scenarios. \ikN{look into GANs, also consider that we could generate representative samples from our network. Maybe we can make use of those to create new data}
+
+\item Our current method uses a parameterised wavelet transform as feature space conditioning for neural network computations. As a short- to medium-term goal we wish to extend this by also learning wavelet (or other) feature representation spaces jointly with the the remaining network parameters. This involves learning a kernel for frequency transformations. 
+
+
+\end{enumerate}
+\subsubsection{Medium-term}
+\begin{enumerate}
+	\item The first medium-term goal in line is to bring probabilistic reasoning to our detection schemes, while maintaining the impressive performance offered by deep learning approaches. A major downside with neural networks is the inability to obtain model uncertainty (using a softmax to get probabilities is not enough to obtain model uncertainty. See extension originally mentioned by Denker and LeCunn \cite{denker1991transforming}). The aforementioned does not however apply \ikn{Not sure if this is true} to neural networks trained with deep kernel learning \cite{wilson2016deep}. As part of deep kernel learning (DKL), kernel parameters are learnt jointly with neural network hyperparameters the authors. This allows more principled handling of uncertainty. \ikN{Adam: analogy with type-II MLE used for inferring hyperparameters: OK as it happens higher up the inference chain, i.e. not used to learn model parameters} The authors demonstrated that jointly learning all DKL parameters has advantages over training a GP applied to the output layer of a trained deep neural network. Furthermore, in a range of regression and classification tasks, the DKL (hybrid GP/CNN) outperforms the equivalent CNN, GP applied to a fixed pre-trained CNN, GP applied to a pre-trained DNN, and a GP solely. With availability of code, a simple medium-term milestone would be to apply a DKL method with our equivalent wavelet-conditioned CNN to the mosquito data available at that stage of the project. 
+	\item A further medium-term goal is to work on automation of neural network architecture optimization. This would build on work by Swersky et al. \cite{swersky2014raiders} which utilises a Bayesian Optimisation kernel \cite{snoek2012practical} for conditional parameter spaces to infer model architecture and corresponding hyperparameters. In line with our short-term objectives to infer wavelet feature representations, we would also like to build upon the BayesOpt framework to include a mechanism for learning hyperparameters in hybrid wavelet-CNN networks.
+
+\end{enumerate}
+\subsubsection{Long-term}
+\begin{enumerate}
+	\item In the long-term we wish to extend DKLs to our model which we will develop to jointly infer wavelet feature representation spaces and neural network parameters.
+	\item The ultimate long-term goals are to build a dynamic detector that is able to also respond to changes in its environment. This is particularly relevant to signal detection over traditional image detection, as [change in stimulus in time-series compared to static image representations]. As part of the adaptability, the algorithm is required to recognise when the model is insufficient for explaining novel data. This may be incorporated using feedback mechanisms by drawing from ideas in evolutionary algorithms \cite{coello2007evolutionary}. We may wish to feed back uncertain results to a crowdsourcing platform to aid with creating a lifelong learning algorithm.
+\end{enumerate}
+
 
 
 \subsection{Risk Assessment}
@@ -853,12 +770,11 @@ so risk much scares
 
 Mitigating measures:
 \begin{enumerate}
-	\item Keep with it bro
 	\item Do not lose scientific contribution, affects practical implementation
 \end{enumerate}
-%
-% ---- Bibliography ----
-%
+
+\section{Conclusion}
+\label{sec:conclusion}
 
 
 
