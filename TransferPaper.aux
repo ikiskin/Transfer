@@ -48,14 +48,14 @@
 \citation{potamitis2014classifying}
 \citation{lee2009unsupervised}
 \citation{li2001classification}
-\citation{krizhevsky2012imagenet}
-\citation{lee2009unsupervised}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{section.1.2}}
 \newlabel{sec:Context}{{2}{2}{Related Work}{section.1.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Insect Detection}{2}{subsection.1.2.1}}
 \newlabel{subsec:InsectDetect}{{2.1}{2}{Insect Detection}{subsection.1.2.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Feature Representation and Learning}{2}{subsection.1.2.2}}
 \newlabel{sub:dl}{{2.2}{2}{Feature Representation and Learning}{subsection.1.2.2}{}}
+\citation{krizhevsky2012imagenet}
+\citation{lee2009unsupervised}
 \citation{goeau2015lifeclef}
 \citation{joly2016lifeclef}
 \citation{sainath2015deep,gwardys2014deep,potamitis2016deep}
@@ -65,99 +65,3 @@
 \citation{vialatte2009bump}
 \BKM@entry{id=8,dest={73756273656374696F6E2E312E332E32},srcline={310}}{4E657572616C204E6574776F726B20436F6E66696775726174696F6E73}
 \citation{Goodfellow-et-al-2016}
-\citation{srivastava2014dropout}
-\citation{krizhevsky2012imagenet}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Method}{3}{section.1.3}}
-\newlabel{sec:method}{{3}{3}{Method}{section.1.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}The Wavelet Transform}{3}{subsection.1.3.1}}
-\newlabel{subsec:wavSTFT}{{3.1}{3}{The Wavelet Transform}{subsection.1.3.1}{}}
-\newlabel{eq:bump}{{1}{3}{The Wavelet Transform}{equation.1.3.1}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Detection Pipeline\relax }}{3}{algorithm.1}}
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{alg:Detection}{{1}{3}{Detection Pipeline\relax }{algorithm.1}{}}
-\newlabel{algline:transform}{{2}{3}{Detection Pipeline\relax }{algorithm.1}{}}
-\newlabel{line:method:stft}{{2}{3}{Detection Pipeline\relax }{algorithm.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Neural Network Configurations}{3}{subsection.1.3.2}}
-\BKM@entry{id=9,dest={73756273656374696F6E2E312E332E33},srcline={404}}{547261646974696F6E616C20436C617373696669657220426173656C696E65}
-\citation{silva2013applying}
-\citation{giannakopoulos2015pyaudioanalysis}
-\BKM@entry{id=10,dest={73656374696F6E2E312E34},srcline={410}}{4578706572696D656E74616C2044657461696C73}
-\BKM@entry{id=11,dest={73756273656374696F6E2E312E342E31},srcline={412}}{4461746120416E6E6F746174696F6E}
-\citation{bhattacharya2016southern}
-\BKM@entry{id=12,dest={73756273656374696F6E2E312E342E32},srcline={430}}{506172616D657465722043726F73732D56616C69646174696F6E}
-\newlabel{fig:subfig:convspec}{{\caption@xref {fig:subfig:convspec}{ on input line 329}}{4}{Neural Network Configurations}{figure.caption.2}{}}
-\newlabel{sub@fig:subfig:convspec}{{}{4}{Neural Network Configurations}{figure.caption.2}{}}
-\newlabel{fig:subfig:convdiagram}{{\caption@xref {fig:subfig:convdiagram}{ on input line 335}}{4}{Neural Network Configurations}{figure.caption.2}{}}
-\newlabel{sub@fig:subfig:convdiagram}{{}{4}{Neural Network Configurations}{figure.caption.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The CNN pipeline. 1.5 s wavelet spectrogram of mosquito recording is partitioned into images with $c=1$ channels, of dimensions $h_1 \times w_1$. This serves as input to a convolutional network with $N_k$ filters with kernel $\mathbf  {W}_p \in \mathbb  {R}^{k\times k}$. Feature maps are formed with dimensions reduced to $h_2 \times w_2$ following convolution. These maps are fully connected to $N_d$ units in the dense layer, fully connected to 2 units in the output layer.\relax }}{4}{figure.caption.2}}
-\newlabel{fig:CNN}{{1}{4}{The CNN pipeline. 1.5 s wavelet spectrogram of mosquito recording is partitioned into images with $c=1$ channels, of dimensions $h_1 \times w_1$. This serves as input to a convolutional network with $N_k$ filters with kernel $\mathbf {W}_p \in \mathbb {R}^{k\times k}$. Feature maps are formed with dimensions reduced to $h_2 \times w_2$ following convolution. These maps are fully connected to $N_d$ units in the dense layer, fully connected to 2 units in the output layer.\relax }{figure.caption.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces MLP architecture. For clarity the diagram displays connections for a few units. Each layer is fully connected with ReLU activations. Input dimensions $D = h_1 \times w_1 $. Number of hidden units in the first and second layers labelled $L$ and $M$ respectively.\relax }}{4}{figure.caption.3}}
-\newlabel{fig:NN}{{2}{4}{MLP architecture. For clarity the diagram displays connections for a few units. Each layer is fully connected with ReLU activations. Input dimensions $D = h_1 \times w_1 $. Number of hidden units in the first and second layers labelled $L$ and $M$ respectively.\relax }{figure.caption.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Traditional Classifier Baseline}{4}{subsection.1.3.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Experimental Details}{4}{section.1.4}}
-\newlabel{sec:ExperDetails}{{4}{4}{Experimental Details}{section.1.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Data Annotation}{4}{subsection.1.4.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Parameter Cross-Validation}{4}{subsection.1.4.2}}
-\newlabel{subsec:xvalparams}{{4.2}{4}{Parameter Cross-Validation}{subsection.1.4.2}{}}
-\citation{guyon2002gene}
-\BKM@entry{id=13,dest={73656374696F6E2E312E35},srcline={468}}{436C617373696669636174696F6E20506572666F726D616E6365}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces STFT (top) and wavelet (middle) representations of signal with $h_1 = 256$ frequency bins and wavelet scales respectively. Corresponding varying class labels (bottom) as supplied by human experts. The wavelet representation shows greater contrast in horizontal constant frequency bands that correspond to the mosquito tone.\relax }}{5}{figure.caption.4}}
-\newlabel{fig:DataLabel}{{3}{5}{STFT (top) and wavelet (middle) representations of signal with $h_1 = 256$ frequency bins and wavelet scales respectively. Corresponding varying class labels (bottom) as supplied by human experts. The wavelet representation shows greater contrast in horizontal constant frequency bands that correspond to the mosquito tone.\relax }{figure.caption.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Classification Performance}{5}{section.1.5}}
-\newlabel{sec:results}{{5}{5}{Classification Performance}{section.1.5}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Cross-validation results. Optimal hyperparameters given in bold.\relax }}{5}{table.caption.5}}
-\newlabel{tab:xval}{{1}{5}{Cross-validation results. Optimal hyperparameters given in bold.\relax }{table.caption.5}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Summary classification metrics. The metrics are evaluated from a single run on test data, following 10-fold cross-validation of features and hyperparameters on training dataset.\relax }}{5}{table.caption.6}}
-\newlabel{tab:results}{{2}{5}{Summary classification metrics. The metrics are evaluated from a single run on test data, following 10-fold cross-validation of features and hyperparameters on training dataset.\relax }{table.caption.6}{}}
-\BKM@entry{id=14,dest={73756273656374696F6E2E312E352E31},srcline={563}}{56697375616C6973696E67204469736372696D696E617469766520506F776572}
-\BKM@entry{id=15,dest={73656374696F6E2E312E36},srcline={595}}{436F6E636C7573696F6E73}
-\newlabel{fig:subfig:a}{{5a}{6}{Spectrogram\relax }{figure.caption.8}{}}
-\newlabel{sub@fig:subfig:a}{{a}{6}{Spectrogram\relax }{figure.caption.8}{}}
-\newlabel{fig:subfig:b}{{5b}{6}{Wavelet\relax }{figure.caption.8}{}}
-\newlabel{sub@fig:subfig:b}{{b}{6}{Wavelet\relax }{figure.caption.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces ROC, precision-recall, and classifier outputs over test data for \ref  {fig:subfig:a}: STFT with 256 Fourier coefficients and \ref  {fig:subfig:b}: wavelet with 256 scales. Target prediction for a range of signal windows is given by the blue dotted line, with actual predictions denoted by green dots. Each prediction is generated over $w_1 = 10$ samples -- a window of 320\tmspace  +\thinmuskip {.1667em}ms.\relax }}{6}{figure.caption.8}}
-\newlabel{fig:results}{{5}{6}{ROC, precision-recall, and classifier outputs over test data for \ref {fig:subfig:a}: STFT with 256 Fourier coefficients and \ref {fig:subfig:b}: wavelet with 256 scales. Target prediction for a range of signal windows is given by the blue dotted line, with actual predictions denoted by green dots. Each prediction is generated over $w_1 = 10$ samples -- a window of 320\,ms.\relax }{figure.caption.8}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Visualising Discriminative Power}{6}{subsection.1.5.1}}
-\newlabel{subsec:visual}{{5.1}{6}{Visualising Discriminative Power}{subsection.1.5.1}{}}
-\bibdata{TransferBib}
-\bibcite{ai2012classification}{1}
-\bibcite{akay1998time}{2}
-\bibcite{alphey2010sterile}{3}
-\bibcite{bhatt2015}{4}
-\bibcite{bhattacharya2016southern}{5}
-\bibcite{chen2014flying}{6}
-\bibcite{chesmore2004automated}{7}
-\bibcite{clemins2002automatic}{8}
-\bibcite{daubechies2011synchrosqueezed}{9}
-\bibcite{giannakopoulos2015pyaudioanalysis}{10}
-\bibcite{goeau2015lifeclef}{11}
-\bibcite{Goodfellow-et-al-2016}{12}
-\bibcite{guyon2002gene}{13}
-\bibcite{gwardys2014deep}{14}
-\bibcite{humphrey2013feature}{15}
-\bibcite{joly2016lifeclef}{16}
-\bibcite{krizhevsky2012imagenet}{17}
-\bibcite{lee2009unsupervised}{18}
-\bibcite{lengeler2004insecticide}{19}
-\bibcite{leqing2010insect}{20}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Plot of standardised wavelet coefficient amplitude against centre frequency of each wavelet scale for the top 10\tmspace  +\thinmuskip {.1667em}\% predicted outputs over a test dataset. The learned spectra $\mathbf  {x}_{i,\text  {test}}(f)$ for the highest $N$ scores closely match the frequency characteristics of the labelled class samples $\mathbf  {x}_{i, \textrm  {train}}(f)$.\relax }}{7}{figure.caption.9}}
-\newlabel{fig:Resultsmeans}{{6}{7}{Plot of standardised wavelet coefficient amplitude against centre frequency of each wavelet scale for the top 10\,\% predicted outputs over a test dataset. The learned spectra $\mathbf {x}_{i,\text {test}}(f)$ for the highest $N$ scores closely match the frequency characteristics of the labelled class samples $\mathbf {x}_{i, \textrm {train}}(f)$.\relax }{figure.caption.9}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusions}{7}{section.1.6}}
-\newlabel{sec:Conclusion}{{6}{7}{Conclusions}{section.1.6}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Acknowledgements.}{7}{section*.10}}
-\bibcite{li2001classification}{21}
-\bibcite{moore1986automated}{22}
-\bibcite{Mukundarajan2017}{23}
-\bibcite{oswald2003}{24}
-\bibcite{parsons2000}{25}
-\bibcite{Pinhas2008}{26}
-\bibcite{potamitis2014classifying}{27}
-\bibcite{potamitis2016deep}{28}
-\bibcite{Potamitis2007}{29}
-\bibcite{sainath2015deep}{30}
-\bibcite{silva2013applying}{31}
-\bibcite{srivastava2014dropout}{32}
-\bibcite{vialatte2009bump}{33}
-\bibcite{WHO2014factsheet}{34}
-\bibcite{WHO2016}{35}
-\bibcite{zilli2014hidden}{36}

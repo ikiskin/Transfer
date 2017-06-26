@@ -114,7 +114,7 @@
 %                                     also used for the TOC unless
 %                                     \toctitle is used
 %
-\author{Ivan Kiskin\inst{1,2} \and Stephen Roberts\inst{1,2}}
+\author{Ivan Kiskin\inst{1,2}}
 %
 % \authorrunning{Ivar Ekeland et al.} % abbreviated author list (for running head)
 %
@@ -124,7 +124,7 @@
 %
 \institute{University of Oxford, Department of Engineering, Oxford OX1 3PJ, UK, \\
 \and
-\email{\textrm{\{}ikiskin, sjrob\textrm{\}}@robots.ox.ac.uk}, 
+\email{\textrm{ikiskin@robots.ox.ac.uk}}, 
 }
 % \and
 % \email{\textrm{\{}ikiskin, ber, dzilli, sjrob\textrm{\}}@robots.ox.ac.uk}, 
@@ -153,10 +153,10 @@
 Signal detection is a very broad research area with contributions from a wide range of academic disciplines. We define signal detection theory as \emph{``a means to quantify the ability to discern between information-bearing patterns and random patterns that distract from the information (called noise, consisting of background stimuli and random activity of the detection machine)"}\ikn{Write own def/find good source}. The aim of the DPhil is to progress the state-of-art by working on specific real-world applications.  The motivation to excel in the application aligns with the need to innovate algorithms or architectures.
 
 This literature review critically covers contributions to signal processing and deep learning in the context of signal detection.
-The research is thus  examined in chronological order, examining the progression of the state of the art in specific fields. We narrow down our focus to audio signals and highlight the potential areas in need of further improvements, forming the basis of our research efforts. Section \ref{sec:speechrecognition} focuses specifically on the speech recognition field, due to its competitive nature and associated rich publication record. The progress in speech recognition state of art was fuelled by both industry and academia due to its importance in human-machine interaction systems, that arguably are essential to general artificial intelligence [cit].
+The research is thus  examined in chronological order, examining the progression of the state of the art in specific fields. We narrow down our focus to audio signals and highlight the potential areas in need of further improvements, forming the basis of our research efforts. Section \ref{sec:speechrecognition} focuses specifically on the speech recognition field, due to its competitive nature and associated rich publication record as well as the closeness to our chosen application domains. The progress in speech recognition state of art was fuelled by both industry and academia due to its importance in human-machine interaction systems, that arguably are essential to general artificial intelligence [cit].
 
 Section \ref{sec:imagerecognition} focuses on image recognition, the most competitive field and resultant driver in the scientific literature.
-Our focus then shifts to bird recognition and acoustic event detection in Sections \ref{sec:birdrecognition} and \ref{sec:AED} as fields where innovation was driven by progress in both speech and image recognition.
+Our focus then shifts to birdsong recognition and acoustic event detection in Sections \ref{sec:birdrecognition} and \ref{sec:AED} as fields where innovation was driven by progress in both speech and image recognition.
 
 We further highlight detection methods from traditional signal  processing literature  that show most potential promise of transferability to our application in Section  \ref{sec:traditional}.
 
@@ -169,9 +169,9 @@ The literature review is followed by the research proposal which includes a conc
 
 \section{Speech Recognition}
 \label{sec:speechrecognition}
-Due to its significance in academia and industry [cite], major attention is given to the field of speech recognition. Speech recognition has been a prominently researched field due to its critical role in human-machine interactions. The ability to accurately transcribe spoken text would influence a diverse range of applications, and hence has been the subject of prominent study. 
+Due to its significance in academia and industry [cite], much attention is given to the field of speech recognition. Speech recognition has been a prominently researched field due to its critical role in human-machine interactions. The ability to accurately transcribe spoken text would influence a diverse range of applications, and hence has been the subject of prominent study. 
 
-We choose to concentrate on work succeeding 1990s, as it forms the basis of modern methods which are more applicable to our/current research. Major breakthroughs in early methods came from a paradigm shift to more statistics-based methods, such as the Hidden Markov Model (HMM) \cite{juang2005automatic}. An HMM is a statistical model, where the system is modelled as a Markov process with discrete latent variables. An HMM can be interpreted as an extension of a mixture model in which latent variables are related by a Markov process \cite{bishop2006pattern}. The discrete multinomial latent variables describe which component of the mixture is responsible for generating the corresponding observation.
+We choose to concentrate on work since the 1990s, as it forms the basis of modern methods which are more applicable to our/current research. Major breakthroughs in early methods came from a paradigm shift to more statistics-based methods, such as the Hidden Markov Model (HMM) \cite{juang2005automatic}. An HMM is a statistical model, where the system is modelled as a Markov process with discrete latent variables. An HMM can be interpreted as an extension of a mixture model in which latent variables are related by a Markov process \cite{bishop2006pattern}. The discrete multinomial latent variables describe which component of the mixture is responsible for generating the corresponding observation.
 
 By defining a state transition matrix (between states $s_i$) and the state output distribution, the HMM can be used as a generative classifier (for predicting $y_i$). An example scenario is given in Figure \ref{fig:HMM}.
 
@@ -302,7 +302,7 @@ Historically, the use of rectified linear units to train large networks in compu
 
 \subsubsection{Include LSTM paper}
 
-\subsubsection{Relevance to our application?}\ikn{Not sure if necessary}
+\subsubsection{Relevance to our application?}\ikn{Not sure if necessary}\srN{put in and make decision later - probably best in}
 
 
 
@@ -363,7 +363,7 @@ Deep Learning Techniques \cite{sprengel2016audio}}
 \section{Image recognition}
 \label{sec:imagerecognition}
 Strong parallels with deep learning methods on sound (spectrogram representation simply an image). More active research area. State-of-art potentially ahead than sound detection [evidence].
-
+\srN{point out that only very recently have techniques from image analysis come into the signal world}
 
 
 \subsection{Deep Kernel Learning}
@@ -737,6 +737,7 @@ The proposal is structured by approximate timelines. We define short-term goals 
 \end{enumerate}
 Should benefits be demonstrated in either scenario, the focus of work will be to improve on computational efficiency of the CWT algorithm implementation. A suitable alternative may be to use a discrete wavelet transform (DWT) that can be executed at the same computational complexity as the FFT [cit needed].
 \item A further short term goal involves utilising data augmentation for training neural networks. In our mosquito detection application data is very expensive, so being able to generate data probabilistically using a scaffold model may help scale performance for multiple species and remain competitive with traditional classification methods, even in extremely data-limited scenarios. \ikN{look into GANs, also consider that we could generate representative samples from our network. Maybe we can make use of those to create new data}
+\srN{this is a good idea and would really help alleviate the poverty of some data}
 
 \item Our current method uses a parameterised wavelet transform as feature space conditioning for neural network computations. As a short- to medium-term goal we wish to extend this by also learning wavelet (or other) feature representation spaces jointly with the the remaining network parameters. This involves learning a kernel for frequency transformations. 
 
