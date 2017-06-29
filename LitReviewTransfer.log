@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.8.8)  26 JUN 2017 16:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.2.2)  29 JUN 2017 22:16
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
 **LitReviewTransfer.tex
 (./LitReviewTransfer.tex
@@ -984,64 +983,64 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 151.
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 153.
-
-Overfull \hbox (7.99883pt too wide) in paragraph at lines 153--154
-\OT1/ptm/m/n/12 plines. We de-fine sig-nal de-tec-tion the-ory as \OT1/ptm/m/it
-/12 ``a means to quan-tify the abil-ity to dis-cern be-tween information-
- []
-
-[1
+ine 156.
+ [1
 
 
-{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] [3] [4]
+{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+Underfull \vbox (badness 2689) has occurred while \output is active []
 
-LaTeX Warning: Marginpar on page 5 moved.
+ [3]
+[4]
+Missing character: There is no â in font ptmri7t!
+Missing character: There is no € in font ptmri7t!
+Missing character: There is no ˜ in font ptmri7t!
+Missing character: There is no â in font ptmri7t!
+Missing character: There is no € in font ptmri7t!
+Missing character: There is no ™ in font ptmri7t!
+ [5]
 
-[5] [6] [7] [8]
+LaTeX Warning: Marginpar on page 6 moved.
+
+[6] [7] [8] [9]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no  in font ptmr7t!
 
-Overfull \hbox (32.78096pt too wide) in paragraph at lines 488--489
+Overfull \hbox (32.78096pt too wide) in paragraph at lines 455--456
 []\OT1/ptm/m/n/12 Autoenconder, convolutional``U-net" ([][]$\OT1/cmtt/m/n/12 ht
 tp : / / lmb . informatik . uni-[]freiburg . de / people / ronneber /
  []
 
-Excluding 'comment' comment. Excluding 'comment' comment. [9]
-Overfull \hbox (24.259pt too wide) in paragraph at lines 601--602
+Excluding 'comment' comment. Excluding 'comment' comment. [10]
+Overfull \hbox (24.259pt too wide) in paragraph at lines 568--569
 \OT1/ptm/m/n/12 Paradigm shift from hand-crafted to DNN to CNN. Im-age anal-y-s
 is mov-ing to-wards RNNs/hybrid LSTM/CNN.
  []
 
-Excluding 'comment' comment. [10] [11] [12]
-Overfull \hbox (15.9142pt too wide) in paragraph at lines 766--767
+Excluding 'comment' comment. [11] [12] [13]
+Overfull \hbox (15.9142pt too wide) in paragraph at lines 733--734
 []\OT1/ptm/m/n/12 Changes in data ac-qui-si-tion ren-der-ing al-go-rithm im-pra
 c-ti-cal/irrelevant (af-fect-ing the need to port/research
  []
 
-(./LitReviewTransfer.bbl [13]
+(./LitReviewTransfer.bbl [14]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ” in font ptmr7t!
- [14]) [15]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 787.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 787.
+ [15]) [16]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 754.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 754.
  (./LitReviewTransfer.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 787.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 787.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 787.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 754.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 754.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 754.
  ) 
 Here is how much of TeX's memory you used:
- 19936 strings out of 493014
- 365697 string characters out of 6133352
- 445192 words of memory out of 5000000
- 22996 multiletter control sequences out of 15000+600000
+ 19941 strings out of 493014
+ 365810 string characters out of 6133352
+ 445452 words of memory out of 5000000
+ 23000 multiletter control sequences out of 15000+600000
  32492 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,10n,80p,1558b,944s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1053,10 +1052,10 @@ ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive
 /2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texm
 f-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fon
 ts/type1/urw/times/utmri8a.pfb>
-Output written on LitReviewTransfer.pdf (15 pages, 126806 bytes).
+Output written on LitReviewTransfer.pdf (16 pages, 130005 bytes).
 PDF statistics:
- 350 PDF objects out of 1000 (max. 8388607)
- 287 compressed objects within 3 object streams
- 105 named destinations out of 1000 (max. 500000)
+ 377 PDF objects out of 1000 (max. 8388607)
+ 301 compressed objects within 4 object streams
+ 106 named destinations out of 1000 (max. 500000)
  141 words of extra memory for PDF output out of 10000 (max. 10000000)
 

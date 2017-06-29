@@ -2,10 +2,6 @@
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
 
-\bibitem{anandconvoluted}
-Anand, N., Verma, P.: Convoluted feelings convolutional and recurrent nets for
-  detecting emotion from audio data
-
 \bibitem{bishop2006pattern}
 Bishop, C.M.: Pattern recognition. Machine Learning  128,  1--58 (2006)
 
@@ -54,10 +50,21 @@ Giannoulis, D., Benetos, E., Stowell, D., Rossignol, M., Lagrange, M.,
 Go{\"e}au, H., Glotin, H., Vellinga, W.P., Planqu{\'e}, R., Rauber, A., Joly,
   A.: {LifeCLEF} bird identification task 2015. In: CLEF2015 (2015)
 
+\bibitem{graves2013speech}
+Graves, A., Mohamed, A.r., Hinton, G.: Speech recognition with deep recurrent
+  neural networks. In: Acoustics, speech and signal processing (icassp), 2013
+  ieee international conference on. pp. 6645--6649. IEEE (2013)
+
 \bibitem{gwardys2014deep}
 Gwardys, G., Grzywczak, D.: Deep image features in music information retrieval.
   International Journal of Electronics and Telecommunications  60(4),  321--326
   (2014)
+
+\bibitem{hinton2012deep}
+Hinton, G., Deng, L., Yu, D., Dahl, G.E., Mohamed, A.r., Jaitly, N., Senior,
+  A., Vanhoucke, V., Nguyen, P., Sainath, T.N., et~al.: Deep neural networks
+  for acoustic modeling in speech recognition: The shared views of four
+  research groups. IEEE Signal Processing Magazine  29(6),  82--97 (2012)
 
 \bibitem{humphrey2013feature}
 Humphrey, E.J., Bello, J.P., LeCun, Y.: Feature learning and deep
@@ -81,6 +88,13 @@ Joly, A., Go{\"e}au, H., Glotin, H., Spampinato, C., Bonnet, P., Vellinga,
 Juang, B.H., Rabiner, L.R.: Automatic speech recognition--a brief history of
   the technology development. Georgia Institute of Technology. Atlanta Rutgers
   University and the University of California. Santa Barbara  1, ~67 (2005)
+
+\bibitem{li2013hybrid}
+Li, L., Zhao, Y., Jiang, D., Zhang, Y., Wang, F., Gonzalez, I., Valentin, E.,
+  Sahli, H.: Hybrid deep neural network--hidden markov model (dnn-hmm) based
+  speech emotion recognition. In: Affective Computing and Intelligent
+  Interaction (ACII), 2013 Humaine Association Conference on. pp. 312--317.
+  IEEE (2013)
 
 \bibitem{mcvicar2016learning}
 McVicar, M., Santos-Rodr, R., De~Bie, T., et~al.: Learning to separate vocals
@@ -122,6 +136,10 @@ Phan, H., Hertel, L., Maass, M., Mertins, A.: Robust audio event recognition
 \bibitem{potamitis2016deep}
 Potamitis, I.: Deep learning for detection of bird vocalisations. arXiv
   preprint arXiv:1609.08408  (2016)
+
+\bibitem{rabiner1989tutorial}
+Rabiner, L.R.: A tutorial on hidden markov models and selected applications in
+  speech recognition. Proceedings of the IEEE  77(2),  257--286 (1989)
 
 \bibitem{rabiner1993fundamentals}
 Rabiner, L.R., Juang, B.H.: Fundamentals of speech recognition  (1993)

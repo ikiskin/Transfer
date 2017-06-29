@@ -150,12 +150,12 @@
 
 \section{Introduction}
 
-Signal detection is a very broad research area with contributions from a wide range of academic disciplines. We define signal detection theory as \emph{``a means to quantify the ability to discern between information-bearing patterns and random patterns that distract from the information (called noise, consisting of background stimuli and random activity of the detection machine)"}\ikn{Write own def/find good source}. The aim of the DPhil is to progress the state-of-art by working on specific real-world applications.  The motivation to excel in the application aligns with the need to innovate algorithms or architectures.
+Signal detection is a very broad research area with contributions from a wide range of academic disciplines. We define signal detection as the ability to discern information-bearing patterns from random patterns that contain no information. The aim of the DPhil is to progress the state-of-art by working on specific real-world applications.  The motivation to excel in applications aligns with the need to innovate algorithms or architectures.
 
 This literature review critically covers contributions to signal processing and deep learning in the context of signal detection.
-The research is thus  examined in chronological order, examining the progression of the state of the art in specific fields. We narrow down our focus to audio signals and highlight the potential areas in need of further improvements, forming the basis of our research efforts. Section \ref{sec:speechrecognition} focuses specifically on the speech recognition field, due to its competitive nature and associated rich publication record as well as the closeness to our chosen application domains. The progress in speech recognition state of art was fuelled by both industry and academia due to its importance in human-machine interaction systems, that arguably are essential to general artificial intelligence [cit].
+The research is thus  examined in chronological order, examining the progression of the state of the art in specific fields. We narrow down our focus to audio signals and highlight the potential areas in need of further improvements\ikn{Need to do this}, forming the basis of our research efforts. Section \ref{sec:speechrecognition} focuses specifically on the speech recognition field, due to its competitive nature and associated rich publication record as well as the similarity to our chosen application domains. The progress in speech recognition state of art was fuelled by both industry and academia due to its importance in human-machine interaction systems, that arguably are essential to general artificial intelligence (as stated in a thesis by the authors of "The Fundamentals of Speech Recognition \cite{rabiner1993fundamentals}", \cite{juang2005automatic}.
 
-Section \ref{sec:imagerecognition} focuses on image recognition, the most competitive field and resultant driver in the scientific literature.
+Section \ref{sec:imagerecognition} focuses on image recognition, the most competitive field [cit for number of entries] and resultant driver in the scientific literature.
 Our focus then shifts to birdsong recognition and acoustic event detection in Sections \ref{sec:birdrecognition} and \ref{sec:AED} as fields where innovation was driven by progress in both speech and image recognition.
 
 We further highlight detection methods from traditional signal  processing literature  that show most potential promise of transferability to our application in Section  \ref{sec:traditional}.
@@ -169,9 +169,9 @@ The literature review is followed by the research proposal which includes a conc
 
 \section{Speech Recognition}
 \label{sec:speechrecognition}
-Due to its significance in academia and industry [cite], much attention is given to the field of speech recognition. Speech recognition has been a prominently researched field due to its critical role in human-machine interactions. The ability to accurately transcribe spoken text would influence a diverse range of applications, and hence has been the subject of prominent study. 
+Due to its significance in academia and industry, much attention is given to the field of speech recognition. Speech recognition has been a prominently researched field due to its critical role in human-machine interactions. The ability to accurately transcribe spoken text would influence a diverse range of applications, and hence has been the subject of prominent study \cite{juang2005automatic}. 
 
-We choose to concentrate on work since the 1990s, as it forms the basis of modern methods which are more applicable to our/current research. Major breakthroughs in early methods came from a paradigm shift to more statistics-based methods, such as the Hidden Markov Model (HMM) \cite{juang2005automatic}. An HMM is a statistical model, where the system is modelled as a Markov process with discrete latent variables. An HMM can be interpreted as an extension of a mixture model in which latent variables are related by a Markov process \cite{bishop2006pattern}. The discrete multinomial latent variables describe which component of the mixture is responsible for generating the corresponding observation.
+We choose to concentrate on work since the 1990s, as it forms the basis of modern methods which are most applicable to current research. Major breakthroughs in early methods came from a paradigm shift to more statistics-based methods, such as the Hidden Markov Model (HMM) \cite{juang2005automatic}. An HMM is a statistical model, where the system is modelled as a Markov process with discrete latent variables. An HMM can be interpreted as an extension of a mixture model in which latent variables are related by a Markov process \cite{bishop2006pattern}. The discrete multinomial latent variables describe which component of the mixture is responsible for generating the corresponding observation.
 
 By defining a state transition matrix (between states $s_i$) and the state output distribution, the HMM can be used as a generative classifier (for predicting $y_i$). An example scenario is given in Figure \ref{fig:HMM}.
 
@@ -219,68 +219,24 @@ In this particular HMM, states can only reach themselves or the adjacent state.}
 
 
 
-Prominent contributions \cite{rabiner1993fundamentals} (book, fundamentals of theory etc), [cite2]. The improvements came from the introduction of ... (better theoretical understanding?/more powerful hardware? more data?)
+The HMM formed the definitive state-of-art in the early 1990s \cite{rabiner1989tutorial}, with applications in form of DSP hardware being sold in a market for [pin reading, digit recognition, etc]\cite[market sales for speech recognition hardware over time in five market segments, fig 9.2, p.488]{rabiner1993fundamentals}. Prominent contributions \cite{rabiner1993fundamentals} (book, fundamentals of theory etc), [cite2]. The improvements came from the introduction of ... (better theoretical understanding?/more powerful hardware? more data?)
+
+\ikN{Maybe move HMM disadvantage section to after discussing hybrid DNN/HMM: first we talk about disadvantages of GMMs, then feature quality used in DNN/HMM or even GMM/HMM, followed by doing away with the entire HMM section with ``raw" deep learning}
+However, HMMs suffer inherent limitations in speech recognition. The assumption that successive observations are independent, as well as the probability of being in a state only depending on the state at the previous time step are not strictly true \cite{rabiner1989tutorial}. Additionally, the feature representation is hand-crafted by the user, typically in the form of log-scaled frequency coefficients such as the MFCC. \emph{MFCCs, GMMs, and HMMs co-evolved as a way of doing speech recognition when computers were too slow to explore more computationally intensive approaches. MFCCs throw away a lot of the information in the sound wave, but preserve most of the information required for discrimination. By including temporal differences, MFCCs partially overcome the very strong conditional independence assumption of HMMs, namely that successive frames are independent given the hidden state of the HMM. The temporal differences also allow diagonal covariance Gaussians to model the strong temporal
+covariances by reducing these particular pairwise covariances to individual coefficients.} \cite{mohamed2012acoustic}
+
 Relevance to general signal detection? However in the absence of phenomes/not wishing to encode a rich library of prior information (linguistics understanding) / perhaps machines do this better than us: Deep learning
 
-
-\subsubsection{Move towards hybrid DNN-HMM}
-
-
-Effect of introduction of DL on literature \cite{deng2014achievements}:
-Output representation learning:
-Designing effective linguistic representations for the output layers of deep networks for ASR. Context-dependent states 1000-30000. Design follows traditional GMM-HMM systems. CD-DNN gave much higher accuracy when large training data supported model capacity. Future: making use of linguistically-guided structured design based on symbolic/phonological units of speech?
-
-Moving towards raw features:
-do away with hand-crafted feature engineering. MFCCs led to significant accuracy improvements in GMM/HMM systems despite known loss of information introduced.
-
-\emph{MFCCs, GMMs, and HMMs co-evolved as a way of doing
-speech recognition when computers were too slow to explore
-more computationally intensive approaches. MFCCs throw
-away a lot of the information in the sound wave, but preserve
-most of the information required for discrimination. By including
-temporal differences, MFCCs partially overcome the
-very strong conditional independence assumption of HMMs,
-namely that successive frames are independent given the
-hidden state of the HMM. The temporal differences also allow
-diagonal covariance Gaussians to model the strong temporal
-covariances by reducing these particular pairwise covariances
-to individual coefficients. As we shall see, a Fourier transform
-based filterbank, densely distributed on a mel-scale, is a potential
-alternative to MFCCs for models that can easily model
-correlated features [7]. \cite{mohamed2012acoustic}}
+%Could be bullshit: The hand-crafted phoneme representation front-end is replaced with ....
+To improve the quality of feature representations that are used as inputs to the HMM, there was a shift to hybrid Deep Neural Network Hidden Markov systems (DNN-HMMs) from Gaussian Mixture Model HMMs (GMM-HMMs). GMMs in HMMs have a serious shortcoming that they are statistically inefficient for modeling data that lie on or near a nonlinear manifold in the data space \cite{hinton2012deep}.  DNN-HMM design follows traditional GMM-HMM systems. As the DNN is used to model the posterior probability of a state In a large-scale given an observation vector, a prior is required. The prior is commonly obtained with a Viterbi algorithm of the GMM-HMM and is given in the form of an initial labeled state sequence \cite{li2013hybrid}.  However, it was found that DNNs gave much higher accuracy when large training data supported model capacity \cite{deng2014achievements}.  In acoustic modeling for large vocabulary continuous speech recognition (LVCSR) tasks, DNN-HMMs were shown by \cite{dahl2012context}to give significant gains over state-of-the-art Gaussian Mixture Model/Hidden Markov Model (GMM/HMM) systems in a wide variety of small and large vocabulary tasks. \cite{dahl2012context}demonstrated reductions of relative error of 16.0 \% and 23.2 \% using context-dependent DNN-HMMs over context-dependent GMM-HMMs trained using the minimum phone error rate and maximum-likelihood, respectively.
 
 
 
- Cos transform approx de-correlates feature components, important for use of GMMs with diagonal cov matricies. Does not apply to deep learning models, where strength of deep learning methods in modelling data correlation makes transform reduntant.
+Whereas MFCCs led to significant accuracy improvements in GMM/HMM systems despite known loss of information introduced, further advancements came from reducing the specificity of the signal transforms that were used to form feature representations.
+``For example, Mohamed et al. (2012a) \cite[firstExampleMovingGMMsectionofHMM/GMMtoDNN]{mohamed2012acoustic} and Li et al., (2012) showed significantly lowered ASR errors using large-scale DNNs when moving from the MFCC features back to more primitive (Mel-scaled) filter-bank features. These results indicate that DNNs can learn a better transformation than the original fixed cosine transform from the Mel-scaled filter-bank features."  The cosine transform approximately de-correlates feature components, which is important for the use of GMMs with diagonal covariance matrices. This however does not apply to deep learning models, where as their strength in modelling data correlation makes the transform redundant. Perhaps a move to raw input data waveforms is to occur in future, although current research has been unable to extract equivalent performance in audio applications from raw waveforms [cite], other than in single cases [cite wavenet].
 
 
-``For example, Mohamed et al. (2012a) \cite[firstExampleMovingGMMsectionofHMM/GMMtoDNN]{mohamed2012acoustic} and Li et al., (2012) showed
-significantly lowered ASR errors using large-scale DNNs when moving from the MFCC features back to
-more primitive (Mel-scaled) filter-bank features. These results indicate that DNNs can learn a better
-transformation than the original fixed cosine transform from the Mel-scaled filter-bank features."
-Perhaps a move to raw input data (waveform): see end of paragraph
-
-Better optimisation, architectures, transfer learning and noise robustness
-
-\subsubsection{Move towards DNN}
-
-Recently, Deep Neural Networks (DNNs) have achieved tremendous
-success in acoustic modeling for large vocabulary continuous
-speech recognition (LVCSR) tasks, showing significant gains over
-state-of-the-art Gaussian Mixture Model/Hidden Markov Model
-(GMM/HMM) systems on a wide variety of small and large vocabulary
-tasks 
-
-
-\cite{dahl2012context}
-\emph{We illustrate the key components of our model, describe the procedure for applying CD-DNN-HMMs to LVSR, and analyze the effects of various modeling choices on performance. Experiments on a challenging
-business search dataset demonstrate that CD-DNN-HMMs
-can significantly outperform the conventional context-dependent
-Gaussian mixture model (GMM)-HMMs, with an absolute sentence
-accuracy improvement of 5.8 \% and 9.2 \% (or relative error
-reduction of 16.0 \% and 23.2 \%) over the CD-GMM-HMMs trained
-using the minimum phone error rate (MPE) and maximum-likelihood
-(ML) criteria, respectively.}
+%Names of subsections in paper (not sure what to use for): Better optimisation, architectures, transfer learning and noise robustness
 
 
 Historically, the use of rectified linear units to train large networks in computer vision carried over to training DNNs in speech detection, resulting in performance gains relative to DNNs trained with sigmoid units, with further improvement on GMM/HMM systems. \cite{dahl2013improving}
@@ -288,21 +244,32 @@ Historically, the use of rectified linear units to train large networks in compu
 
 
 
-\subsubsection{Final move from DNN to CNN/LSTM}
-
-
-\subsubsection*{Deep Convolutional Neural Networks for Large-scale Speech Tasks \cite{sainath2015deep}}
+\subsubsection{The final major change in recent literature was the replacement of the HMM in its entirety, as well as the introduction of CNNs and LSTMs for feature generation.}
+In large-scale speech tasks, deep convolutional nets have been shown to significantly outperform DNN-HMM systems by \cite{sainath2015deep}. Their method used salient features (warped VTLN log mel-filterbank+delta+double-delta coefficients as in Soltau, Saon, \& Kingsbury, 2010) to train the CNNs (after trial of particular feature combinations). Due to the relevancy to current research we would like to address the following implementation details: 
 \begin{itemize}
-	\item Paper focuses on details of implementation -- number of layers, dropout/pooling, choice of activation functions (quite descriptive). 
 	\item CNNs on the other hand capture translational invariance with far fewer parameters by averaging the outputs of hidden units in different local time and frequency regions.
 	\item Full weight sharing: allowing multiple convolutional layers, encouraging deeper networks (c.f. limited weight sharing: limited to one convolutional layer)
 	\item Performance decreasing after more than 2 conv layers
 	\item Pooling in time with overlap can thought of as a way to smooth out the signal in time, another form of regularization.
+    \item The CNNs and fully-connected DNNs use 1024 hidden units per fully connected layer with a sigmoid non-linearity, unless otherwise indicated. The last layer is a softmax layer with 512 output targets. The 512 targets come from clustering context-dependent GMM/HMM states''
 \end{itemize}
 
-\subsubsection{Include LSTM paper}
+Further improvement was found with the application of recurrent neural networks \cite{graves2013speech}. The authors note in 2013 that while HMM-RNN systems [5] had also seen a recent revival [6, 7], they did not perform as well as deep networks. \emph{Instead of combining RNNs with HMMs, it is possible
+to train RNNs ‘end-to-end’ for speech recognition [8, 9, 10].
+This approach exploits the larger state-space and richer dynamics
+of RNNs compared to HMMs, and avoids the problem
+of using potentially incorrect alignments as training targets.
+The combination of Long Short-term Memory [11], an
+RNN architecture with an improved memory, with end-to-end
+training has proved especially effective for cursive handwriting
+recognition [12, 13].} The authors have shown that the combination of deep, bidirectional LSTM RNNs with end-to-end training gave state-of-the-art results in phoneme recognition, and note that the next step is to extend the system to large vocabulary speech recognition. A further proposed direction is to combine CNNs and deep LSTMs \cite{graves2013speech}.
 
-\subsubsection{Relevance to our application?}\ikn{Not sure if necessary}\srN{put in and make decision later - probably best in}
+We note the authors use the same feature representation (mel-scaled coefficients, with their first and second derivatives and a few extras)
+\subsubsection{Relevance to our application?}
+Speech recognition, whether it is predicting particular phonemes, or their sequences, requires predicting a dynamic signal that is highly nonstationary and embedded in noise. Has strong transfer to fields in audio event recognition, and indeed methods developed in speech recognition have been applied as black-boxes with little modification to tasks such as bird recognition, that we focus on next.
+
+
+\ikn{Not sure if necessary}\srN{put in and make decision later - probably best in}
 
 
 
