@@ -46,6 +46,11 @@ Giannoulis, D., Benetos, E., Stowell, D., Rossignol, M., Lagrange, M.,
   An ieee aasp challenge. In: Applications of Signal Processing to Audio and
   Acoustics (WASPAA), 2013 IEEE Workshop on. pp. 1--4. IEEE (2013)
 
+\bibitem{goeau2014lifeclef}
+Go{\"e}au, H., Glotin, H., Vellinga, W.P., Planqu{\'e}, R., Rauber, A., Joly,
+  A.: Lifeclef bird identification task 2014. In: CLEF: Conference and Labs of
+  the Evaluation forum (2014)
+
 \bibitem{goeau2015lifeclef}
 Go{\"e}au, H., Glotin, H., Vellinga, W.P., Planqu{\'e}, R., Rauber, A., Joly,
   A.: {LifeCLEF} bird identification task 2015. In: CLEF2015 (2015)
@@ -149,14 +154,19 @@ Sainath, T.N., Kingsbury, B., Saon, G., Soltau, H., Mohamed, A.r., Dahl, G.,
   Ramabhadran, B.: Deep convolutional neural networks for large-scale speech
   tasks. Neural Networks  64,  39--48 (2015)
 
+\bibitem{simonyan2014very}
+Simonyan, K., Zisserman, A.: Very deep convolutional networks for large-scale
+  image recognition. arXiv preprint arXiv:1409.1556  (2014)
+
 \bibitem{snoek2012practical}
 Snoek, J., Larochelle, H., Adams, R.P.: Practical bayesian optimization of
   machine learning algorithms. In: Advances in neural information processing
   systems. pp. 2951--2959 (2012)
 
-\bibitem{sprengel2016audio}
-Sprengel, E., Martin~Jaggi, Y., Hofmann, T.: Audio based bird species
-  identification using deep learning techniques. Working notes of CLEF  (2016)
+\bibitem{stowell2014automatic}
+Stowell, D., Plumbley, M.D.: Automatic large-scale classification of bird
+  sounds is strongly improved by unsupervised feature learning. PeerJ  2,  e488
+  (2014)
 
 \bibitem{swersky2014raiders}
 Swersky, K., Duvenaud, D., Snoek, J., Hutter, F., Osborne, M.A.: Raiders of the

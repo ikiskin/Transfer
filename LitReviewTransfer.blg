@@ -4,45 +4,45 @@ The top-level auxiliary file: LitReviewTransfer.aux
 The style file: splncs03.bst
 Database file #1: TransferBib.bib
 Warning--empty journal in rabiner1993fundamentals
-You've used 33 entries,
+You've used 35 entries,
             2785 wiz_defined-function locations,
-            759 strings with 11521 characters,
-and the built_in function-call counts, 19895 in all, are:
-= -- 1644
-> -- 736
-< -- 35
-+ -- 303
-- -- 268
-* -- 1275
-:= -- 2591
-add.period$ -- 49
-call.type$ -- 33
-change.case$ -- 256
+            768 strings with 11792 characters,
+and the built_in function-call counts, 20973 in all, are:
+= -- 1729
+> -- 775
+< -- 37
++ -- 319
+- -- 282
+* -- 1340
+:= -- 2733
+add.period$ -- 51
+call.type$ -- 35
+change.case$ -- 271
 chr.to.int$ -- 0
-cite$ -- 34
-duplicate$ -- 1703
-empty$ -- 1667
-format.name$ -- 295
-if$ -- 4301
+cite$ -- 36
+duplicate$ -- 1802
+empty$ -- 1760
+format.name$ -- 311
+if$ -- 4534
 int.to.chr$ -- 0
-int.to.str$ -- 33
-missing$ -- 367
-newline$ -- 104
-num.names$ -- 66
-pop$ -- 679
+int.to.str$ -- 35
+missing$ -- 388
+newline$ -- 110
+num.names$ -- 70
+pop$ -- 720
 preamble$ -- 1
-purify$ -- 196
+purify$ -- 207
 quote$ -- 0
-skip$ -- 532
+skip$ -- 562
 stack$ -- 0
-substring$ -- 1061
-swap$ -- 971
-text.length$ -- 35
+substring$ -- 1107
+swap$ -- 1024
+text.length$ -- 37
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 130
+type$ -- 138
 warning$ -- 1
-while$ -- 163
-width$ -- 35
-write$ -- 331
+while$ -- 171
+width$ -- 37
+write$ -- 350
 (There was 1 warning)

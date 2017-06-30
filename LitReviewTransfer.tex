@@ -278,59 +278,94 @@ Speech recognition, whether it is predicting particular phonemes, or their seque
 
 \section{Bird recognition}
 \label{sec:birdrecognition}
-BirdCLEF case study. Flesh out main points made in paper lit review. Move from traditional classifiers to Deep Learning
+A prominent example of the shift in methodology evidenced in image recognition is the BirdCLEF bird recognition challenge. The challenge consists of the classification of bird songs and calls into up to 1500 bird species from tens of thousands of crowd-sourced recordings. The introduction of deep learning has brought drastic improvements in mean average precision (MAP) scores. The best MAP score of 2014 was 0.45, achieved by combining two main categories of features for classification: parametric acoustic features consisting of spectral features, cepstral features, energy features and voicing-related features, and probabilities of species-specific spectrogram segments \cite{goeau2014lifeclef}. The feature sets were used in combination with unsupervised dimensionality reduction to train randomized ensemble decision trees. The runner-up used an MFCC feature foundation, with further PCA whitening, to train random forests (a full pipeline is given in Figure 3 in \cite{stowell2014automatic})
 
-A prominent example of this shift in methodology is the BirdCLEF bird recognition challenge. The challenge consists of the classification of bird songs and calls into up to 1500 bird species from tens of thousands of crowd-sourced recordings. The introduction of deep learning has brought drastic improvements in mean average precision (MAP) scores. The best MAP score of 2014 was 0.45 \cite{goeau2015lifeclef}
-
-1st
-MNB TSA, Germany, 4 runs [13]: This participant combined two main
-categories of features for the classification: parametric acoustic features (see
-openSMILE Audio Statistics) and probabilities of species-specific spectrogram
-segments (see Segment-Probabilities)
-
-2nd
-The final
-classification was then completed thanks to a support vector machine trained on
-top of the resulting matching-based representations.
-
-
-
-
-, which was improved to 0.69 the following year when deep learning was introduced, outperforming the closest scoring hand-crafted method that scored 0.58 \cite{joly2016lifeclef}. 
-
-
-1st: 5-layer CNN CUBE Switzerland
-
-
-2nd:
-
-MNB from last year but with more experience: still losered
-
-
-
-
-
-
-
-The impressive performance gain came from the utilisation of well-established convolutional neural network practice from image recognition. By transforming the signals into STFT spectrogram format, the input is represented by 2D matrices, which are used as training data. 
-
-
-
-\subsubsection*{BirdCLEF 2016 winner: Audio Based Bird Species Identification using
-Deep Learning Techniques \cite{sprengel2016audio}}
-\begin{itemize}
-	\item Convnets on spectrogram chunks, with denoising step
-	\item Five conv layers, one dense layer. Every conv layer uses a rectify activation function, followed by a max-pooling layer
-	layer. 
-	\item No performance benefit from using 1D convolution with height equal to spectral width (frequency)
-	\item Used smaller 2D patches instead
-	\item Each chunk around 3 seconds in length, acting as a unique training sample for the NN
-\end{itemize}
+The following year of 2015 saw a slight decrease in performance due to the increased difficulty of the task \cite{goeau2015lifeclef}, with the best results achieved in very similar fashion to last year. However, 2016 marked the introduction of deep learning methods to the competition. Overall MAP scores improved to 0.69 outperforming the previously dominant method, which scored 0.58  on this occasion following small tweaks \cite{joly2016lifeclef}. The impressive performance gain came from the utilisation of well-established convolutional neural network practice from image recognition. By transforming the signals into STFT spectrogram format, the training data is represented by 2D matrices analogous to single-channel image representations. Following median-based segment de-noising, the authors employed a 5 layer CNN network on input sections of approximately 3 seconds in length. This allows capturing and encoding the temporal dependencies of repeating birdsong or call patterns. The authors also note no performance benefit from using 1D convolution with height equal to spectral width (frequency).
 
 \section{Image recognition}
 \label{sec:imagerecognition}
 Strong parallels with deep learning methods on sound (spectrogram representation simply an image). More active research area. State-of-art potentially ahead than sound detection [evidence].
+
+
+Relation between Fourier transforms in audio and images
+
+
+
+Due to the incredibly large research efforts, as evidenced by the number of entries to a wide variety of image recognition tasks in [ILSVCR link], a huge range of sub-fields in neural networks underwent incremental improvements. We structure this section by noteworthy changes in characteristics of the networks.
+
+\subsection{Depth}
+A primary driving factor is ... depth. Increasing number of layers has benefits to allow more non-linearities. Faster computation times [switch from larger filters, fewer layers to smaller filters with more layers]
+
+
+
+Up to 2014:
+\cite{simonyan2014very}:
+\emph{Convolutional networks (ConvNets) have recently enjoyed a great success in large-scale image
+and video recognition (Krizhevsky et al., 2012; Zeiler \& Fergus, 2013; Sermanet et al., 2014;
+Simonyan \& Zisserman, 2014) which has become possible due to the large public image repositories,
+such as ImageNet (Deng et al., 2009), and high-performance computing systems, such as GPUs
+or large-scale distributed clusters (Dean et al., 2012). In particular, an important role in the advance
+of deep visual recognition architectures has been played by the ImageNet Large-Scale Visual Recognition
+Challenge (ILSVRC) (Russakovsky et al., 2014), which has served as a testbed for a few
+generations of large-scale image classification systems, from high-dimensional shallow feature encodings
+(Perronnin et al., 2010) (the winner of ILSVRC-2011) to deep ConvNets (Krizhevsky et al.,
+2012) (the winner of ILSVRC-2012).
+With ConvNets becoming more of a commodity in the computer vision field, a number of attempts
+have been made to improve the original architecture of Krizhevsky et al. (2012) in a
+bid to achieve better accuracy. For instance, the best-performing submissions to the ILSVRC-
+2013 (Zeiler \& Fergus, 2013; Sermanet et al., 2014) utilised smaller receptive window size and
+smaller stride of the first convolutional layer. Another line of improvements dealt with training
+and testing the networks densely over the whole image and over multiple scales (Sermanet et al.,
+2014; Howard, 2014). In this paper, we address another important aspect of ConvNet architecture
+design – its depth. To this end, we fix other parameters of the architecture, and steadily increase the
+depth of the network by adding more convolutional layers, which is feasible due to the use of very
+small (3×3) convolution filters in all layers.}
+
+
+From 2015:
+
+
+
+From DeepID3: Face Recognition with Very Deep Neural Networks:``Using deep neural networks to learn effective feature
+representations has become popular in face recognition
+[12, 20, 17, 22, 14, 13, 18, 21, 19, 15]."
+
+\subsection{Residual learning}
+
+Deep Residual Learning for Image Recognition:
+
+\emph{On the ImageNet classification dataset [35], we obtain
+excellent results by extremely deep residual nets. Our 152-
+layer residual net is the deepest network ever presented on
+ImageNet, while still having lower complexity than VGG
+nets [40]. Our ensemble has 3.57\% top-5 error on the
+ImageNet test set, and won the 1st place in the ILSVRC
+2015 classification competition. The extremely deep representations
+also have excellent generalization performance
+on other recognition tasks, and lead us to further win the
+1st places on: ImageNet detection, ImageNet localization,
+COCO detection, and COCO segmentation in ILSVRC \&
+COCO 2015 competitions. This strong evidence shows that
+the residual learning principle is generic, and we expect that
+it is applicable in other vision and non-vision problems.}
+
+\subsection{Dataset availability}
+CIFAR10/100
+\subsection{Data augmentation}
+
+
 \srN{point out that only very recently have techniques from image analysis come into the signal world}
+
+However, few applications in signal processing. When applied, great results: 
+
+bird recognition
+
+speech?
+
+
+
+
+
 
 
 \subsection{Deep Kernel Learning}
