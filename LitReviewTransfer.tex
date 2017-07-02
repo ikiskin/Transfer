@@ -152,16 +152,14 @@
 
 Signal detection is a very broad research area with contributions from a wide range of academic disciplines. We define signal detection as the ability to discern information-bearing patterns from random patterns that contain no information. The aim of the DPhil is to progress the state-of-art by working on specific real-world applications.  The motivation to excel in applications aligns with the need to innovate algorithms or architectures.
 
-This literature review critically covers contributions to signal processing and deep learning in the context of signal detection.
-The research is thus  examined in chronological order, examining the progression of the state of the art in specific fields. We narrow down our focus to audio signals and highlight the potential areas in need of further improvements\ikn{Need to do this}, forming the basis of our research efforts. Section \ref{sec:speechrecognition} focuses specifically on the speech recognition field, due to its competitive nature and associated rich publication record as well as the similarity to our chosen application domains. The progress in speech recognition state of art was fuelled by both industry and academia due to its importance in human-machine interaction systems, that arguably are essential to general artificial intelligence (as stated in a thesis by the authors of "The Fundamentals of Speech Recognition \cite{rabiner1993fundamentals}", \cite{juang2005automatic}.
+This literature review critically covers contributions to signal processing from deep learning in the context of speech detection, acoustic event detection, and image recognition. The research is thus  examined in chronological order, examining the progression of the state-of-art in specific fields. We narrow down our focus to audio signals and images and highlight the potential areas in need of further improvements\ikn{Need to do this}, forming the basis of our research efforts. Section \ref{sec:speechrecognition} focuses on the speech recognition field, due to its competitive nature and associated rich publication record as well as the similarity to our chosen application domains. The progress in speech recognition state-of-art was fuelled by both industry and academia due to its importance in human-machine interaction systems, that arguably are essential to general artificial intelligence \cite{rabiner1993fundamentals}, \cite{juang2005automatic}.
 
-Section \ref{sec:imagerecognition} focuses on image recognition, the most competitive field [cit for number of entries] and resultant driver in the scientific literature.
+Section \ref{sec:imagerecognition} focuses on image recognition, the most competitive field in recent years due to the multitude of image recognition and object detection challenges (with over ... entries in last year's Imagenet Large Scale Visual Recognition Challenge alone). As a result, innovations have become drivers in related fields in the scientific literature.
 Our focus then shifts to birdsong recognition and acoustic event detection in Sections \ref{sec:birdrecognition} and \ref{sec:AED} as fields where innovation was driven by progress in both speech and image recognition.
 
-We further highlight detection methods from traditional signal  processing literature  that show most potential promise of transferability to our application in Section  \ref{sec:traditional}.
+% We further highlight detection methods from traditional signal  processing literature  that show most potential promise of transferability to our application in Section  \ref{sec:traditional}.
 
-Finally, we outline how reviewed methodology directly applies to our application of mosquito detection, which falls within the scope of noisy audio signal detection.
-
+\emph{Finally, we outline how reviewed methodology directly applies to our application of mosquito detection, which falls within the scope of noisy audio signal detection.} \ikn{To do}
 
 The literature review is followed by the research proposal which includes a concise summary of completed work, future work, and a risk assessment. Future work is broken down into short, medium and long-term goals in Section \ref{sec:proposal}. We conclude with .... in Section \ref{sec:conclusion}.
 
@@ -274,6 +272,9 @@ Speech recognition, whether it is predicting particular phonemes, or their seque
 
 \section{Image recognition}
 \label{sec:imagerecognition}
+\subsubsection{State of art before deep learning}
+\ikN{Describe briefly}
+
 Strong parallels with deep learning methods on sound (spectrogram representation simply an image). More active research area. State-of-art potentially ahead than sound detection [evidence].
 
 
@@ -349,20 +350,28 @@ The prominent applications where neural networks significantly outperformed othe
 
 However, few applications in signal processing. When applied, great results. We illustrate this with a case study to a sound recognition equivalent challenge to ILSVRC, bird recognition.
 
+
+
+\subsection{Deep Kernel Learning}
+\ikN{Find a way to integrate this section properly}
+From Wilson et. al \cite{wilson2016deep}
+\emph{In the experiments, we show that jointly learning all deep kernel parameters has advantages over training a GP applied to the output layer of a trained deep neural network.}
+
+\begin{itemize}
+    \item DKL does as well/slightly better than pure CNN for learning MNIST dataset. The CNN significantly outperforms GP, DBN + GP and CNN + GP. Definitely worth investigating using for my own task
+\end{itemize}
+
+
+
+
+
 \section{Bird recognition}
 \label{sec:birdrecognition}
 A prominent example of the recent shift in methodology towards deep learning is the BirdCLEF bird recognition challenge. The challenge consists of the classification of bird songs and calls into up to 1500 bird species from tens of thousands of crowd-sourced recordings. The introduction of deep learning has brought drastic improvements in mean average precision (MAP) scores. The best MAP score of 2014 was 0.45, achieved by combining two main categories of features for classification: parametric acoustic features consisting of spectral features, cepstral features, energy features and voicing-related features, and probabilities of species-specific spectrogram segments \cite{goeau2014lifeclef}. The feature sets were used in combination with unsupervised dimensionality reduction to train randomized ensemble decision trees. The runner-up used an MFCC feature foundation, with further PCA whitening, to train random forests (a full pipeline is given in Figure 3 in \cite{stowell2014automatic})
 
 The following year of 2015 saw a slight decrease in performance due to the increased difficulty of the task \cite{goeau2015lifeclef}, with the best results achieved in very similar fashion to last year. However, 2016 marked the introduction of deep learning methods to the competition. Overall MAP scores improved to 0.69 outperforming the previously dominant method, which scored 0.58  on this occasion following small tweaks \cite{joly2016lifeclef}. The impressive performance gain came from the utilisation of well-established convolutional neural network practice from image recognition. By transforming the signals into STFT spectrogram format, the training data is represented by 2D matrices analogous to single-channel image representations. Following median-based segment de-noising, the authors employed a 5 layer CNN network on input sections of approximately 3 seconds in length. This allows capturing and encoding the temporal dependencies of repeating birdsong or call patterns. The authors also note no performance benefit from using 1D convolution with height equal to spectral width (frequency). As with common practice in image recognition, data augmentation was performed in the form of noise injection, ... anything else?
 
-\subsection{Deep Kernel Learning}
 
-From Wilson et. al \cite{wilson2016deep}
-\emph{In the experiments, we show that jointly learning all deep kernel parameters has advantages over training a GP applied to the output layer of a trained deep neural network.}
-
-\begin{itemize}
-	\item DKL does as well/slightly better than pure CNN for learning MNIST dataset. The CNN significantly outperforms GP, DBN + GP and CNN + GP. Definitely worth investigating using for my own task
-\end{itemize}
 
 
 \section{Acoustic Event Detection}
@@ -528,14 +537,14 @@ General:
 
 
 
-\section{Traditional Classification}
-\label{sec:traditional}
+% \section{Traditional Classification}
+% \label{sec:traditional}
 
-Primitive methods: simple filters, extended to filterbanks: origin from digital electronic instrumentation
+% Primitive methods: simple filters, extended to filterbanks: origin from digital electronic instrumentation
 
 
 
-Perhaps structure by application, talk about traditional -> deep learning. OR, collate fields and talk traditional -> deep learning with paragraphs/subsections for each application.
+% Perhaps structure by application, talk about traditional -> deep learning. OR, collate fields and talk traditional -> deep learning with paragraphs/subsections for each application.
 
 
 \section{Conclusion}

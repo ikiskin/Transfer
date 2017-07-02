@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.14)  2 JUL 2017 16:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.14)  2 JUL 2017 17:13
 entering extended mode
 **"D:/Google Drive/AIMSCDT/PhD/TexFiles/Reports/Transfer/LitReviewTransfer.tex"
 
@@ -955,7 +955,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 151.
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 156.
+ine 155.
  [1
 
 
@@ -971,46 +971,46 @@ Missing character: There is no â in font ptmri7t!
 Missing character: There is no € in font ptmri7t!
 Missing character: There is no ™ in font ptmri7t!
  [5]
-
-LaTeX Warning: Marginpar on page 6 moved.
+Overfull \hbox (165.63864pt too wide) in paragraph at lines 276--276
+ []\OT1/ptm/b/n/12 State of art be-fore deep learn-ing[] [] 
+ []
 
 Missing character: There is no â in font ptmri7t!
 Missing character: There is no € in font ptmri7t!
 Missing character: There is no “ in font ptmri7t!
 Missing character: There is no Ã in font ptmri7t!
 Missing character: There is no — in font ptmri7t!
-[6] [7]
-Underfull \vbox (badness 2158) has occurred while \output is active []
-
- [8]
-[9] [10]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[6] [7] [8] [9] [10]
+Underfull \vbox (badness 1067) has occurred while \output is active []
 
  [11]
-Excluding 'comment' comment. Excluding 'comment' comment. [12]
-Overfull \hbox (24.259pt too wide) in paragraph at lines 543--544
+Excluding 'comment' comment. Excluding 'comment' comment.
+Overfull \hbox (24.259pt too wide) in paragraph at lines 552--553
 \OT1/ptm/m/n/12 Paradigm shift from hand-crafted to DNN to CNN. Im-age anal-y-s
 is mov-ing to-wards RNNs/hybrid LSTM/CNN.
  []
 
-[13] [14] [15] [16] (LitReviewTransfer.bbl
+[12] [13] [14]
+Underfull \vbox (badness 6461) has occurred while \output is active []
+
+ [15]
+[16] (LitReviewTransfer.bbl
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ” in font ptmr7t!
  [17] [18]) [19]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 634.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 634.
-
-(LitReviewTransfer.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 634.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 634.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 634.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 643.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 643.
+ (LitReviewTransfer.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 643.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 643.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 643.
  ) 
 Here is how much of TeX's memory you used:
- 19853 strings out of 493634
- 362125 string characters out of 3143738
- 439827 words of memory out of 3000000
- 22745 multiletter control sequences out of 15000+200000
+ 19866 strings out of 493634
+ 362406 string characters out of 3143738
+ 443000 words of memory out of 3000000
+ 22755 multiletter control sequences out of 15000+200000
  31816 words of font info for 72 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  55i,10n,80p,1614b,944s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1020,9 +1020,9 @@ s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX
 s/type1/public/amsfonts/cm/cmtt9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/u
 rw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.p
 fb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on LitReviewTransfer.pdf (19 pages, 172960 bytes).
+Output written on LitReviewTransfer.pdf (19 pages, 173064 bytes).
 PDF statistics:
  420 PDF objects out of 1000 (max. 8388607)
- 124 named destinations out of 1000 (max. 500000)
- 149 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 127 named destinations out of 1000 (max. 500000)
+ 141 words of extra memory for PDF output out of 10000 (max. 10000000)
 
