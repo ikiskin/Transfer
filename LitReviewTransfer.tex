@@ -272,16 +272,6 @@ Speech recognition, whether it is predicting particular phonemes, or their seque
 \ikn{Not sure if necessary}\srN{put in and make decision later - probably best in}
 
 
-
-
-
-
-\section{Bird recognition}
-\label{sec:birdrecognition}
-A prominent example of the shift in methodology evidenced in image recognition is the BirdCLEF bird recognition challenge. The challenge consists of the classification of bird songs and calls into up to 1500 bird species from tens of thousands of crowd-sourced recordings. The introduction of deep learning has brought drastic improvements in mean average precision (MAP) scores. The best MAP score of 2014 was 0.45, achieved by combining two main categories of features for classification: parametric acoustic features consisting of spectral features, cepstral features, energy features and voicing-related features, and probabilities of species-specific spectrogram segments \cite{goeau2014lifeclef}. The feature sets were used in combination with unsupervised dimensionality reduction to train randomized ensemble decision trees. The runner-up used an MFCC feature foundation, with further PCA whitening, to train random forests (a full pipeline is given in Figure 3 in \cite{stowell2014automatic})
-
-The following year of 2015 saw a slight decrease in performance due to the increased difficulty of the task \cite{goeau2015lifeclef}, with the best results achieved in very similar fashion to last year. However, 2016 marked the introduction of deep learning methods to the competition. Overall MAP scores improved to 0.69 outperforming the previously dominant method, which scored 0.58  on this occasion following small tweaks \cite{joly2016lifeclef}. The impressive performance gain came from the utilisation of well-established convolutional neural network practice from image recognition. By transforming the signals into STFT spectrogram format, the training data is represented by 2D matrices analogous to single-channel image representations. Following median-based segment de-noising, the authors employed a 5 layer CNN network on input sections of approximately 3 seconds in length. This allows capturing and encoding the temporal dependencies of repeating birdsong or call patterns. The authors also note no performance benefit from using 1D convolution with height equal to spectral width (frequency).
-
 \section{Image recognition}
 \label{sec:imagerecognition}
 Strong parallels with deep learning methods on sound (spectrogram representation simply an image). More active research area. State-of-art potentially ahead than sound detection [evidence].
@@ -349,24 +339,21 @@ COCO 2015 competitions. This strong evidence shows that
 the residual learning principle is generic, and we expect that
 it is applicable in other vision and non-vision problems.}
 
-\subsection{Dataset availability}
-CIFAR10/100
+
+
 \subsection{Data augmentation}
-
-
+The prominent applications where neural networks significantly outperformed other means of classification all involved large datasets [2009: CIFAR10/100 \cite{krizhevsky2009learning}, 60,000: samples x classes, 6000x10, 1000x60 Imagenet: \cite{ILSVRC15}: see section 3 on how datasets are constructed: crowdsourcing strategy for 1) image classification, 2) single-object localisation, 3) object detection]. .. \cite{simonyan2014very}:
+ attribute much increase in performance due to computational hardware and dataset availability. However, even with scarce data it has been common practice to generate additional training data by applying transformations to the original data \cite{hinton2012improving}
+. The practice can be traced back to \cite{simard2003best}, where the authors note that synthesising plausible transformations of data is simple, however learning transformation invariance can be arbitrarily complicated. If the data is both scarce, and the distribution to be learned has transformation-invariance properties, generating additional data using transformations may improve performance. Indeed this practice has become widely adopted in the neural network literature, with common transformations including translations, horizontal reflections, as well as altering intensities of RGB channels in training images \cite{krizhevsky2012imagenet}. The authors note that the transformations artificially increase the dataset size by over a factor of 2048 for the affine transformations alone. Despite the high inter-dependence of samples, the augmentation offers a form of normalisation, allowing the use of deeper networks. As established, depth plays an important role in overall performance, which places great emphasis on producing as large of a training data set as possible. The augmentation has become common practice as evidenced in ILSVRC submission winners throughout the years \cite[check 3rd ref]{simonyan2014very,he2016deep,krizhevsky2012imagenet}.
 \srN{point out that only very recently have techniques from image analysis come into the signal world}
 
-However, few applications in signal processing. When applied, great results: 
+However, few applications in signal processing. When applied, great results. We illustrate this with a case study to a sound recognition equivalent challenge to ILSVRC, bird recognition.
 
-bird recognition
+\section{Bird recognition}
+\label{sec:birdrecognition}
+A prominent example of the recent shift in methodology towards deep learning is the BirdCLEF bird recognition challenge. The challenge consists of the classification of bird songs and calls into up to 1500 bird species from tens of thousands of crowd-sourced recordings. The introduction of deep learning has brought drastic improvements in mean average precision (MAP) scores. The best MAP score of 2014 was 0.45, achieved by combining two main categories of features for classification: parametric acoustic features consisting of spectral features, cepstral features, energy features and voicing-related features, and probabilities of species-specific spectrogram segments \cite{goeau2014lifeclef}. The feature sets were used in combination with unsupervised dimensionality reduction to train randomized ensemble decision trees. The runner-up used an MFCC feature foundation, with further PCA whitening, to train random forests (a full pipeline is given in Figure 3 in \cite{stowell2014automatic})
 
-speech?
-
-
-
-
-
-
+The following year of 2015 saw a slight decrease in performance due to the increased difficulty of the task \cite{goeau2015lifeclef}, with the best results achieved in very similar fashion to last year. However, 2016 marked the introduction of deep learning methods to the competition. Overall MAP scores improved to 0.69 outperforming the previously dominant method, which scored 0.58  on this occasion following small tweaks \cite{joly2016lifeclef}. The impressive performance gain came from the utilisation of well-established convolutional neural network practice from image recognition. By transforming the signals into STFT spectrogram format, the training data is represented by 2D matrices analogous to single-channel image representations. Following median-based segment de-noising, the authors employed a 5 layer CNN network on input sections of approximately 3 seconds in length. This allows capturing and encoding the temporal dependencies of repeating birdsong or call patterns. The authors also note no performance benefit from using 1D convolution with height equal to spectral width (frequency). As with common practice in image recognition, data augmentation was performed in the form of noise injection, ... anything else?
 
 \subsection{Deep Kernel Learning}
 
@@ -380,14 +367,7 @@ From Wilson et. al \cite{wilson2016deep}
 
 \section{Acoustic Event Detection}
 \label{sec:AED}
-(Use this to introduce AED as relevant to our research)
-
-From \cite{espi2015exploiting}:
-\emph{Acoustic event detection (AED) is the field that deals
-with detecting and classifying these non-speech acoustic
-signals, and the goal is to convert a continuous acoustic
-signal into a sequence of event labels with associated
-start and end times. The field has attracted increasing
+To draw parallels even closer to our application, we study recent research in Acoustic Event Detection (AED). This is the field that deals with detecting and classifying non-speech acoustic signals, with intent to convert continuous signals into a sequence of event labels associated with start and end times \cite{espi2015exploiting}. \emph{The field has attracted increasing
 attention in recent years including dedicated challenges
 such as CLEAR \cite{mostefa2007chil}, and recently D-CASE \cite{giannoulis2013detection}, with tasks
 involving the detection of a known set of acoustic events
@@ -397,11 +377,10 @@ speech communication \cite{mostefa2007chil,giannoulis2013detection} and scene un
 
 
 
-We further examine the progression of the state-of-art in acoustic event detection. An example can be found at the Music Information Retrieval Evaluation eXchange (MIREX). Example tasks include recognising musical chords. This requires detecting a specific composition of frequencies localised in time. Classifying musical instruments that play the same fundamental notes requires detection of the harmonic structure of those notes. 
+
+An example can be found at the Music Information Retrieval Evaluation eXchange (MIREX). Example tasks include recognising musical chords. This requires detecting a specific composition of frequencies localised in time. Classifying musical instruments that play the identical notes requires detection of the harmonic structure of the tones produced as a result of playing the notes. This is analogous to many real-world problems, as the ratio of harmonics defines particular sounds. Correct detection could allow discrimination of harmonic stacks from background noise occurring at the same fundamental frequency. For example, the task may be to identify an insect flying in a room with constant noise produced by a fan at the same fundamental frequency -- a case evidenced in our collected training data.\ikN{Making specific reference to mosquito detection but nowhere else?}
 A study of MIREX concluded that the state-of-art stagnated in variety of such classification and detection tasks (Humphrey et al. \cite{humphrey2013feature}) between 2007 and 2012. 
-This was attributed to the use of traditional methods for feature extraction and classification. It was suggested deep learning can help overcome three deficiencies associated with traditional methods: hand-crafted feature design is not sustainable, shallow processing architectures struggle with latent complexity of real-world phenomena, short-time analysis cannot naturally capture higher-level information.
-% For example, recognising musical chords requires detecting a specific composition of frequencies localised in time. Classifying musical instruments that play the same fundamental notes requires detection of the harmonic structure of those notes. Based on a study of the MIREX (Music Information Retrieval Evaluation eXchange) it was concluded that the state of art in music informatics has seen decelerating progress in a wide range of classification and detection tasks (Humphrey et al. \cite{humphrey2013feature}) between 2007 and 2012. This was attributed to the use of traditional methods for feature extraction and classification. It was suggested deep learning can help overcome three deficiencies associated with traditional methods: hand-crafted feature design is not sustainable, shallow processing architectures struggle with latent complexity of real-world phenomena, short-time analysis cannot naturally capture higher level information. 
-Indeed since the assessment, there has been a paradigm shift. As an example, in the results of \cite{mirex2016}, every (all-time) top performer in the four chord recognition challenges (Korzienowski, Widmer \cite{mirex2016chord}) featured forms of deep networks operating on simple feature representations. 
+This was attributed to the use of traditional methods for feature extraction and classification. It was suggested deep learning can help overcome three deficiencies associated with traditional methods: hand-crafted feature design is not sustainable, shallow processing architectures struggle with latent complexity of real-world phenomena, short-time analysis cannot naturally capture higher-level information. Indeed since the assessment, there has been a paradigm shift. As an example, in the results of \cite{mirex2016}, every (all-time) top performer in the four chord recognition challenges (Korzienowski, Widmer \cite{mirex2016chord}) featured forms of deep networks operating on simple feature representations. 
 
 \subsubsection*{Exploiting spectro-temporal locality in deep learning \cite{espi2015exploiting}}
 Use of CNNs on spectrograms to replace MFCC.
@@ -414,89 +393,50 @@ Regarding TF trade-off:
 	\item ``In summary, the multi-resolution approach consists in a set multiple single-resolution DNN classifier working in parallel for the same task". Multiple TF resolutions may be key to consistent results (concluded in 5.3). However, this applies to DNNs (deep neural nets). CNNs show more promising results.
 \end{itemize}
 
-Further evidence is presented by phan et al \cite{phan2016robust}, includes comparison between traditional classifier combinations e.g. SVM + MFCC (and enhanced version of it), MPEG/PCA + HMM, Gabor + HMM, MFCC+Gabor and a bunch of CNNs and DNNs. SIF: spectrogram image features. Their use of variable convolutional filter sizes, relatively shallow and somewhat unusual 1-max pooling layer performed best on their given dataset across a range of SNRs
+Further evidence is presented by Phan et al. \cite{phan2016robust}, where the authors include a comparison between popular traditional classifier combinations with CNNs and DNNs. Traditional feature-classification pairings studied included SVM + MFCC (and enhanced version of it), MPEG/PCA + HMM, Gabor + HMM, and MFCC + Gabor. SIF: spectrogram image features. With their use of variable convolutional filter sizes, relatively shallow networks with  1-max pooling strategies significantly outperformed traditional approaches on their given dataset across a range of SNRs. Strongest improvements where evidenced in low SNR scenarios, where traditional methods would fully break down. The signal data was obtained from the Real World Computing Partnership Sound Scene Database in Real Acoustic Environments. While the possibility to cherry-pick sources exists, the authors attempt to minimise bias by randomly sub-sampling the dataset into  2000, 500, and 1500 event instances for training, validation, and testing purposes, respectively. 
+
+[Due to the similarity of this application with ours, we note important outlined details]. Irrespective of finer details, a very clear benefit to CNN performance over HMM/SVM combinations as soon as any noise is introduced is evidenced. Additionally, there is a reliable benefit to CNNs over DNNs as consistent with speech recognition literature. Furthermore a general trend for generic spectrogram features to be preferable to more salient features such as MFCCs and Gabor features was demonstrated with the use of CNNs. The CNN architecture was both simple and efficient. We note varying convolutional size filters were employed, that were learnt from data automatically. As often it is unclear over what time-scale events happen predictably exactly, this is a highly useful feature to implement in future works.
+
+% negatives:
+% begin{itemize}
+% 	\item Little gains over conventional CNN on SIF in clean signal scenario
+% 	\item Little implementation detail given
+% 	\item No hyperparam optimisation 
+% \end{itemize}
+
+A further meta-review of the music informatics field \cite{humphrey2013feature} argues for the need to learn feature representations to take away the hand-crafted process of both choosing feature extraction methods, as well as classification algorithms. [Feature extraction has parallels to data compression: efficient learning of representations (also perhaps useful in replacing conventional audio codecs?)] A key point presented is that A good representation is sufficient for good overall performance, and it is important not to demand the impossible from the classifier \ikN{To self: see Non-linear semantic embedding vs PCA, with use of kNN pp.15-16)}
+Further CNN proponents include the ability to better capture long-term information (dependence of sample on previous samples). In the limit an example is given in the WaveNet paper \cite{van2016wavenet} where each sample is conditioned on every preceding sample by using causal correlation filters. On the other hand, conventionally, features derived from short-time signals are limited to the information content contained within each segment. As a result, if some musical event does not occur within the span of an observation---a motif that does not fit within a single frame---then it simply cannot be described by that feature vector alone. This is in part addressed by the Markov property as regularly used in speech detection [see section above], but still imposes a limit on single-frame/sequence dependence [check exactly how dependence works].
+
+%Deep Image Features in Music Information Retrieval
+Note that one may save resources by utilising transfer learning \cite[Paper uses a Caffe ILSVRC CNN as baseline]{gwardys2014deep}
 
 
-Signal data: Real World Computing Partnership Sound Scene Database in Real Acoustic Environments. Random subsampling into  2000, 500, and 1500 event instances for training, validation, and testing purpose, respectively. [open to some possible cherry picking]. 
-positive notable points about their architecture:
-\begin{itemize}
-	\item Irrespective of finer details, very clear benefit to CNN performance over HMM/SVM combinations as soon as any noise is introduced. Additionally, benefit to CNN over DNN as consistent with speech recognition literature. Also general trend for SIF to be preferable to MFCC/Gabor etc. more complicated features
-	\item Simple, efficient CNN architecture: varying size convolutional filters, 1-max pooling scheme, softmax layer.
-	\item Size of convnet filters to be learnt from data automatically
-\end{itemize}
-negatives:
-\begin{itemize}
-	\item Little gains over conventional CNN on SIF in clean signal scenario
-	\item Little implementation detail given
-	\item No hyperparam optimisation 
-\end{itemize}
-
-
-\subsubsection*{Music Informatics: Feature Learning and Deep Architectures: New Directions for Music Informatics (Linked @ NeuralNet/DeepLearning site) \cite{humphrey2013feature}}
-
-\begin{itemize}
-	\item Talks about learning representations to take away need for hand-crafted process of 
-
-\begin{enumerate} 
-	\item Feature extraction
-	\item Traditional classification algorithm on features
-\end{enumerate}
-	\item Feature extraction has parallels to data compression: efficient learning of representations (also perhaps useful in replacing conventional audio codecs?)
-	\item A good representation is sufficient for good overall performance (not demanding the impossible from the classifier, see Non-linear semantic embedding vs PCA, with use of kNN pp.15-16)
-\end{itemize}
-Benefits include:
-\begin{itemize}
-	\item Better capturing long-term information (dependence of sample on previous samples). In the limit an example is given in the WaveNet paper \cite{van2016wavenet} where each sample is conditioned on every preceding sample. Uses causal correlation filters. 
-
-	\item Conventionally, features derived from short-time signals are limited to the information content contained within each segment. As a result, if some musical event does not occur within the span of an observation---a motif that does not fit within a single frame---then it simply cannot be described by that feature vector alone.”
+% \subsubsection*{Non-linear semantic embedding for instrument sample libraries \cite{humphrey2011non} \footnote{ieeexplore.ieee.org/iel5/6146696/6147038/06147663.pdf}}
+% \begin{itemize}
+% 	\item Traditional neural nets: spatial organisation of input vector inconsequential to network. Solved by use of CNNs: sensitivity to highly correlated data and varying degrees of translation invariance
+% \end{itemize}
 
 
 
 
 
-\end{itemize}
+% \subsubsection*{Deep learning for detection of bird vocalisations \cite{potamitis2016deep}}
+% \begin{itemize}
+% 	\item Linked by Davide 
 
-
-\subsubsection*{Deep Image Features in Music Information Retrieval \cite{gwardys2014deep}}
-\begin{itemize}
-	\item Saving resources by utilising transfer learning. Paper uses a Caffe ILSVRC CNN as baseline 
-\end{itemize}
-
-
-
-\subsubsection*{End-to-end Learning for Music Audio \cite{dieleman2014end}}
-Raw audio CNN: did not reach spectrogram performance, however:
-\begin{itemize}
-	\item Features learned from raw audio
-	\item Autonomous discovery of frequency decomposition
-	\item Phase-, translation-invariant features if pooling used
-\end{itemize}
-
-
-
-\subsubsection*{Non-linear semantic embedding for instrument sample libraries \cite{humphrey2011non} \footnote{ieeexplore.ieee.org/iel5/6146696/6147038/06147663.pdf}}
-\begin{itemize}
-	\item Traditional neural nets: spatial organisation of input vector inconsequential to network. Solved by use of CNNs: sensitivity to highly correlated data and varying degrees of translation invariance
-\end{itemize}
-
-
-
-Other:
-
-\subsubsection*{Deep learning for detection of bird vocalisations \cite{potamitis2016deep}}
-\begin{itemize}
-	\item Linked by Davide 
-
-	\item Autoenconder, convolutional``U-net" (\url{http://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/})
-	\item Does not discriminate between species in current configuration
-\end{itemize}
+% 	\item Autoenconder, convolutional``U-net" (\url{http://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/})
+% 	\item Does not discriminate between species in current configuration
+% \end{itemize}
 	
 
 
 
 
 \subsubsection{Final move}
-towards raw data? next potential research challenge. Performance not as good yet. Successful applications have arisen in raw audio generation (wavenet paper \cite{van2016wavenet}) (speech/music)
+
+To further facilitate autonomous behaviour, the next potential research challenge would be to operate on raw data, rather than raw ``spectrogram'' data, as alluded to by [cit cit cit]. Spectrogram representations are not raw in any form, as they require both a parameterised Fourier transform, as well as a smoothing window at a fixed resolution (or in some case multiple transforms at different resolutions to detect events occurring over differing time scales \cite{espi2015exploiting}).
+
+Few papers have achieved noteworthy results in this field. Dieleman et al. \cite{dieleman2014end} address this in a range of music information retrieval tasks. The authors note that the networks are able to autonomously discover frequency decompositions from raw audio, as well as phase and translation-invariant feature representations. Furthermore, successful applications have arisen in raw audio \emph{generation} \cite{van2016wavenet}. The authors employed a .... architecture to synthesise speech and music sequences with remarkable results.
 
 
 
@@ -603,8 +543,8 @@ Perhaps structure by application, talk about traditional -> deep learning. OR, c
 Paradigm shift from hand-crafted to DNN to CNN. Image analysis moving towards RNNs/hybrid LSTM/CNN. Work seeing CNNs as deep kernel methods. Our target for future research. Furthermore, all signal detection performed in frequency domain with simple STFTs, we can use a more general transform with wavelets [need something about wavelets in lit review]. Perhaps there is a move towards raw data: unlikely to happen in future x years because [evidence of poor raw performance, despite small success stories]. Deepmind finds a way to get stuff to work where it doesn't make sense. Non-intuitive methodology, unclear how architectures came to light etc.
 
 
-\section{Extra literature}
-\cite{mcvicar2016learning}
+% \section{Extra literature}
+% \cite{mcvicar2016learning}
 
 
  \section{Paper litreview section commented out below}
@@ -760,18 +700,33 @@ Should benefits be demonstrated in either scenario, the focus of work will be to
 
 
 \subsection{Risk Assessment}
-\emph{You must provide a risk assessment identifying critical points or uncertainties, and indicate how you will manage these}
+We provide a risk assessment to identify critical points or uncertainties, and indicate how we will manage these. The assessment is categorised by high, medium and low and addressed accordingly.
 
-High-risk: 
+\subsubsection{High-level risks} 
 \begin{enumerate} 
 \item Advances in deep learning rendering our classification algorithms obsolete
 \item Changes in data acquisition rendering algorithm impractical/irrelevant (affecting the need to port/research efficiency of algorithms/DWT alternative)
+\item Benefit to using wavelets may have been purely due to saliency of feature, in particular the logarithmic tiling of the time-frequency plane, working well for small datasets
 
 \end{enumerate}
 
-so risk much scares
 
-Mitigating measures:
+\subsubsection{Mitigating measures}
+\begin{enumerate}
+	\item This would not discredit our scientific contribution, but would affect practical implementations of algorithms on portable devices. This has a greater effect on the outcome of the HumBug project, but not on the PhD. A further mitigation measure is to combine advances in the field with our own advances.
+	\item As with (2), this affects practical implementations. We could shift our focus to applications with dataset availability to suit our research needs, or adapt the algorithms to match new data availability. In the case of neural networks, this would involve adding further layers and model complexity without overfitting according to the new data size constraints.
+	\item Research why performance benefit was shown for small datasets, and investigate CNN performance relative to other salient features. The CNN was trialled with a set of salient features, which were shown not to increase performance, so it is unlikely that is only the saliency responsible for the boost in performance when combining CNNs with the wavelet transform.
+\end{enumerate}
+
+\subsubsection{Medium-level risks} 
+\begin{enumerate}
+	\item Do not lose scientific contribution, affects practical implementation
+\end{enumerate}
+\subsubsection{Mitigating measures}
+\begin{enumerate}
+	\item Do not lose scientific contribution, affects practical implementation
+\end{enumerate}
+\subsubsection{Low-level risk} 
 \begin{enumerate}
 	\item Do not lose scientific contribution, affects practical implementation
 \end{enumerate}

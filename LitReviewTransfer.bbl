@@ -65,11 +65,21 @@ Gwardys, G., Grzywczak, D.: Deep image features in music information retrieval.
   International Journal of Electronics and Telecommunications  60(4),  321--326
   (2014)
 
+\bibitem{he2016deep}
+He, K., Zhang, X., Ren, S., Sun, J.: Deep residual learning for image
+  recognition. In: Proceedings of the IEEE conference on computer vision and
+  pattern recognition. pp. 770--778 (2016)
+
 \bibitem{hinton2012deep}
 Hinton, G., Deng, L., Yu, D., Dahl, G.E., Mohamed, A.r., Jaitly, N., Senior,
   A., Vanhoucke, V., Nguyen, P., Sainath, T.N., et~al.: Deep neural networks
   for acoustic modeling in speech recognition: The shared views of four
   research groups. IEEE Signal Processing Magazine  29(6),  82--97 (2012)
+
+\bibitem{hinton2012improving}
+Hinton, G.E., Srivastava, N., Krizhevsky, A., Sutskever, I., Salakhutdinov,
+  R.R.: Improving neural networks by preventing co-adaptation of feature
+  detectors. arXiv preprint arXiv:1207.0580  (2012)
 
 \bibitem{humphrey2013feature}
 Humphrey, E.J., Bello, J.P., LeCun, Y.: Feature learning and deep
@@ -93,6 +103,15 @@ Joly, A., Go{\"e}au, H., Glotin, H., Spampinato, C., Bonnet, P., Vellinga,
 Juang, B.H., Rabiner, L.R.: Automatic speech recognition--a brief history of
   the technology development. Georgia Institute of Technology. Atlanta Rutgers
   University and the University of California. Santa Barbara  1, ~67 (2005)
+
+\bibitem{krizhevsky2009learning}
+Krizhevsky, A., Hinton, G.: Learning multiple layers of features from tiny
+  images  (2009)
+
+\bibitem{krizhevsky2012imagenet}
+Krizhevsky, A., Sutskever, I., Hinton, G.E.: Imagenet classification with deep
+  convolutional neural networks. In: Advances in neural information processing
+  systems. pp. 1097--1105 (2012)
 
 \bibitem{li2013hybrid}
 Li, L., Zhao, Y., Jiang, D., Zhang, Y., Wang, F., Gonzalez, I., Valentin, E.,
@@ -149,10 +168,21 @@ Rabiner, L.R.: A tutorial on hidden markov models and selected applications in
 \bibitem{rabiner1993fundamentals}
 Rabiner, L.R., Juang, B.H.: Fundamentals of speech recognition  (1993)
 
+\bibitem{ILSVRC15}
+Russakovsky, O., Deng, J., Su, H., Krause, J., Satheesh, S., Ma, S., Huang, Z.,
+  Karpathy, A., Khosla, A., Bernstein, M., Berg, A.C., Fei-Fei, L.: {ImageNet
+  Large Scale Visual Recognition Challenge}. International Journal of Computer
+  Vision (IJCV)  115(3),  211--252 (2015)
+
 \bibitem{sainath2015deep}
 Sainath, T.N., Kingsbury, B., Saon, G., Soltau, H., Mohamed, A.r., Dahl, G.,
   Ramabhadran, B.: Deep convolutional neural networks for large-scale speech
   tasks. Neural Networks  64,  39--48 (2015)
+
+\bibitem{simard2003best}
+Simard, P.Y., Steinkraus, D., Platt, J.C., et~al.: Best practices for
+  convolutional neural networks applied to visual document analysis. In: ICDAR.
+  vol.~3, pp. 958--962 (2003)
 
 \bibitem{simonyan2014very}
 Simonyan, K., Zisserman, A.: Very deep convolutional networks for large-scale
