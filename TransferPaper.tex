@@ -40,6 +40,7 @@
 \captionsetup{compatibility=false}
 \usepackage{subcaption}
 \usepackage{tikz} % Essential for Neural Network diagrams
+\usepackage{multirow}
 
 \usepackage[colorlinks=true,linkcolor=blue,urlcolor=black, bookmarksdepth=2]{hyperref}
 \usepackage{bookmark}
@@ -300,7 +301,7 @@ We present a novel wavelet-transform-based convolutional neural network architec
 
 As an initial step, we extract the training data into a format suitable for the classifier. We choose to use the continuous wavelet transform (CWT) due to its successful application in time-frequency analysis \cite{daubechies2011synchrosqueezed} (Step \ref{algline:transform} of Algorithm \ref{alg:Detection}). Given the direct relationship between the wavelet scale and centre frequency, we use the bump wavelet \cite{vialatte2009bump}, expressed in the Fourier domain as:
 \begin{equation} 
-\Psi(s\omega) = \exp \left(1 - \frac{1}{1 - (s\omega - \mu)^2/\sigma^2}\right) 
+\Psi(s\omega) = e^{1 - \sigma^2/(1 - (s\omega - \mu)^2)} 
    \mathbbm{I}[(\mu - \sigma)/s, (\mu + \sigma)/s],
 \label{eq:bump}   
 \end{equation}
@@ -450,14 +451,16 @@ Classifier & Features  & Cross-validation grid         \\
 \noalign{\smallskip}
 \hline
 \noalign{\smallskip}
-CNN          & STFT   & $k \in \{2,\mathbf{3},4,5\}, N_k \in \{8,16,\mathbf{32}\}, N_d \in \{16,64,\mathbf{128},256\}$ \\
-CNN          & Wavelet & $k \in \{2,3,4,\mathbf{5}\}, N_k \in \{8,16,\mathbf{32}\}, N_d \in \{16,64,\mathbf{128},256\}$\\
-MLP          & STFT   & $ w_1 \in \{1,\mathbf{10}\}, L \in \{8, 256, 1028, \mathbf{2056}\}, M \in \{\mathbf{64}, 512, 1024\} $ \\
-MLP          & Wavelet & $w_1 \in \{1,\mathbf{10}\}, L \in \{8, \mathbf{256}, 1028, 2056\}, M \in \{64, 512, \mathbf{1024}\} $ \\ 
+ CNN          & STFT   & \multirow{2}{*}{\parbox{4cm}{$k \in \{2,\mathbf{3},4,5\}, \\ N_k \in \{8,16,\mathbf{32}\},\\  N_d \in \{16,64,\mathbf{128},256\}$. }}\\ \\ \\
+ \hline
+CNN          & Wavelet & \multirow{2}{*}{\parbox{4cm}{$k \in \{2,3,4,\mathbf{5}\},\\ N_k \in \{8,16,\mathbf{32}\}, \\ N_d \in \{16,64,\mathbf{128},256\}$.}}\\ \\ \\ 
+\hline
+MLP          & STFT   & \multirow{2}{*}{\parbox{4cm}{$ w_1 \in \{1,\mathbf{10}\},\\ L \in \{8, 256, 1028, \mathbf{2056}\}, \\ M \in \{\mathbf{64}, 512, 1024\} $.}} \\ \\ \\
+\hline
+MLP          & Wavelet & \multirow{2}{*}{\parbox{4cm}{$w_1 \in \{1,\mathbf{10}\},\\ L \in \{8, \mathbf{256}, 1028, 2056\}, \\ M \in \{64, 512, \mathbf{1024}\} $.}} \\ \\ \\ 
 \hline
 \noalign{\smallskip}
-NB, RF, SVM          & $F_{10}  \in \mathbb{R}^{304} $  & $ \text{PCA} \in \mathbb{R}^{N}, N \in 0.8^n \times 304, n \in \{0,1,\ldots,12\},$ \\
-&& $\text{RFE} \in \mathbb{R}^{M}, M \in 304 - 8m, m \in \{0, 1, \ldots, \mathbf{27}, \ldots  35\}.  $\\
+NB, RF, SVM          & $F_{10}  \in \mathbb{R}^{304} $  & \multirow{2}{*}{\parbox{4cm}{$ \text{PCA} \in \mathbb{R}^{N}, N \in 0.8^n \times 304,\\ n \in \{0,1,\ldots,12\}, \\ \text{RFE} \in \mathbb{R}^{M}, M \in 304 - 8m, \\ m \in \{0, 1, \ldots, \mathbf{27}, \ldots  35\}.  $}}\\ \\ \\  \\
 
 \hline
 \end{tabular}
