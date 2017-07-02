@@ -543,123 +543,6 @@ Perhaps structure by application, talk about traditional -> deep learning. OR, c
 Paradigm shift from hand-crafted to DNN to CNN. Image analysis moving towards RNNs/hybrid LSTM/CNN. Work seeing CNNs as deep kernel methods. Our target for future research. Furthermore, all signal detection performed in frequency domain with simple STFTs, we can use a more general transform with wavelets [need something about wavelets in lit review]. Perhaps there is a move towards raw data: unlikely to happen in future x years because [evidence of poor raw performance, despite small success stories]. Deepmind finds a way to get stuff to work where it doesn't make sense. Non-intuitive methodology, unclear how architectures came to light etc.
 
 
-% \section{Extra literature}
-% \cite{mcvicar2016learning}
-
-
- \section{Paper litreview section commented out below}
-\begin{comment}
-
-\section{Related Work}
-\label{sec:Context}
-%
-%\dzN{Where do we position our lit review? I would say NN for bioacoustics. In that case, the starting paragraph should introduce that context.\\
-%I propose the following structure:\\
-%1. acoustic detection/classification of species \\
-%2. automated \^{}\^{} \\
-%3. \^{}\^{} of mosquitoes \\
-%4. \^{}\^{} with neural networks\\
-%5. \^{}\^{} with wavelets}
-%%
-The use of artificial neural networks in acoustic detection and classification of species dates back to at least the beginning of the century, with the first approaches addressing the identification of bat echolocation calls \cite{parsons2000}. Both manual and algorithmic techniques have subsequently been used to identify insects \cite{chesmore2004automated,zilli2014hidden}, elephants \cite{clemins2002automatic}, delphinids \cite{oswald2003}, and other animals. The benefits of leveraging the sound animals produce -- both actively as communication mechanisms and passively as a results of their movement -- is clear: animals themselves use sound to identify prey, predators, and mates. Sound can therefore be used to locate individuals for biodiversity monitoring, pest control, identification of endangered species and more.
-
-This section will therefore review the use of machine learning approaches in bioacoustics, in particular with respect to insect recognition. We describe the traditional feature and classification approaches to acoustic signal detection. In contrast, we also present the benefit of feature extraction methods inherent to current deep learning approaches. Finally, we narrow our focus down to the often overlooked wavelet transform, which offers significant performance gains in our pipeline.
-
-%The HumBug\footnote{\url{http://humbug.ac.uk/}} project works to provide valuable data to help in the fight against mosquito-borne diseases that have a major impact on human health, income and mortality (WHO report \citeyear{who-2015}). The project aims to deploy a sensor network consisting of portable devices, such as low-cost mobile phones and other monitoring devices. The sensors are used to detect mosquitoes, and may communicate in either a centralised or decentralised fashion. Reliable detection is critical to the success of the overall project.
-%Mosquito detection additionally is beneficial to the signal processing, machine learning and ecological communities. This is due to the fundamental challenge of time-series forecasting in noisy environments -- a problem which generalises to virtually any field. 
-
-\subsection{Insect Detection}
-\label{subsec:InsectDetect}
-%\dzN{How about the following:\\
-%0. Real-time detection to save the world\\
-%1. Certain insects are very loud (e.g. orthoptera---crickets and the like)\\
-%2. Mosquitoes are particularly quiet, and their sounds vary dramatically\\
-%3. Main factor are species, gender, age, temperature and humidity \\
-%4. Main datasets are of tethered mosquitoes --$>$ not free-flying and distressed --$>$ not representative of real sound --$>$ Data scarcity\\
-%5. Previous/current work has used microphones (cheaper, easier deployment) and phototransistors (reduced noise)}
-Real-time mosquito detection provides a method to combat the transmission of lethal diseases, mainly malaria, yellow fever and dengue fever. Unlike \textit{Orthoptera} (crickets and grasshoppers) and \textit{Hempitera} (e.g. cicadas), which produce strong locating and mating calls, mosquitoes (\textit{Diptera, Culicidae}) are much quieter. The noise they emit is produced by their wingbeat, and is affected by a range of different variables, mainly species, gender, age, temperature and humidity. In the wild, wingbeat sounds are often overwhelmed by ambient noise. For these reasons, laboratory recordings of mosquitoes are regularly taken on tethered mosquitoes in quiet or even soundproof chambers, and therefore do not represent realistic conditions. 
-
-Even in this data-scarce scenario, the employment of artificial neural networks has been proven successful for a number of years. In \cite{chesmore2004automated} a neural network classifier was used to discriminate four species of grasshopper recorded in northern England, with accuracy surpassing 70\,\%. Other classification methods include Gaussian mixture models \cite{Potamitis2007,Pinhas2008} and hidden Markov models \cite{leqing2010insect,zilli2014hidden}, applied to a variety of different features extracted from recordings of singing insects.
-
-Chen et al. \cite{chen2014flying} attribute the stagnation of automated insect detection accuracy to the mere use of acoustic devices, which are allegedly not capable of producing a signal sufficiently clean to be classified correctly. As a consequence, they replace microphones with pseudo-acoustic optical sensors, recording mosquito wingbeat through a laser beam hitting a phototransistor array -- a practice already proposed by Moore et al. \cite{moore1986automated}. This technique however relies on the ability to lure a mosquito through the laser beam. 
-
-Independently of the technique used to record a mosquito wingbeat frequency, the need arises to be able to identify the insect's flight in a noisy recording. The following section reviews recent achievements in the wider context of acoustic signal classification. 
-
-% Using Neural networks for classifying insects dates back to work in \citeyear{moore1986automated} (Moore et al.). \dzn{In the abstract there is no reference to  NN. It looks like it's device to record flight frequency with light}1 Common configurations consist of training an artificial neural network on spectrogram bins or features directly related to the wingbeat frequency \cite{moore2002automated,li2005automated}.
-
-
-% Later work offered an insight into improving features based on the availability of an extremely clean source, using frequency spectrum harmonic and inter-harmonic peaks \cite{raman2007detecting}. In practice we are unable to measure harmonics so cleanly. In certain cases the fundamental frequency itself may even be inaudible, as is the case for the dataset used in this paper. This can be verified by frequency spectrum analysis of audibly clean sections. 
-
-% In recent works, it was suggested by Chen et. al (\citeyear{chen2014flying}) that neural networks as configured commonly \bpN{Do you mean non-deep aka shallow networks/MLPs?} are unreliable for insect classifications specifically on low-dimensional datasets. The authors instead opted for a Bayes Classifier which worked well for their dataset.
-%{}
-
-\subsection{Feature Representation and Learning}
-%\ikN{
-%Need link with prev section --- DONE\\
-%We have lost focus on sparse data somewhat}
-
-%{New structure: 
-%\begin{itemize}
-%	\item handcrafted
-%	\begin{itemize}
-%		\item wavelet
-%		\item STFT
-%		\item LPCC
-%		\item MFCC
-%	\end{itemize}
-%	\item MIREX
-%	\item learnt features
-%	\begin{itemize}
-%		\item exa. vision
-%		\item exa. speech
-%	\end{itemize}
-%	\item BIRDCLEF brings together both
-%	\item Conclusion with wav+learning: to the best of our knowledge
-%\end{itemize}}
-% As the feature representation is fundamental to each method, we review manual and automated extraction
-\label{sub:dl}
-The process of automatically detecting an acoustic signal in noise typically consists of an initial preprocessing stage, which involves cleaning and denoising the signal itself, followed by a feature extraction process, in which the signal is transformed into a format suitable for a classifier, followed by the final classification stage. 
-Historically, audio feature extraction in signal processing employed domain knowledge and intricate understanding of digital signal theory \cite{humphrey2013feature}, leading to hand-crafted feature representations. 
-%We describe some of these in approximate order from most general to most complex. 
-
-Many of these representations often recur in the literature. A powerful, though often overlooked, technique is the wavelet transform, which has the ability to represent multiple time-frequency resolutions \cite[Ch. 9]{akay1998time}. An instantiation with a fixed time-frequency resolution thereof is the Fourier transform. The Fourier transform can be temporally windowed with a smoothing window function to create a Short-time Fourier transform (STFT). Mel-frequency cepstral coefficients (MFCCs) create lower-dimensional representations by taking the STFT, applying a non-linear transform (the logarithm), pooling, and a final affine transform. A further example is presented by Linear Prediction Cepstral Coefficients (LPCCs), which pre-emphasise low-frequency resolution, and thereafter undergo linear predictive and cepstral analysis \cite{ai2012classification}.  
-
-Detection methods have fed generic STFT representations to standard classifiers \cite{potamitis2014classifying}, but more frequently complex features and feature combinations are used, applying dimensionality reduction to combat the curse of dimensionality \cite{lee2009unsupervised}. Complex features (e.g. MFCCs and LPCCs) were originally developed for specific applications, such as speech recognition, but have since been used in several audio domains \cite{li2001classification}.
-
-%Humphrey et al. conclude that manually optimising a feature representation does not fit every problem and may be unnecessarily constraining the solution space. In particular, it was suggested that deep learning can help overcome three deficiencies associated with traditional methods: hand-crafted feature design is not sustainable, shallow processing architectures struggle with latent complexity of real-world phenomena, short-time analysis cannot naturally capture higher-level information.
-
-% deleted from paragraph : (or none whatsoever in rare data-rich cases such as Wavenet \citeyear{van2016wavenet})
-On the contrary, the deep learning approach usually consists of applying a simple, general transform to the input data, and allowing the network to both learn features and perform classification. This enables the models to learn salient, hierarchical features from raw data. The automated deep learning approach has recently featured prominently in the machine learning literature, showing impressive results in a variety of application domains, such as computer vision \cite{krizhevsky2012imagenet} and speech recognition \cite{lee2009unsupervised}. However, deep learning models such as convolutional and recurrent neural networks are known to have a large number of parameters and hence typically require large data and hardware resources. 
-Despite their success, these techniques have only recently received more attention in time-series signal processing.
-
-
-% We begin by explaining the motivation for our approach. To do so, we draw parallels with related fields. In acoustic signal processing, there exists a natural relationship between mosquito detection and music recognition challenges. 
-
-% A study of the MIREX (Music Information Retrieval Evaluation eXchange) concluded that the state-of-art stagnated in relevant classification and detection tasks (Humphrey et al. \citeyear{humphrey2013feature}) between 2007 and 2012. This was attributed to the use of traditional methods for feature extraction and classification. It was suggested deep learning can help overcome three deficiencies associated with traditional methods: hand-crafted feature design is not sustainable, shallow processing architectures struggle with latent complexity of real-world phenomena, short-time analysis cannot naturally capture higher-level information.
-
-%For example, recognising musical chords requires detecting a specific composition of frequencies localised in time. Classifying musical instruments that play the same fundamental notes requires detection of the harmonic structure of those notes. Based on a study of the MIREX (Music Information Retrieval Evaluation eXchange) it was concluded that the state of art in music informatics has seen decelerating progress in a wide range of classification and detection tasks (Humphrey et al. \citeyear{humphrey2013feature}) between 2007 and 2012. This was attributed to the use of traditional methods for feature extraction and classification. It was suggested deep learning can help overcome three deficiencies associated with traditional methods: hand-crafted feature design is not sustainable, shallow processing architectures struggle with latent complexity of real-world phenomena, short-time analysis cannot naturally capture higher level information. \dzn{MIREX stuff is too long winded and only very marginally relevant. It should be reduced to a couple of sentences}
-%\bpN{Maybe this is paragraph is a bit too detailed?}
-
-%Indeed since the assessment, there has been a paradigm shift. As an example, in the results of \cite{mirex2016}, every (all-time) top performer in the four chord recognition challenges (Korzienowski, Widmer \citeyear{mirex2016chord}) featured forms of deep networks operating on simple feature representations. 
-
-%Drawing parallels with ImageNet, a distinct example presents itself in the bird recognition challenge (BirdCLEF). %% Never mentioned ImageNet
-A prominent example of this shift in methodology is the BirdCLEF bird recognition challenge. The challenge consists of the classification of bird songs and calls into up to 1500 bird species from tens of thousands of crowd-sourced recordings. The introduction of deep learning has brought drastic improvements in mean average precision (MAP) scores. The best MAP score of 2014 was 0.45 \cite{goeau2015lifeclef}, which was improved to 0.69 the following year when deep learning was introduced, outperforming the closest scoring hand-crafted method that scored 0.58 \cite{joly2016lifeclef}. The impressive performance gain came from the utilisation of well-established convolutional neural network practice from image recognition. By transforming the signals into STFT spectrogram format, the input is represented by 2D matrices, which are used as training data. Alongside this example, the most widely used base method to transform the input signals is the STFT  \cite{sainath2015deep,gwardys2014deep,potamitis2016deep}.
-
-However, to the best of our knowledge, the more flexible wavelet transform is hardly ever used as the representation domain for a convolutional neural network. As a result, in the following section we present our methodology, which leverages the benefits of the wavelet transform demonstrated in the signal processing literature, as well as the ability to form hierarchical feature representations for deep learning.
-
-% As the STFT also forms the basis for lower dimensional feature representations such as MFCCs, challenging a fundamental, often taken for granted, transform in the deep learning context can serve as a useful contribution to the signal processing and neural network communities. Our choice to focus specifically on wavelet transforms is justified as follows.
-
-% The STFT computes the Fourier transform of temporal signal windows at fixed time-frequency resolution. The wavelet transform employs a fully scalable modulated window which provides a principled solution to the windowing function selection problem (Valens \citeyear{valens1999really}). The window is slid across the signal, and for every position a spectrum is calculated. The procedure is then repeated at a multitude of scales, providing a signal representation with multiple time-frequency resolutions. This allows the provision of good time resolution for high-frequency events, as well as good frequency resolution for low-frequency events, which in practice is a combination best suited to real signals [reference: got this from wiki, update].
-%This important property is commonly utilised in [sig proc references], but only in rare occurrences in neural networks to the best of our knowledge [refs?]. 
-
-
-
-\end{comment}
-
-
-
-
-
 
 
 \section{Proposal}
@@ -700,36 +583,43 @@ Should benefits be demonstrated in either scenario, the focus of work will be to
 
 
 \subsection{Risk Assessment}
-We provide a risk assessment to identify critical points or uncertainties, and indicate how we will manage these. The assessment is categorised by high, medium and low and addressed accordingly.
+We provide a risk assessment to identify critical points or uncertainties, and indicate how we will manage these. The assessment is categorised by high, medium and low risks, as well as their impact factors. For low-level risks we consider only those of high impact.
 
 \subsubsection{High-level risks} 
 \begin{enumerate} 
-\item Advances in deep learning rendering our classification algorithms obsolete
-\item Changes in data acquisition rendering algorithm impractical/irrelevant (affecting the need to port/research efficiency of algorithms/DWT alternative)
-\item Benefit to using wavelets may have been purely due to saliency of feature, in particular the logarithmic tiling of the time-frequency plane, working well for small datasets
+\item High impact: Benefit to using wavelets may have been purely due to saliency of feature, in particular the logarithmic tiling of the time-frequency plane, working well for small datasets
+\item Medium impact: Advances in deep learning rendering our classification algorithms obsolete
+\item Low impact: Changes in data acquisition rendering algorithm impractical or irrelevant (affecting the need to port/research efficiency of algorithms/DWT alternative)
+
 
 \end{enumerate}
 
 
 \subsubsection{Mitigating measures}
-\begin{enumerate}
-	\item This would not discredit our scientific contribution, but would affect practical implementations of algorithms on portable devices. This has a greater effect on the outcome of the HumBug project, but not on the PhD. A further mitigation measure is to combine advances in the field with our own advances.
+\begin{enumerate} 
+    \item Research why performance benefit was shown for small datasets, and investigate CNN performance relative to other salient features. The CNN was trialled with a set of salient features, which were shown not to increase performance, so it is unlikely that is only the saliency responsible for the boost in performance when combining CNNs with the wavelet transform.
+    \item This would not discredit our scientific contribution, but would affect practical implementations of algorithms on portable devices. This has a greater effect on the outcome of the HumBug project, but not on the PhD. A further mitigation measure is to combine advances in the field with our own advances.
 	\item As with (2), this affects practical implementations. We could shift our focus to applications with dataset availability to suit our research needs, or adapt the algorithms to match new data availability. In the case of neural networks, this would involve adding further layers and model complexity without overfitting according to the new data size constraints.
-	\item Research why performance benefit was shown for small datasets, and investigate CNN performance relative to other salient features. The CNN was trialled with a set of salient features, which were shown not to increase performance, so it is unlikely that is only the saliency responsible for the boost in performance when combining CNNs with the wavelet transform.
+
 \end{enumerate}
 
 \subsubsection{Medium-level risks} 
 \begin{enumerate}
-	\item Do not lose scientific contribution, affects practical implementation
+	\item High impact: Inability to reproduce impressive performance results of CNNs when working with deep kernel methods, or other probabilistic models
+    \item Medium impact: Tasks are not met by desired date
+    \item Low impact: Inability to reproduce performance when working towards autonomous frequency representation discovery
 \end{enumerate}
 \subsubsection{Mitigating measures}
 \begin{enumerate}
-	\item Do not lose scientific contribution, affects practical implementation
+	\item Work towards a hybrid neural network/probabilistic model to leverage gains in both fields
+    \item Set regular milestones and consider conference deadlines to focus work towards a specific scientific contribution
+    \item Not necessarily a problem, as currently publishing with raw data methods is accepted with poorer performance, as long as an original scientific contribution is made \cite{dieleman2014end}.
 \end{enumerate}
-\subsubsection{Low-level risk} 
-\begin{enumerate}
-	\item Do not lose scientific contribution, affects practical implementation
-\end{enumerate}
+
+% \subsubsection{Low-level risk} 
+% \begin{enumerate}
+% 	\item High impact: 
+% \end{enumerate}
 
 \section{Conclusion}
 \label{sec:conclusion}
