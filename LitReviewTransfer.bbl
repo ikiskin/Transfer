@@ -55,10 +55,20 @@ Go{\"e}au, H., Glotin, H., Vellinga, W.P., Planqu{\'e}, R., Rauber, A., Joly,
 Go{\"e}au, H., Glotin, H., Vellinga, W.P., Planqu{\'e}, R., Rauber, A., Joly,
   A.: {LifeCLEF} bird identification task 2015. In: CLEF2015 (2015)
 
+\bibitem{graves2008unconstrained}
+Graves, A., Liwicki, M., Bunke, H., Schmidhuber, J., Fern{\'a}ndez, S.:
+  Unconstrained on-line handwriting recognition with recurrent neural networks.
+  In: Advances in Neural Information Processing Systems. pp. 577--584 (2008)
+
 \bibitem{graves2013speech}
 Graves, A., Mohamed, A.r., Hinton, G.: Speech recognition with deep recurrent
   neural networks. In: Acoustics, speech and signal processing (icassp), 2013
   ieee international conference on. pp. 6645--6649. IEEE (2013)
+
+\bibitem{graves2009offline}
+Graves, A., Schmidhuber, J.: Offline handwriting recognition with
+  multidimensional recurrent neural networks. In: Advances in neural
+  information processing systems. pp. 545--552 (2009)
 
 \bibitem{gwardys2014deep}
 Gwardys, G., Grzywczak, D.: Deep image features in music information retrieval.

@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex LitReviewTransfer"] 1499085580 "LitReviewTransfer.aux" "LitReviewTransfer.bbl" "LitReviewTransfer" 1499100106
+["bibtex LitReviewTransfer"] 1499119356 "LitReviewTransfer.aux" "LitReviewTransfer.bbl" "LitReviewTransfer" 1499119556
   "./splncs03.bst" 1245061022 33098 4ef5df5462ae7c3cec476a39dec1b7bb ""
-  "LitReviewTransfer.aux" 1499100105 12887 730f41880abb341eb1b3feed2e782431 ""
+  "LitReviewTransfer.aux" 1499119357 12519 4cae8ef185c8916c5b9b4bbeaaad8355 ""
   "LitReviewTransfer.bcf" 0 -1 0 ""
-  "TransferBib.bib" 1499076721 29176 d07c3e2d73e24b3c8dc2751b6227a5e4 ""
+  "TransferBib.bib" 1499100743 29808 c3bcbaf06dec4ad20a659ee60193f7f9 ""
   (generated)
   "LitReviewTransfer.bbl"
   "LitReviewTransfer.blg"
-["pdflatex"] 1499100104 "LitReviewTransfer.tex" "LitReviewTransfer.pdf" "LitReviewTransfer" 1499100106
+["pdflatex"] 1499119356 "LitReviewTransfer.tex" "LitReviewTransfer.pdf" "LitReviewTransfer" 1499119556
   "/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -27,9 +27,12 @@
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm" 1136768653 1528 abec98dbc43e172678c11b3b9031252a ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmr10.tfm" 1136768653 1296 45809c5a464d5f32c8f98ba97c1bb47f ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1136768653 1288 655e228510b4c2a1abe905c368440826 ""
+  "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1136768653 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmtt9.tfm" 1136768653 764 c98a2af25c99b73a368cf7336e255190 ""
+  "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm" 1229303445 688 37338d6ab346c2f1466b29e195316aa4 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
+  "/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb" 1248133631 29078 718ea4567ceff944262b0f5b0800e1d9 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb" 1136849748 44729 811d6c62865936705a31c797a1d5dada ""
   "/usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb" 1136849748 46026 6dab18b61c907687b520c72847215a68 ""
@@ -39,6 +42,7 @@
   "/usr/local/texlive/2016/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf" 1136768653 1384 a9d8adaf491ce34e5fba99dc7bbe5f39 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf" 1136768653 1132 27520247d3fe18d4266a226b461885c2 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/vf/adobe/times/zptmcm7t.vf" 1136768653 1108 d271d6f9de4122c3f8d3b65666167fac ""
+  "/usr/local/texlive/2016/texmf-dist/fonts/vf/adobe/times/zptmcm7y.vf" 1136768653 964 5673178ff30617b900214de28ab32b38 ""
   "/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2016/texmf-dist/tex/generic/ifxetex/ifxetex.sty" 1284331290 1458 43ab4710dc82f3edeabecd0d099626b2 ""
   "/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty" 1463608860 8237 3b62ef1f7e2c23a328c814b3893bc11f ""
@@ -174,9 +178,9 @@
   "/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1486047434 1888048 f2c5faed5981a516f406b2ccc20bff71 ""
   "/usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt" 1486047486 3873396 e547337f49f8ee9a4316ef9797c779e9 ""
   "/usr/local/texlive/2016/texmf.cnf" 1463979140 577 2938757e76f31531e65cc647e3507693 ""
-  "LitReviewTransfer.aux" 1499100105 12887 730f41880abb341eb1b3feed2e782431 ""
-  "LitReviewTransfer.bbl" 1499085580 9067 187b342435f8a143ae5c2f23f1a5999d "bibtex LitReviewTransfer"
-  "LitReviewTransfer.tex" 1499100103 53102 ad56efad27db2f7e8ffe837db624c084 ""
+  "LitReviewTransfer.aux" 1499119357 12519 4cae8ef185c8916c5b9b4bbeaaad8355 ""
+  "LitReviewTransfer.bbl" 1499119356 9549 888604738dbf3089485489dd86c79203 "bibtex LitReviewTransfer"
+  "LitReviewTransfer.tex" 1499119353 54435 ab0f9fdd2a464a6947c04d7b7b21e861 ""
   "llncs.cls" 1435147238 42910 21b15ca036d6c144fc14b6b7fb201290 ""
   "remreset.sty" 1327597438 1096 6a75275ca00e32428c6f059d2f618ea7 ""
   (generated)

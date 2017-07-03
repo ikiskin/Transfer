@@ -228,8 +228,6 @@ The HMM formed the definitive state-of-art in the early 1990s \cite{rabiner1989t
 To improve the quality of feature representations that are used as inputs to the HMM, there was a shift to hybrid Deep Neural Network Hidden Markov systems (DNN-HMMs) from Gaussian Mixture Model HMMs (GMM-HMMs). GMMs in HMMs have a serious shortcoming that they are statistically inefficient for modeling data that lie on or near a nonlinear manifold in the data space \cite{hinton2012deep}.  DNN-HMM design follows traditional GMM-HMM systems. As the DNN is used to model the posterior probability of a state In a large-scale given an observation vector, a prior is required. The prior is commonly obtained with a Viterbi algorithm of the GMM-HMM and is given in the form of an initial labeled state sequence \cite{li2013hybrid}.  However, it was found that DNNs gave much higher accuracy when large training data supported model capacity \cite{deng2014achievements}.  In acoustic modeling for large vocabulary continuous speech recognition (LVCSR) tasks, DNN-HMMs were shown by \cite{dahl2012context}to give significant gains over state-of-the-art Gaussian Mixture Model/Hidden Markov Model (GMM/HMM) systems in a wide variety of small and large vocabulary tasks. \cite{dahl2012context}demonstrated reductions of relative error of 16.0 \% and 23.2 \% using context-dependent DNN-HMMs over context-dependent GMM-HMMs trained using the minimum phone error rate and maximum-likelihood, respectively.
 
 
-
-\ikN{Maybe move HMM disadvantage section to after discussing hybrid DNN/HMM: first we talk about disadvantages of GMMs, then feature quality used in DNN/HMM or even GMM/HMM, followed by doing away with the entire HMM section with ``raw" deep learning}
 However, HMMs suffer inherent limitations in speech recognition. The assumption that successive observations are independent, as well as the probability of being in a state only depending on the state at the previous time step do not strictly hold true \cite{rabiner1989tutorial}. Additionally, the feature representation is hand-crafted by the user, typically in the form of log-scaled frequency coefficients such as the MFCC. MFCCs, GMMs and HMMs co-evolved in speech recognition under limited computational power. MFCCs lose significant information from the sound wave, but preserve higher order information that is required for discrimination. This is to partially overcome the very strong conditional independence assumptions of HMMs \cite{mohamed2012acoustic}.
 
 % \emph{MFCCs, GMMs, and HMMs co-evolved as a way of doing speech recognition when computers were too slow to explore more computationally intensive approaches. MFCCs throw away a lot of the information in the sound wave, but preserve most of the information required for discrimination. By including temporal differences, MFCCs partially overcome the very strong conditional independence assumption of HMMs, namely that successive frames are independent given the hidden state of the HMM. The temporal differences also allow diagonal covariance Gaussians to model the strong temporal covariances by reducing these particular pairwise covariances to individual coefficients.} 
@@ -242,7 +240,7 @@ Relevance to general signal detection? However in the absence of phenomes/not wi
 Whereas MFCCs led to significant accuracy improvements in GMM-HMM systems despite known loss of information introduced, further advancements came from reducing the specificity of the signal transforms that were used to form feature representations.
 For example, Mohamed et al. (2012a) \cite[firstExampleMovingGMMsectionofHMM/GMMtoDNN]{mohamed2012acoustic} and Li et al., (2012) showed significantly lowered automatic speech recognition errors using large-scale DNNs when moving from the MFCC features back to more primitive (Mel-scaled) filter-bank features. The results implicated that DNNs are able to learn a better representation from Mel-scaled features than the original fixed cosine transform. The original use of the cosine transform is justified by its approximate de-correlation of feature components. This is of importance to using diagonal covariance matrices with GMMs. This restriction however does not apply to deep learning models, as their strength in modelling data correlation makes the transform redundant. 
 
-There is a possibility of future work to focus on training directly on raw waveforms, although current research has been unable to extract equivalent performance in audio applications from raw waveforms [cite]. This is further discussed at the end of Section \ref{sec:AED}
+There is a possibility of future work to focus on training directly on raw waveforms, although current research has been unable to extract equivalent performance in audio applications, discussed further discussed at the end of Section \ref{sec:AED}
 
 
 %Names of subsections in paper (not sure what to use for): Better optimisation, architectures, transfer learning and noise robustness
@@ -261,11 +259,11 @@ In large-scale speech tasks, deep convolutional nets have been shown to signific
  
 
 
-Further improvement was found with the application of recurrent neural networks \cite{graves2013speech}. The authors note in 2013 that while HMM-RNN systems [5] had also seen a recent revival [6, 7], they did not perform as well as deep networks. As with Sainath et al., the authors favoured to train RNNs ‘end-to-end’ for speech recognition [8, 9, 10], instead of combining RNNs with HMMs. This approach allowed RNNs to exploit their larger state-space and richer dynamics, as well as avoid potentially incorrect alignments as training targets. The combination of Long Short-term Memory [11], an RNN architecture, with end-to-end training has proved especially effective for cursive handwriting recognition [12, 13]. The authors have shown that the combination of deep, bidirectional LSTM RNNs with end-to-end training gave state-of-the-art results in phoneme recognition[12, 13]\ikn{Check refs}, and note that the next step is to extend the system to large vocabulary speech recognition. A further proposed direction is to combine CNNs and deep LSTMs \cite{graves2013speech}.
+Further improvement was found with the application of recurrent neural networks \cite{graves2013speech}. The authors noted in 2013 that while HMM-RNN systems had seen a recent revival, they did not perform as well as deep networks. As with Sainath et al., the authors favoured to train RNNs ‘end-to-end’ for speech recognition, instead of combining RNNs with HMMs. This approach allowed RNNs to exploit their larger state-space and richer dynamics, as well as avoid potentially incorrect alignments as training targets. The combination of Long Short-term Memory [11], an RNN architecture, with end-to-end training has proved especially effective for cursive handwriting recognition \cite{graves2008unconstrained,graves2009offline}. The authors have shown that the combination of deep, bidirectional LSTM RNNs with end-to-end training gave state-of-the-art results in phoneme recognition, and note that the next step is to extend the system to large vocabulary speech recognition. A further proposed direction is to combine CNNs and deep LSTMs.
 
-We note the authors use the same feature representation (mel-scaled coefficients, with their first and second derivatives and a few extras), and propose the investigation of moving towards autonomous learning of the feature space [as discussed in ....]
+We note the authors use the same feature representation (mel-scaled coefficients, with their first and second derivatives and a few extras), and propose the investigation of moving towards autonomous learning of the feature space (as discussed in the Proposal in Section \ref{sec:proposal}).
 \subsubsection{Relevance to our application?}
-Speech recognition, whether it is predicting particular phonemes, or their sequences, requires predicting a dynamic signal that is highly nonstationary and embedded in noise. Has strong transfer to fields in audio event recognition, and indeed methods developed in speech recognition have been applied as black-boxes with little modification to tasks such as bird recognition, that we focus on next.
+Speech recognition, whether it is predicting particular phonemes, or their sequences, requires predicting a dynamic signal that is highly nonstationary and embedded in noise. The field has strong transferability to general audio event recognition, and indeed methods developed in speech recognition have been applied as black-boxes with little modification to tasks such as bird recognition, which we discuss in Section \ref{sec:birdrecognition}.
 
 
 \ikN{I think I have to talk about relevance to mosquito detection in particular}\srN{put in and make decision later - probably best in}
@@ -275,72 +273,57 @@ Speech recognition, whether it is predicting particular phonemes, or their seque
 \label{sec:imagerecognition}
 \subsubsection{State of art before deep learning}
 \ikN{Describe briefly}
-
-Strong parallels with deep learning methods on sound (spectrogram representation simply an image). More active research area. State-of-art potentially ahead than sound detection [evidence].
-
-
-Relation between Fourier transforms in audio and images
-
-
-
-Due to the incredibly large research efforts, as evidenced by the number of entries to a wide variety of image recognition tasks in [ILSVCR link], a huge range of sub-fields in neural networks underwent incremental improvements. We structure this section by noteworthy changes in characteristics of the networks.
+Deep learning methods in image recognition have strong parallels with deep learning methods in acoustics. This stems from the fundamental frequency representation currently in use with sounds--the spectrogram. A spectrogram representation is a two-dimensional matrix with intensity measurements as entries. This is equivalent to a black and white image representation. Due to the incredibly large and concentrated research efforts, as evidenced by the number of entries to a wide variety of image recognition tasks \cite{russakovsky2014imagenet,ILSVRC15}, a vast range of sub-fields in neural networks underwent incremental improvements. We structure this section by noteworthy changes in characteristics of the networks.
 
 \subsection{Depth}
-A primary driving factor is ... depth. Increasing number of layers has benefits to allow more non-linearities. Faster computation times [switch from larger filters, fewer layers to smaller filters with more layers]
+A primary driving factor of progress in deep learning is network depth. This was first formally addressed by Simonyan and Zisserman by fixing parameters of the architecture, and steadily increasing the depth of the network by addition of convolutional layers. This was feasible due to the use of very small convolution filters in all layers \cite{simonyan2014very}. The effect was to increase model complexity by allowing more non-linearities, and hence making the network more discriminative. Without spatial pooling in between convolutional layers, two $3 \times 3$ layers have an effective receptive field size of a single $5 \times 5$ layer. In addition, this results in a decrease of parameters (with an 81 \% reduction when replacing a $7 \times 7$ receptive field with three $3\times3$ layers). As a result, on top of accuracy improvements, faster gradient back-propagation and hence times were also achieved.
+
+
+% Up to 2014:
+% \cite{simonyan2014very}:
+% \emph{Convolutional networks (ConvNets) have recently enjoyed a great success in large-scale image
+% and video recognition (Krizhevsky et al., 2012; Zeiler \& Fergus, 2013; Sermanet et al., 2014;
+% Simonyan \& Zisserman, 2014) which has become possible due to the large public image repositories,
+% such as ImageNet (Deng et al., 2009), and high-performance computing systems, such as GPUs
+% or large-scale distributed clusters (Dean et al., 2012). In particular, an important role in the advance
+% of deep visual recognition architectures has been played by the ImageNet Large-Scale Visual Recognition
+% Challenge (ILSVRC) (Russakovsky et al., 2014), which has served as a testbed for a few
+% generations of large-scale image classification systems, from high-dimensional shallow feature encodings
+% (Perronnin et al., 2010) (the winner of ILSVRC-2011) to deep ConvNets (Krizhevsky et al.,
+% 2012) (the winner of ILSVRC-2012).
+% With ConvNets becoming more of a commodity in the computer vision field, a number of attempts
+% have been made to improve the original architecture of Krizhevsky et al. (2012) in a
+% bid to achieve better accuracy. For instance, the best-performing submissions to the ILSVRC-
+% 2013 (Zeiler \& Fergus, 2013; Sermanet et al., 2014) utilised smaller receptive window size and
+% smaller stride of the first convolutional layer. Another line of improvements dealt with training
+% and testing the networks densely over the whole image and over multiple scales (Sermanet et al.,
+% 2014; Howard, 2014). In this paper, we address another important aspect of ConvNet architecture
+% design – its depth. To this end, we fix other parameters of the architecture, and steadily increase the
+% depth of the network by adding more convolutional layers, which is feasible due to the use of very
+% small (3×3) convolution filters in all layers.}
 
 
 
-Up to 2014:
-\cite{simonyan2014very}:
-\emph{Convolutional networks (ConvNets) have recently enjoyed a great success in large-scale image
-and video recognition (Krizhevsky et al., 2012; Zeiler \& Fergus, 2013; Sermanet et al., 2014;
-Simonyan \& Zisserman, 2014) which has become possible due to the large public image repositories,
-such as ImageNet (Deng et al., 2009), and high-performance computing systems, such as GPUs
-or large-scale distributed clusters (Dean et al., 2012). In particular, an important role in the advance
-of deep visual recognition architectures has been played by the ImageNet Large-Scale Visual Recognition
-Challenge (ILSVRC) (Russakovsky et al., 2014), which has served as a testbed for a few
-generations of large-scale image classification systems, from high-dimensional shallow feature encodings
-(Perronnin et al., 2010) (the winner of ILSVRC-2011) to deep ConvNets (Krizhevsky et al.,
-2012) (the winner of ILSVRC-2012).
-With ConvNets becoming more of a commodity in the computer vision field, a number of attempts
-have been made to improve the original architecture of Krizhevsky et al. (2012) in a
-bid to achieve better accuracy. For instance, the best-performing submissions to the ILSVRC-
-2013 (Zeiler \& Fergus, 2013; Sermanet et al., 2014) utilised smaller receptive window size and
-smaller stride of the first convolutional layer. Another line of improvements dealt with training
-and testing the networks densely over the whole image and over multiple scales (Sermanet et al.,
-2014; Howard, 2014). In this paper, we address another important aspect of ConvNet architecture
-design – its depth. To this end, we fix other parameters of the architecture, and steadily increase the
-depth of the network by adding more convolutional layers, which is feasible due to the use of very
-small (3×3) convolution filters in all layers.}
 
-
-From 2015:
+% From 2015:
 
 
 
-From DeepID3: Face Recognition with Very Deep Neural Networks:``Using deep neural networks to learn effective feature
-representations has become popular in face recognition
-[12, 20, 17, 22, 14, 13, 18, 21, 19, 15]."
+% From DeepID3: Face Recognition with Very Deep Neural Networks:``Using deep neural networks to learn effective feature
+% representations has become popular in face recognition
+% [12, 20, 17, 22, 14, 13, 18, 21, 19, 15]."
 
 \subsection{Residual learning}
+A recent advancement was presented by He et al. \cite{he2016deep} as deep residual learning. Their submission resulted in first place placements on ImageNet detection, ImageNet localization, COCO detection, and COCO segmentation in ILSVRC \&
+COCO 2015 competitions. The authors argue that the breadth of categories in which excellent results are achieved is strong evidence that the method is applicable in other vision and non-vision problems. 
 
-Deep Residual Learning for Image Recognition:
 
-\emph{On the ImageNet classification dataset [35], we obtain
-excellent results by extremely deep residual nets. Our 152-
-layer residual net is the deepest network ever presented on
-ImageNet, while still having lower complexity than VGG
-nets [40]. Our ensemble has 3.57\% top-5 error on the
-ImageNet test set, and won the 1st place in the ILSVRC
-2015 classification competition. The extremely deep representations
-also have excellent generalization performance
-on other recognition tasks, and lead us to further win the
-1st places on: ImageNet detection, ImageNet localization,
-COCO detection, and COCO segmentation in ILSVRC \&
-COCO 2015 competitions. This strong evidence shows that
-the residual learning principle is generic, and we expect that
-it is applicable in other vision and non-vision problems.}
+\emph{Let us consider H(x) as an underlying mapping to be fit by a few stacked layers (not necessarily the entire net), with x denoting the inputs to the first of these layers. If one hypothesizes that multiple nonlinear layers can asymptotically
+approximate complicated functions2 , then it is equivalent to hypothesize that they can asymptotically approximate the residual functions, i.e., H(x) − x (assuming that
+the input and output are of the same dimensions). So rather than expect stacked layers to approximate H(x), we explicitly let these layers approximate a residual function F(x) := H(x) − x. The original function thus becomes F(x)+x. Although both forms should be able to asymptotically approximate the desired functions (as hypothesized), the ease of learning might be different}
 
+
+The formulation allows the use of extremely deep networks. Their 152-layer residual network was at the time of submission the deepest network ever presented at ImageNet, while still having lower complexity than VGG proposed in \cite{simonyan2014very}.
 
 
 \subsection{Data augmentation}
