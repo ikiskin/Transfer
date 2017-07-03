@@ -317,13 +317,12 @@ A primary driving factor of progress in deep learning is network depth. This was
 A recent advancement was presented by He et al. \cite{he2016deep} as deep residual learning. Their submission resulted in first place placements on ImageNet detection, ImageNet localization, COCO detection, and COCO segmentation in ILSVRC \&
 COCO 2015 competitions. The authors argue that the breadth of categories in which excellent results are achieved is strong evidence that the method is applicable in other vision and non-vision problems. 
 
+The authors define $\mathcal{H}(x)$ as an underlying mapping to be learnt by a few stacked layers of the network, with $x$ denoting the inputs to these layers. The authors argue that ``if one hypothesizes that multiple nonlinear layers can asymptotically approximate complicated functions, then it is equivalent to hypothesize that they can asymptotically approximate the residual functions, i.e., $\mathcal{H}(x) − x$. So rather than expect stacked layers to approximate H(x), we explicitly let these layers approximate a residual function F(x) := H(x) − x. The original function thus becomes F(x)+x. Although both forms should be able to asymptotically approximate the desired functions (as hypothesized), the ease of learning might be different''. 
 
-\emph{Let us consider H(x) as an underlying mapping to be fit by a few stacked layers (not necessarily the entire net), with x denoting the inputs to the first of these layers. If one hypothesizes that multiple nonlinear layers can asymptotically
-approximate complicated functions2 , then it is equivalent to hypothesize that they can asymptotically approximate the residual functions, i.e., H(x) − x (assuming that
-the input and output are of the same dimensions). So rather than expect stacked layers to approximate H(x), we explicitly let these layers approximate a residual function F(x) := H(x) − x. The original function thus becomes F(x)+x. Although both forms should be able to asymptotically approximate the desired functions (as hypothesized), the ease of learning might be different}
+As a result, the mathematically equivalent formulations can be implemented with architecture modifications via identity mappings \cite[figx]{he2016deep}.
 
 
-The formulation allows the use of extremely deep networks. Their 152-layer residual network was at the time of submission the deepest network ever presented at ImageNet, while still having lower complexity than VGG proposed in \cite{simonyan2014very}.
+The rate of learning deep architectures under this formulation allows the use of extremely deep networks. The 152-layer residual network was at the time of submission the deepest network ever presented at ImageNet, while still having lower complexity than VGG proposed in \cite{simonyan2014very}.
 
 
 \subsection{Data augmentation}

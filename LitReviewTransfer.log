@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.2.2)  3 JUL 2017 23:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.2.2)  3 JUL 2017 23:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1015,15 +1015,15 @@ Overfull \hbox (165.63864pt too wide) in paragraph at lines 275--275
  []
 
 [5]
-Missing character: There is no â in font ptmri7t!
-Missing character: There is no ˆ in font ptmri7t!
-Missing character: There is no ’ in font ptmri7t!
-Missing character: There is no â in font ptmri7t!
-Missing character: There is no ˆ in font ptmri7t!
-Missing character: There is no ’ in font ptmri7t!
+Missing character: There is no â in font zptmcm7t!
+Missing character: There is no ˆ in font zptmcm7t!
+Missing character: There is no ’ in font zptmcm7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no ˆ in font ptmr7t!
+Missing character: There is no ’ in font ptmr7t!
  [6] [7] [8] [9] [10] [11] Excluding 'comment' comment.
 Excluding 'comment' comment.
-Overfull \hbox (24.259pt too wide) in paragraph at lines 536--537
+Overfull \hbox (24.259pt too wide) in paragraph at lines 535--536
 \OT1/ptm/m/n/12 Paradigm shift from hand-crafted to DNN to CNN. Im-age anal-y-s
 is mov-ing to-wards RNNs/hybrid LSTM/CNN.
  []
@@ -1033,13 +1033,13 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ” in font ptmr7t!
  [17] [18]) [19]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 627.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 627.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 626.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 626.
 
 (./LitReviewTransfer.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 627.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 627.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 627.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 626.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 626.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 626.
  ) 
 Here is how much of TeX's memory you used:
  20007 strings out of 493014
@@ -1054,13 +1054,14 @@ exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
 xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texl
 ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
 ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive
-/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texm
-f-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fon
-ts/type1/urw/times/utmri8a.pfb>
-Output written on LitReviewTransfer.pdf (19 pages, 139418 bytes).
+/2016/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2016/te
+xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/f
+onts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
+/urw/times/utmri8a.pfb>
+Output written on LitReviewTransfer.pdf (19 pages, 141185 bytes).
 PDF statistics:
- 447 PDF objects out of 1000 (max. 8388607)
- 352 compressed objects within 4 object streams
+ 453 PDF objects out of 1000 (max. 8388607)
+ 356 compressed objects within 4 object streams
  130 named destinations out of 1000 (max. 500000)
  141 words of extra memory for PDF output out of 10000 (max. 10000000)
 
