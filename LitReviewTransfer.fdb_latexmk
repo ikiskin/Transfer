@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex LitReviewTransfer"] 1499080326 "LitReviewTransfer.aux" "LitReviewTransfer.bbl" "LitReviewTransfer" 1499080327
+["bibtex LitReviewTransfer"] 1499085580 "LitReviewTransfer.aux" "LitReviewTransfer.bbl" "LitReviewTransfer" 1499100106
   "./splncs03.bst" 1245061022 33098 4ef5df5462ae7c3cec476a39dec1b7bb ""
-  "LitReviewTransfer.aux" 1499080327 12886 91f4999df7bc1f525a1dd0ece3201dec ""
+  "LitReviewTransfer.aux" 1499100105 12887 730f41880abb341eb1b3feed2e782431 ""
   "LitReviewTransfer.bcf" 0 -1 0 ""
   "TransferBib.bib" 1499076721 29176 d07c3e2d73e24b3c8dc2751b6227a5e4 ""
   (generated)
   "LitReviewTransfer.bbl"
   "LitReviewTransfer.blg"
-["pdflatex"] 1499080326 "LitReviewTransfer.tex" "LitReviewTransfer.pdf" "LitReviewTransfer" 1499080327
+["pdflatex"] 1499100104 "LitReviewTransfer.tex" "LitReviewTransfer.pdf" "LitReviewTransfer" 1499100106
   "/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -174,12 +174,12 @@
   "/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1486047434 1888048 f2c5faed5981a516f406b2ccc20bff71 ""
   "/usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt" 1486047486 3873396 e547337f49f8ee9a4316ef9797c779e9 ""
   "/usr/local/texlive/2016/texmf.cnf" 1463979140 577 2938757e76f31531e65cc647e3507693 ""
-  "LitReviewTransfer.aux" 1499080327 12886 91f4999df7bc1f525a1dd0ece3201dec ""
-  "LitReviewTransfer.bbl" 1499080326 9067 187b342435f8a143ae5c2f23f1a5999d "bibtex LitReviewTransfer"
-  "LitReviewTransfer.tex" 1499080324 52665 a89ae0c69a0c38a983d297315cefdece ""
+  "LitReviewTransfer.aux" 1499100105 12887 730f41880abb341eb1b3feed2e782431 ""
+  "LitReviewTransfer.bbl" 1499085580 9067 187b342435f8a143ae5c2f23f1a5999d "bibtex LitReviewTransfer"
+  "LitReviewTransfer.tex" 1499100103 53102 ad56efad27db2f7e8ffe837db624c084 ""
   "llncs.cls" 1435147238 42910 21b15ca036d6c144fc14b6b7fb201290 ""
   "remreset.sty" 1327597438 1096 6a75275ca00e32428c6f059d2f618ea7 ""
   (generated)
-  "LitReviewTransfer.aux"
   "LitReviewTransfer.pdf"
+  "LitReviewTransfer.aux"
   "LitReviewTransfer.log"
