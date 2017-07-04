@@ -330,7 +330,7 @@ The prominent applications where neural networks significantly outperformed othe
 
 \subsection{Deep Kernel Learning}
 \ikN{Find a way to integrate this section properly}
-To gain insight into understanding their operation, a less established a practice that is gaining traction in recent years, is to view CNNs and other network configurations as instances of Gaussian Processes, or other kernel-learning methods [could be BS, find cit,cit,cit]. In transition to fully probabilistic models, some works attempt to build hybrid neural network/Gaussian process models to retain the performance benefit of deep learning methods, while also conforming to probabilistic predictions. Wilson et. al \cite{wilson2016deep} showed that jointly learning deep kernel parameters has advantages over training a GP applied to the output layer of a trained deep neural network. In addition, the jointly learned model outperformed the equivalent deep neural network on the MNIST dataset. The work forms the basis of a medium-term proposed goal addressed in Section \ref{sec:proposal}.
+To gain insight into understanding their operation, a less established a practice that is gaining traction in recent years, is to view CNNs and other network configurations as instances of Gaussian Processes, or other kernel-learning methods [could be BS, find cit,cit,cit]. In transition to fully probabilistic models, some works attempt to build hybrid neural network/Gaussian process models to retain the performance benefit of deep learning methods, while also conforming to probabilistic predictions. Wilson et. al \cite{wilson2016deep} showed that jointly learning deep kernel parameters has advantages over training a GP applied to the output layer of a trained deep neural network. In addition, the jointly learned model outperformed the equivalent deep neural network, as well as more primitive CNN/DBN-GP combinations, on the MNIST dataset. The work forms the basis of a medium-term proposed goal addressed in Section \ref{sec:proposal}.
 
 
 \srN{point out that only very recently have techniques from image analysis come into the signal world}
@@ -340,33 +340,22 @@ Despite immense popularity in image recognition, until recently there were relat
 
 
 
-\begin{itemize}
-    \item DKL does as well/slightly better than pure CNN for learning MNIST dataset. The CNN significantly outperforms GP, DBN + GP and CNN + GP. Definitely worth investigating using for my own task
-\end{itemize}
-
-
-
 
 
 \section{Bird recognition}
 \ikN{Could combine with AED section and use subheadings like in Image Recognition}
 \label{sec:birdrecognition}
-A prominent example of the recent shift in methodology towards deep learning is the BirdCLEF bird recognition challenge. The challenge consists of the classification of bird songs and calls into up to 1500 bird species from tens of thousands of crowd-sourced recordings. The introduction of deep learning has brought drastic improvements in mean average precision (MAP) scores. The best MAP score of 2014 was 0.45, achieved by combining two main categories of features for classification: parametric acoustic features consisting of spectral features, cepstral features, energy features and voicing-related features, and probabilities of species-specific spectrogram segments \cite{goeau2014lifeclef}. The feature sets were used in combination with unsupervised dimensionality reduction to train randomized ensemble decision trees. The runner-up used an MFCC feature foundation, with further PCA whitening, to train random forests (a full pipeline is given in Figure 3 in \cite{stowell2014automatic})
+A prominent example of the recent shift in methodology towards deep learning is the BirdCLEF bird recognition challenge. The challenge consists of the classification of bird songs and calls into up to 1500 bird species from tens of thousands of crowd-sourced recordings. The introduction of deep learning has brought drastic improvements in mean average precision (MAP) scores. The highest MAP score of 2014 was 0.45, achieved by combining two main categories of features for classification: parametric acoustic features consisting of spectral features, cepstral features, energy features and voicing-related features, and probabilities of species-specific spectrogram segments \cite{goeau2014lifeclef}. The feature sets were used in combination with unsupervised dimensionality reduction to train randomized ensemble decision trees. The runner-up used an MFCC feature foundation, with further PCA whitening, to train random forests (a full pipeline is given in Figure 3 in \cite{stowell2014automatic}).
 
-The following year of 2015 saw a slight decrease in performance due to the increased difficulty of the task \cite{goeau2015lifeclef}, with the best results achieved in very similar fashion to last year. However, 2016 marked the introduction of deep learning methods to the competition. Overall MAP scores improved to 0.69 outperforming the previously dominant method, which scored 0.58  on this occasion following small tweaks \cite{joly2016lifeclef}. The impressive performance gain came from the utilisation of well-established convolutional neural network practice from image recognition. By transforming the signals into STFT spectrogram format, the training data is represented by 2D matrices analogous to single-channel image representations. Following median-based segment de-noising, the authors employed a 5 layer CNN network on input sections of approximately 3 seconds in length. This allows capturing and encoding the temporal dependencies of repeating birdsong or call patterns. The authors also note no performance benefit from using 1D convolution with height equal to spectral width (frequency). As with common practice in image recognition, data augmentation was performed in the form of noise injection, ... anything else?
-
-
+Participants in the following year of 2015 achieved slightly lower scores due to the increased difficulty of the task \cite{goeau2015lifeclef}, with the best results achieved in very similar fashion to the previous year. However, 2016 marked the introduction of deep learning methods to the competition. Overall MAP scores improved to 0.69, outperforming the previously dominant method, which scored 0.58 on this occasion following small tweaks \cite{joly2016lifeclef}. The impressive performance gain came from the utilisation of well-established convolutional neural network practice from image recognition. By transforming the signals into STFT spectrogram format, the training data is represented by 2D matrices analogous to single-channel image representations. Following median-based segment de-noising, the authors employed a 5-layer CNN network on input sections of approximately 3 seconds in length. This allowed capturing and encoding the temporal dependencies of repeating birdsong or call patterns. The authors also noted no performance benefit from using 1D convolution with height equal to spectral width (frequency). As with common practice in image recognition, data augmentation was performed in the form of noise injection. We note that the implementation, while effective, was unremarkable compared to state-of-art submissions of recent years seen in ILSVRC, so there may be further room for improvement. Coupled with the scarcity of overall submissions, there is strong evidence of a lack of maturity in this particular research area, which is expected to advance rapidly since the arrival of deep methods and over-saturation of submissions to image analysis challenges[cit?].
 
 
 \section{Acoustic Event Detection}
 \label{sec:AED}
-To draw parallels even closer to our application, we study recent research in Acoustic Event Detection (AED). This is the field that deals with detecting and classifying non-speech acoustic signals, with intent to convert continuous signals into a sequence of event labels associated with start and end times \cite{espi2015exploiting}. \emph{The field has attracted increasing
-attention in recent years including dedicated challenges
-such as CLEAR \cite{mostefa2007chil}, and recently D-CASE \cite{giannoulis2013detection}, with tasks
-involving the detection of a known set of acoustic events
-happening in a smart room or office setting. In addition,
-AED applications range from rich transcription in
-speech communication \cite{mostefa2007chil,giannoulis2013detection} and scene understanding}
+To draw parallels even closer to our application\ikn{address explicitly}, we study recent research in Acoustic Event Detection (AED). This is the field that deals with detecting and classifying non-speech acoustic signals, with intent to convert continuous signals into a sequence of event labels associated with start and end times \cite{espi2015exploiting}. Recently, the field has been allocated more research effort, with the foundation of dedicated challenges such as such as CLEAR \cite{mostefa2007chil}, and D-CASE \cite{giannoulis2013detection}, which involve detecting a known set of acoustic events indoors have attracted attention. 
+
+
+%AED applications range from rich transcription in speech communication \cite{mostefa2007chil,giannoulis2013detection} and scene understanding
 
 
 
