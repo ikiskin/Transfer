@@ -5,6 +5,10 @@
 \bibitem{bishop2006pattern}
 Bishop, C.M.: Pattern recognition. Machine Learning  128,  1--58 (2006)
 
+\bibitem{brown1991calculation}
+Brown, J.C.: Calculation of a constant q spectral transform. The Journal of the
+  Acoustical Society of America  89(1),  425--434 (1991)
+
 \bibitem{coello2007evolutionary}
 Coello, C.A.C., Lamont, G.B., Van~Veldhuizen, D.A., et~al.: Evolutionary
   algorithms for solving multi-objective problems, vol.~5. Springer (2007)
@@ -107,6 +111,10 @@ Joly, A., Go{\"e}au, H., Glotin, H., Spampinato, C., Bonnet, P., Vellinga,
 Juang, B.H., Rabiner, L.R.: Automatic speech recognition--a brief history of
   the technology development. Georgia Institute of Technology. Atlanta Rutgers
   University and the University of California. Santa Barbara  1, ~67 (2005)
+
+\bibitem{korzeniowski2016feature}
+Korzeniowski, F., Widmer, G.: Feature learning for chord recognition: the deep
+  chroma extractor. arXiv preprint arXiv:1612.05065  (2016)
 
 \bibitem{krizhevsky2009learning}
 Krizhevsky, A., Hinton, G.: Learning multiple layers of features from tiny
