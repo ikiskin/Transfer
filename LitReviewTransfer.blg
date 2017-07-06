@@ -5,45 +5,45 @@ The style file: splncs03.bst
 Database file #1: TransferBib.bib
 Warning--empty journal in krizhevsky2009learning
 Warning--empty journal in rabiner1993fundamentals
-You've used 44 entries,
+You've used 43 entries,
             2785 wiz_defined-function locations,
-            815 strings with 13579 characters,
-and the built_in function-call counts, 26798 in all, are:
-= -- 2202
-> -- 1023
-< -- 45
-+ -- 421
-- -- 374
-* -- 1722
-:= -- 3498
-add.period$ -- 62
-call.type$ -- 44
-change.case$ -- 351
+            810 strings with 13327 characters,
+and the built_in function-call counts, 26095 in all, are:
+= -- 2134
+> -- 1006
+< -- 44
++ -- 414
+- -- 368
+* -- 1681
+:= -- 3413
+add.period$ -- 59
+call.type$ -- 43
+change.case$ -- 343
 chr.to.int$ -- 0
-cite$ -- 46
-duplicate$ -- 2287
-empty$ -- 2219
-format.name$ -- 412
-if$ -- 5777
+cite$ -- 45
+duplicate$ -- 2229
+empty$ -- 2155
+format.name$ -- 405
+if$ -- 5614
 int.to.chr$ -- 0
-int.to.str$ -- 44
-missing$ -- 496
-newline$ -- 137
-num.names$ -- 88
-pop$ -- 929
+int.to.str$ -- 43
+missing$ -- 486
+newline$ -- 134
+num.names$ -- 86
+pop$ -- 909
 preamble$ -- 1
-purify$ -- 270
+purify$ -- 265
 quote$ -- 0
-skip$ -- 718
+skip$ -- 694
 stack$ -- 0
-substring$ -- 1416
-swap$ -- 1300
-text.length$ -- 45
+substring$ -- 1363
+swap$ -- 1268
+text.length$ -- 44
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 174
+type$ -- 170
 warning$ -- 2
-while$ -- 215
-width$ -- 46
-write$ -- 434
+while$ -- 209
+width$ -- 45
+write$ -- 423
 (There were 2 warnings)

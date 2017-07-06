@@ -13,12 +13,6 @@ Brown, J.C.: Calculation of a constant q spectral transform. The Journal of the
 Coello, C.A.C., Lamont, G.B., Van~Veldhuizen, D.A., et~al.: Evolutionary
   algorithms for solving multi-objective problems, vol.~5. Springer (2007)
 
-\bibitem{dahl2013improving}
-Dahl, G.E., Sainath, T.N., Hinton, G.E.: Improving deep neural networks for
-  lvcsr using rectified linear units and dropout. In: Acoustics, Speech and
-  Signal Processing (ICASSP), 2013 IEEE International Conference on. pp.
-  8609--8613. IEEE (2013)
-
 \bibitem{dahl2012context}
 Dahl, G.E., Yu, D., Deng, L., Acero, A.: Context-dependent pre-trained deep
   neural networks for large-vocabulary speech recognition. IEEE Transactions on
