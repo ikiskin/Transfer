@@ -37,6 +37,8 @@
 % Graphics
 \usepackage{placeins}
 \usepackage{graphicx}
+\usepackage{pgfgantt}
+
 % \graphicspath{{../../Papers/ECML/Images/}}
 \usepackage{caption}
 \captionsetup{compatibility=false}
@@ -537,6 +539,25 @@ Our completed work presents an application of deep learning for acoustic event d
 
 \subsection{Further Work}
 The proposal is structured by approximate timelines. We define short-term goals as targets to address in two to three months, medium-term as three to nine months, and long-term as over nine months.
+
+\begin{ganttchart}[vgrid, hgrid]{1}{18}
+\gantttitle{2017}{6} 
+\gantttitle{2018}{12} \\
+\gantttitlelist{7,...,12}{1}
+\gantttitlelist{1,...,12}{1} \\
+\ganttgroup{Group 1}{1}{7} \\
+\ganttbar{Task 1}{1}{2} \\
+\ganttbar{Task 2}{2}{7} \ganttnewline
+\ganttmilestone{Milestone}{7} \ganttnewline
+\ganttbar{Final Task}{8}{12}
+\ganttlink{elem2}{elem3}
+\ganttlink{elem3}{elem4}
+\end{ganttchart}
+\ikN{Will link goals to items on Gantt chart}
+
+
+
+
 \subsubsection{Short-term}
 \begin{enumerate}
 \item Following our work on mosquito detection with the use of wavelet-conditioned Convolutional Neural Networks, it is hypothesised that the wavelet transform is more effective than the STFT from an information-theoretic viewpoint. We wish to explore this hypothesis formally. 
@@ -574,6 +595,7 @@ We provide a risk assessment to identify critical points or uncertainties, and i
 \begin{enumerate} 
 \item High impact: Benefit to using wavelets may have been purely due to saliency of feature, in particular the logarithmic tiling of the time-frequency plane, working well for small datasets
 \item Medium impact: Advances in deep learning rendering our classification algorithms obsolete
+\label{bullet:highrisk2}
 \item Low impact: Changes in data acquisition rendering algorithm impractical or irrelevant (affecting the need to port/research efficiency of algorithms/DWT alternative)
 
 
@@ -584,7 +606,7 @@ We provide a risk assessment to identify critical points or uncertainties, and i
 \begin{enumerate} 
     \item Research why performance benefit was shown for small datasets, and investigate CNN performance relative to other salient features. The CNN was trialled with a set of salient features, which were shown not to increase performance, so it is unlikely that only the saliency is responsible for the boost in performance when combining CNNs with the wavelet transform.
     \item This would not discredit our scientific contribution, but would affect practical implementations of algorithms on portable devices. This has a greater effect on the outcome of the HumBug project, but not on the PhD. A further mitigation measure is to combine advances in the field with our own advances.
-	\item As with (2), this affects practical implementations. We could shift our focus to applications with dataset availability to suit our research needs, or adapt the algorithms to match new data availability. In the case of neural networks, this would involve adding further layers and model complexity without overfitting according to the new data size constraints.
+	\item As with (\ref{bullet:highrisk2}), this affects practical implementations. We could shift our focus to applications with dataset availability to suit our research needs, or adapt the algorithms to match new data availability. In the case of neural networks, this would involve adding further layers and model complexity without overfitting according to the new data size constraints.
 
 \end{enumerate}
 
