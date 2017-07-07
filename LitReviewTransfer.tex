@@ -540,20 +540,63 @@ Our completed work presents an application of deep learning for acoustic event d
 \subsection{Further Work}
 The proposal is structured by approximate timelines. We define short-term goals as targets to address in two to three months, medium-term as three to nine months, and long-term as over nine months.
 
-\begin{ganttchart}[vgrid, hgrid]{1}{18}
+\begin{ganttchart}[vgrid, hgrid]{1}{24}
 \gantttitle{2017}{6} 
-\gantttitle{2018}{12} \\
+\gantttitle{2018}{12} 
+\gantttitle{2019}{6}\\
 \gantttitlelist{7,...,12}{1}
-\gantttitlelist{1,...,12}{1} \\
-\ganttgroup{Group 1}{1}{7} \\
-\ganttbar{Task 1}{1}{2} \\
-\ganttbar{Task 2}{2}{7} \ganttnewline
-\ganttmilestone{Milestone}{7} \ganttnewline
-\ganttbar{Final Task}{8}{12}
-\ganttlink{elem2}{elem3}
-\ganttlink{elem3}{elem4}
+\gantttitlelist{1,...,12}{1} 
+\gantttitlelist{1,...,6}{1}\\
+\ganttgroup{Short-term}{1}{3} \\
+\ganttbar{1. Wavelet theory}{1}{2} \\
+\ganttlinkedbar{3. Feature learning}{3}{5} \\
+\ganttbar{2. Data augmentation}{1}{3} \ganttnewline
+\ganttgroup{Medium-term}{4}{10} \\
+\ganttbar{2. NN automation}{6}{10} \\
+\ganttbar{1. DKL}{4}{8} \\
+\ganttgroup{Long-term}{1}{24} \\
+\ganttbar{1. DKL-wavelet}{11}{16} \\
+\ganttbar{2. Dynamic detector}{1}{24} \ganttnewline
+%\ganttmilestone{Milestone}{7} \ganttnewline
+%\ganttbar{Final Task}{8}{12}
+\ganttlink{elem2}{elem5}
+\ganttlink{elem5}{elem8}
+\ganttlink{elem6}{elem8}
 \end{ganttchart}
-\ikN{Will link goals to items on Gantt chart}
+
+
+
+
+
+
+% \begin{figure}[tpb]
+% \centering
+% \noindent\resizebox{0.7\textwidth}{!}{
+% \begin{ganttchart}[vgrid, hgrid]{1}{24} % 50 weeks
+
+% \gantttitle{2016}{6}
+% \gantttitle{2017}{12}
+% \gantttitle{2018}{6} \\
+% \ganttbar{(1)}{1}{1} \\ 
+% \ganttbar{(2)}{2}{2} \\ 
+% \ganttbar{(3)}{3}{3} \\ 
+% \ganttmilestone{(4)}{3} \\ 
+% \ganttbar{(5)}{4}{6} \\
+% \ganttbar{(6)}{7}{12} \\
+% \ganttmilestone{(7)}{12} \\
+% \ganttbar{(8)}{13}{16} \\
+% \ganttbar{(9)}{17}{20} \\
+% \ganttmilestone{(10)}{20} \\
+% \ganttbar{(11)}{21}{24} \\
+% \ganttmilestone{(12)}{24}
+% \end{ganttchart}
+% }
+% \caption{Gantt chart showing the planning timeline for Future thesis work on PIE over the next 24 months: (1) Investigating new NBV selection metrics, (2) Comparing quantitative performance with state-of-the-art approaches, (3) Testing on real world data, (4) Transfer of Status and submission to ICRA 2018, (5) Implementation of PIE for mobile platforms, (6) Deploy PIE on an autonomous platform, (7) Confirmation of Status and paper/journal submission, (8) Work on parameter reduction, (9) Implement feature recognition and change detection for real world applications, (10) Paper/journal submission, (11) Thesis writing and (12) Thesis submission.}
+% \label{fig:gantt}
+% \end{figure}
+
+
+
 
 
 
