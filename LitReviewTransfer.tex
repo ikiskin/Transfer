@@ -97,6 +97,70 @@
 \newcommand{\msn}[1]{\todo[color=gray!30]{[ms] #1}}
 
 \begin{document}
+
+\begin{titlepage}
+	\enlargethispage{\footskip}
+	\setlength{\parindent}{0pt}
+	
+	\begin{figure}[t]
+		\centering
+		\includegraphics[scale=0.3]{ox_brand_cmyk_pos-eps-converted-to.pdf}%
+		\hspace{0.3cm}
+		\includegraphics[scale=0.3]{aims-logo.pdf}
+	\end{figure}   
+	
+	\begin{center}
+		\onehalfspacing
+		\large
+		\textsc{University of Oxford}\\
+		\textsc{Department Of Engineering Science}
+		
+		\vspace{5mm}
+		
+		\Large
+		Transfer of Status
+		
+		\vspace{20mm}
+		
+		\huge
+		\textbf{Signal Detection: contributions from Image Recognition, Speech Recognition, and Acoustic Event Detection.}
+	\end{center}
+	
+	\vspace{23mm}
+	
+	\begin{minipage}[t]{0.5\textwidth}
+		\raggedright
+		\onehalfspacing
+		\large
+		\textit{Author}:\\[.5\baselineskip]
+		Ivan Kiskin
+	\end{minipage}%
+	\begin{minipage}[t]{0.5\textwidth}
+		\raggedleft
+		\onehalfspacing
+		\large
+		\textit{Supervisor}:\\[.5\baselineskip]
+		Professor Stephen Roberts
+		
+		\vspace{5mm}
+	
+	\end{minipage}%
+	
+	\vspace{\fill}
+	
+	\begin{minipage}[b]{\textwidth}
+		\centering
+		\onehalfspacing
+		\large   
+		Trinity 2017\\
+	%	Academic Year 2014/2015
+		
+		\vspace{20mm} 
+	\end{minipage}%
+	
+\end{titlepage}
+
+
 %
 %\setcounter{tocdepth}{4}
 %\tableofcontents
@@ -105,69 +169,25 @@
 %
 \pagestyle{headings}  % switches on printing of running heads
 
-%
-\mainmatter              % start of the contributions
-
-
-\title{Signal Detection with Deep Learning and Kernel Methods}
-%
-
-%\titlerunning{Hamiltonian Mechanics}  % abbreviated title (for running head)
-%                                     also used for the TOC unless
-%                                     \toctitle is used
-%
-\author{Ivan Kiskin\inst{1,2}}
-%
-% \authorrunning{Ivar Ekeland et al.} % abbreviated author list (for running head)
-%
-%%%% list of authors for the TOC (use if author list has to be modified)
-% \tocauthor{Ivar Ekeland, Roger Temam, Jeffrey Dean, David Grove,
-% Craig Chambers, Kim B. Bruce, and Elisa Bertino}
-%
-\institute{University of Oxford, Department of Engineering, Oxford OX1 3PJ, UK, \\
-\and
-\email{\textrm{ikiskin@robots.ox.ac.uk}}, 
-}
-% \and
-% \email{\textrm{\{}ikiskin, ber, dzilli, sjrob\textrm{\}}@robots.ox.ac.uk}, 
-% % \and
-% % \email{ber@robots.ox.ac.uk}\\
-% \institute{test, \\
-% \and
-% \email{theo.windebank@stcatz.ox.ac.uk}}\\
-% \and
-% \email{dzilli@robots.ox.ac.uk}\\
-% \and
-% \email{marianne.sinka@zoo.ox.ac.uk}
-% % \and
-% \email{sjrob@robots.ox.ac.uk}
-%\and
-%\institute{University of Oxford, Department of Zoology, Oxford OX2 6GG, UK}}
-
-
-\maketitle              % typeset the title of the contribution
-
 
 
 
 \ikN{General notes: \\
-Title sucks\\
+Stopped checking refs at 18 \\
 Certain proposed lines of work in the proposal section could benefit from a literature review in those suggested fields. E.g.: \\
  Have not spoken about wavelets at all in literature review.}
 \section{Introduction}
-
-Signal detection is a very broad research area with contributions from a wide range of academic disciplines. We define signal detection as the ability to discern information-bearing patterns from random patterns that contain no information. The aim of the DPhil is to progress the state of the art by advancing real-world applications.  The motivation to excel in applications aligns with the need to innovate algorithms and architectures.
-
-The literature review critically covers contributions to signal processing from deep learning in the context of speech detection, image recognition, and acoustic event detection. The research is examined in chronological order, following the progression of the state of the art in specific fields. We narrow down our focus to audio signals and images and highlight the potential areas in need of further improvements\ikn{Need to do this}, forming the basis of our research efforts. Section \ref{sec:speechrecognition} focuses on the speech recognition field, due to its competitive nature and associated rich publication record, as well as due to its similarity to our chosen application domains.\ikn{Which are?} The progress in state-of-the-art speech recognition was fuelled by both industry and academia due to its importance in human-machine interaction systems, that arguably are essential to general artificial intelligence \cite{rabiner1993fundamentals}, \cite{juang2005automatic}.
+We define signal detection as the ability to discern information-bearing patterns from random patterns that contain no information. 
+% The motivation to excel in applications aligns with the need to innovate algorithms and architectures.
+This literature review critically covers contributions to signal detection from deep learning in the context of speech detection, image recognition, and acoustic event detection. The research is examined in chronological order, following the progression of the state of the art in specific fields. We narrow our focus to audio signals and images and highlight potential areas in need of further improvements\ikn{Need to do this}. Section \ref{sec:speechrecognition} focuses on the speech recognition field, due to its competitive nature and associated rich publication record. The progress in state-of-the-art speech recognition was fuelled by both industry and academia due to its importance in human-machine interaction systems, that arguably are essential to general artificial intelligence \cite{rabiner1993fundamentals}, \cite{juang2005automatic}.
 
 Section \ref{sec:imagerecognition} focuses on image recognition, the most competitive field in recent years due to the multitude of established image recognition and object detection challenges (with over 50 participating institutions by 2014 in the ImageNet Large Scale Visual Recognition Challenge alone \cite{russakovsky2014imagenet}). As a result, innovations have become influential to related fields in the scientific literature.
 Our focus then shifts to bird species recognition and acoustic event detection in Sections \ref{sec:birdrecognition} and \ref{sec:AED} as fields where innovation was driven by progress in both speech and image recognition.
 
+In each field we remark how advancements are relevant to the subject of our paper: a practical application in mosquito detection.
 % We further highlight detection methods from traditional signal  processing literature  that show most potential promise of transferability to our application in Section  \ref{sec:traditional}.
 
-\emph{Finally, we outline how reviewed methodology directly applies to our application of mosquito detection, which falls within the scope of noisy audio signal detection.} \ikn{To do}
-
-The literature review is followed by the research proposal which includes a concise summary of completed work, future work, and a risk assessment. Future work is broken down into short, medium and long-term goals in Section \ref{sec:proposal}. We conclude with .... in Section \ref{sec:conclusion}.
+The literature review is followed by the research proposal which includes a concise summary of completed work, future work, and a risk assessment. Future work is broken down into short, medium and long-term goals in Section \ref{sec:proposal} and presented on a Gantt chart. We conclude by summarising general scientific trends discussed in this literature review and our paper in Section \ref{sec:litreviewconclusion}.
 
 
 
@@ -175,7 +195,7 @@ The literature review is followed by the research proposal which includes a conc
 \label{sec:speechrecognition}
 Due to its significance in academia and industry, great attention is devoted to the field of speech recognition. Speech recognition has been a prominently researched field due to its critical role in human-machine interactions. The ability to accurately transcribe spoken text would influence a diverse range of applications, and hence has been the subject of prominent study \cite{juang2005automatic}. 
 
-We choose to concentrate on work postdating approximately 1990, as it forms the basis of modern methods which are most applicable to current research. Major breakthroughs in early methods came from a paradigm shift to more\ikn{Need to discuss prev methods?} statistics-based methods, such as the Hidden Markov Model (HMM) \cite{juang2005automatic}. An HMM is a statistical model, where the system is modelled as a Markov process with discrete latent variables. An HMM can be interpreted as an extension of a mixture model\ikn{Need to define?} in which latent variables are related by a Markov process \cite{bishop2006pattern}. The discrete multinomial latent variables describe which component of the mixture is responsible for generating the corresponding observation.
+We choose to concentrate on work postdating approximately 1990, as it forms the basis of modern methods which are most applicable to current research. Major breakthroughs in early methods came from a paradigm shift to more statistics-based methods, such as the Hidden Markov Model (HMM) \cite{juang2005automatic}. An HMM is a statistical model, where the system is modelled as a Markov process with discrete latent variables. An HMM can be interpreted as an extension of a mixture model \cite{lindsay1995mixture} in which latent variables are related by a Markov process \cite{bishop2006pattern}. The discrete multinomial latent variables describe which component of the mixture is responsible for generating the corresponding observation.
 
 By defining a state transition matrix (between states $s_i$) and the state output distribution, the HMM can be used as a generative classifier (for predicting $y_i$). An example scenario is given in Figure \ref{fig:HMM}.
 
@@ -213,7 +233,7 @@ By defining a state transition matrix (between states $s_i$) and the state outpu
 \caption{An HMM with 4 states which can emit 2 discrete symbols $y_1$ or $y_2$.
 $a_{ij}$ is the probability to transition from state $s_i$ to state $s_j$.
 $b_j(y_k)$ is the probability to emit symbol $y_k$ in state $s_j$.
-In this particular HMM, states can only reach themselves or the adjacent state.\ikN{Check wording, might be copy-pasted (reference source)}}
+In this particular HMM, states can only reach themselves or the adjacent state.}
 \label{fig:HMM}
 \end{figure}
 
@@ -228,18 +248,18 @@ The HMM formed the definitive state of the art in the early 1990s \cite{rabiner1
 %Prominent contributions \cite{rabiner1993fundamentals} (book, fundamentals of theory etc), [cite2]. The improvements came from the introduction of ... (better theoretical understanding?/more powerful hardware? more data?)
 
 
-To improve the quality of feature representations that are used as inputs to the HMM, there was a shift to hybrid Deep Neural Network Hidden Markov systems (DNN-HMMs) from Gaussian Mixture Model HMMs (GMM-HMMs). GMMs in GMM-HMM systems have a serious shortcoming in that they are statistically inefficient for modeling data that lie on or near a nonlinear manifold in the data space \cite{hinton2012deep}. This is problematic as speech is inherently highly non-linear [cit]. DNN-HMM design follows traditional GMM-HMM systems. As the DNN is used to model the posterior probability of a state given an observation vector, a prior is required. The prior is commonly obtained with a Viterbi algorithm of the GMM-HMM approach and is given in the form of an initial labeled state sequence \cite{li2013hybrid}. In acoustic modeling for large vocabulary continuous speech recognition (LVCSR) tasks, DNN-HMMs were shown by Dahl et al. \cite{dahl2012context} to give significant gains over state-of-the-art GMM-HMM systems in a wide variety of small and large vocabulary tasks. Reductions in relative error of 16.0 \% and 23.2 \% were demonstrated using context-dependent DNN-HMMs over context-dependent GMM-HMMs. Additionally, it was found that DNNs gave much higher accuracy when large training datasets supported the greatly increased model capacity \cite{deng2014achievements}
+To improve the quality of feature representations that are used as inputs to the HMM, there was a shift to hybrid Deep Neural Network Hidden Markov systems (DNN-HMMs) from Gaussian Mixture Model HMMs (GMM-HMMs). GMMs in GMM-HMM systems have a serious shortcoming in that they are statistically inefficient for modelling data that lie on or near a non-linear manifold in the data space \cite{hinton2012deep}. This is problematic as speech is inherently highly non-linear [cit]. DNN-HMM design follows traditional GMM-HMM systems. As the DNN is used to model the posterior probability of a state given an observation vector, a prior is required. The prior is commonly obtained with the Viterbi algorithm of the GMM-HMM approach and is given in the form of an initial labelled state sequence \cite{li2013hybrid}. In acoustic modelling for large vocabulary continuous speech recognition (LVCSR) tasks, DNN-HMMs were shown by Dahl et al. \cite{dahl2012context} to give significant gains over state-of-the-art GMM-HMM systems in a wide variety of small and large vocabulary tasks. Reductions in relative error of 16.0\,\% and 23.2\,\% were demonstrated using context-dependent DNN-HMMs over context-dependent GMM-HMMs. Additionally, it was found that DNNs gave much higher accuracy when large training datasets supported the greatly increased model capacity \cite{deng2014achievements}
 
 In GMM-HMM systems the feature representation is hand-crafted by the user, typically in the form of Mel-frequency cepstral coefficients (MFCCs). The Fourier transform can be temporally windowed with a smoothing window function to create a Short-time Fourier transform (STFT). MFCCs create lower-dimensional representations by taking the STFT, applying a non-linear transform (the logarithm), pooling, and a final affine transform. 
 
 
- MFCCs, GMMs and HMMs co-evolved in speech recognition in an era with limited computational power. MFCCs lose significant information from the sound wave, but preserve higher order low-dimensional information that is required for discrimination. This is to partially overcome the very strong conditional independence assumptions of HMMs \cite{mohamed2012acoustic}, as well as improve tractability of the problem [cit?].
+ MFCCs, GMMs and HMMs co-evolved in speech recognition in an era with limited computational power. MFCCs lose significant information from the sound wave, but preserve higher order low-dimensional information that is required for discrimination. This is to partially overcome the very strong conditional independence assumptions of HMMs \cite{mohamed2012acoustic}, as well as improve tractability of the problem.
 % \emph{MFCCs, GMMs, and HMMs co-evolved as a way of doing speech recognition when computers were too slow to explore more computationally intensive approaches. MFCCs throw away a lot of the information in the sound wave, but preserve most of the information required for discrimination. By including temporal differences, MFCCs partially overcome the very strong conditional independence assumption of HMMs, namely that successive frames are independent given the hidden state of the HMM. The temporal differences also allow diagonal covariance Gaussians to model the strong temporal covariances by reducing these particular pairwise covariances to individual coefficients.} 
 %Could be bullshit: The hand-crafted phoneme representation front-end is replaced with ....
 Whereas MFCCs led to significant accuracy improvements in GMM-HMM systems despite their known loss of information introduced, further advancements came from reducing the specificity of the signal transforms that were used to form feature representations.
 For example, Mohamed et al. (2012a) \cite{mohamed2012acoustic} and Li et al., (2012) [cant find cit?] showed significantly lowered automatic speech recognition errors using large-scale DNNs when moving from the MFCC features back to more primitive (Mel-scaled) filter-bank features. The results implicated that DNNs are able to learn a better representation from Mel-scaled features than the final step of the MFCC transform: the discrete cosine transform. The original use of the cosine transform is justified by its approximate de-correlation of feature components. This is of importance to using diagonal covariance matrices with GMMs. This restriction however does not apply to deep learning models, as their strength in modelling data correlation makes the transform redundant. 
 
-There is a possibility of future work to focus on training directly on raw waveforms, although current research has been unable to extract equivalent performance in audio applications, discussed further discussed at the end of Section \ref{sec:AED}.
+There is a possibility of future work to focus on training directly on raw waveforms, although current research has been unable to extract equivalent performance in audio applications, discussed further at the end of Section \ref{sec:AED}.
 
 
 %Names of subsections in paper (not sure what to use for): Better optimisation, architectures, transfer learning and noise robustness
@@ -254,33 +274,28 @@ There is a possibility of future work to focus on training directly on raw wavef
 
 
 
-HMMs suffer inherent limitations speech recognition applications. The assumption that successive observations are independent, as well as the probability of being in a state only depending on the state at the previous time step, do not strictly hold true \cite{rabiner1989tutorial}. The final major change in recent literature was the replacement of the HMM in its entirety, as well as the introduction of convolutional neural networks (CNNs) and Long short-term memory networks (LSTMs) for feature generation\ikn{Define here?}. In large-scale speech tasks, deep convolutional nets have been shown to significantly outperform DNN-HMM systems by Sainath et al. \cite{sainath2015deep}. Their method trialled a combination of salient features (logarithmically spaced Fourier coefficients and other features stacked into one vector as used in \cite{soltau2010ibm}) to train the CNNs.
+HMMs suffer inherent limitations speech recognition applications. The assumption that successive observations are independent, as well as the probability of being in a state only depending on the state at the previous time step, do not strictly hold true \cite{rabiner1989tutorial}. The final major change in recent literature was the replacement of the HMM in its entirety, as well as the introduction of convolutional neural networks (CNNs) and Long Short-Term Memory networks (LSTMs) for feature generation. In large-scale speech tasks, deep convolutional nets have been shown to significantly outperform DNN-HMM systems by Sainath et al. \cite{sainath2015deep}. Their method trialled a combination of salient features (logarithmically spaced Fourier coefficients and other features stacked into one vector as used in \cite{soltau2010ibm}) to train the CNNs.
 
-Due to the relevancy to current research \ikn{Re-word} we address the following implementation details. Compared to fully end-to-end trained DNNs\ikn{Check claim}, CNNs capture translational invariance with far fewer parameters by averaging the outputs of hidden units in different local time and frequency regions. The CNNs and fully-connected DNNs used 1024 hidden units per fully connected layer with sigmoid non-linearities. The last layer is a softmax layer with 512 output targets. The 512 targets were determined as a result of clustering context-dependent GMM/HMM states. The authors note decreasing performance when increasing layer depth beyond 2. 
+Due to the relevancy to current research, as well as the method implemented in our paper \cite{kiskin2017mosquito}, we choose to address particular implementation details. Compared to fully end-to-end trained DNNs, CNNs capture translational invariance with far fewer parameters by averaging the outputs of hidden units in different local time and frequency regions. The CNNs and fully-connected DNNs used 1024 hidden units per fully connected layer with sigmoid non-linearities. The last layer is a softmax layer with 512 output targets. The 512 targets were determined as a result of clustering context-dependent GMM-HMM states. The authors note decreasing performance when increasing layer depth beyond 2. This indicates that increasing network depth will not always yield performance benefits, as was consistent with our application \cite[Section 3.2]{kiskin2017mosquito}.
 	%\item Full weight sharing: allowing multiple convolutional layers, encouraging deeper networks (c.f. limited weight sharing: limited to one convolutional layer)
 	
 	%\item Pooling in time with overlap can thought of as a way to smooth out the signal in time, another form of regularization.
  
 
 
-Further improvement was found with the application of recurrent neural networks \cite{graves2013speech}. The authors noted at the time of publication in 2013 that while HMM-RNN systems had seen a recent revival, they did not perform as well as deep networks. As with Sainath et al., the authors favoured to train RNNs ‘end-to-end’ fully, instead of combining RNNs with HMMs. This approach allowed RNNs to exploit their larger state-space capacity and richer dynamics, as well as avoid using potentially incorrect alignments as training targets. The combination of Long Short-term Memory [cit, 11 in orig paper], an RNN architecture, with end-to-end training has proved especially effective for cursive handwriting recognition \cite{graves2008unconstrained,graves2009offline}. Graves et al. \cite{graves2013speech} have shown that combination of deep, bidirectional LSTM RNNs with end-to-end training gave state-of-the-art results in phoneme recognition, and note that the next step is to extend the system to large vocabulary speech recognition. A further proposed direction is to combine CNNs and deep LSTMs.
+Further improvement was found with the application of recurrent neural networks \cite{graves2013speech}. The authors noted at the time of publication in 2013 that while HMM-RNN systems had seen a recent revival, they did not perform as well as deep networks. As with Sainath et al., the authors favoured to train RNNs ‘end-to-end’ fully, instead of combining RNNs with HMMs. This approach allowed RNNs to exploit their larger state-space capacity and richer dynamics, as well as avoid using potentially incorrect alignments as training targets. The combination of LSTMs with end-to-end training has proved especially effective for cursive handwriting recognition \cite{graves2008unconstrained,graves2009offline}. Graves et al. \cite{graves2013speech} have shown that combination of deep, bidirectional LSTM RNNs with end-to-end training gave state-of-the-art results in phoneme recognition, and note that the next step is to extend the system to large vocabulary speech recognition. The authors further propose to combine CNNs and deep LSTMs. 
 
-We note the authors use the same feature representation (mel-scaled coefficients, with their first and second derivatives and a few extras), and propose the investigation of moving towards autonomous learning of the feature space (as discussed in the Proposal in Section \ref{sec:proposal}).
-\subsubsection{Relevance to our application?}
-Speech recognition, whether it is predicting particular phonemes, or their sequences, requires predicting a dynamic signal that is highly nonstationary and embedded in noise. The field has strong transferability to general audio event recognition, and indeed methods developed in speech recognition have been applied as black-boxes with little modification to tasks such as bird recognition, which we discuss in Section \ref{sec:birdrecognition}.
-
-
-\ikN{I think I have to talk about relevance to mosquito detection in particular}\srN{put in and make decision later - probably best in}
+We note the authors use the same feature representation (Mel-scaled coefficients, with their first and second derivatives and a few extras), and propose the investigation of moving towards autonomous learning of the feature space (as discussed in the Proposal in Section \ref{sec:proposal}).
+\subsubsection{Transferability}
+Speech recognition, whether it is predicting particular phonemes, or their sequences, requires predicting a dynamic signal that is highly nonstationary and embedded in noise. The field has strong transferability to general audio event recognition, and indeed methods developed in speech recognition have been frequently applied as black-boxes with little modification to tasks such as bird recognition, which we discuss in Section \ref{sec:birdrecognition}. In addition, it has inspired many methods used in insect detection, further discussed in the literature review of our paper \cite[Section 2.1]{kiskin2017mosquito}.
 
 
 \section{Image recognition}
 \label{sec:imagerecognition}
-\subsubsection{State of art before deep learning}
-\ikN{Describe briefly}
-Deep learning methods in image recognition have strong parallels with deep learning methods in acoustics. This stems from the fundamental frequency representation currently in use with sounds--the spectrogram. A spectrogram representation is a two-dimensional matrix with intensity measurements as entries. This is equivalent to a black and white image representation. Due to the incredibly large and concentrated research efforts, as evidenced by the number of entries to a wide variety of image recognition tasks \cite{russakovsky2014imagenet,ILSVRC15}, a vast range of sub-fields in neural networks underwent incremental improvements. We structure this section by noteworthy changes in characteristics of the networks.
+Deep learning methods in image recognition have strong parallels with deep learning methods in acoustics. This stems from the fundamental frequency representation currently in use with sounds--the spectrogram. A spectrogram representation is a two-dimensional matrix with intensity measurements as entries. This is equivalent to a black and white image representation. With a vast number of entries to a wide variety of image recognition tasks \cite{russakovsky2014imagenet,ILSVRC15}, a wide range of sub-fields in neural networks underwent incremental improvements. We structure this section by noteworthy changes in characteristics of the networks.
 
 \subsection{Depth}
-A primary driving factor of progress in deep learning has been network depth. This was first formally addressed by Simonyan and Zisserman by steadily increasing the depth of the network by addition of convolutional layers, while fixing the remaining parameters of the architecture. This was feasible due to the use of very small convolution filters in all layers \cite{simonyan2014very}. The effect was to increase model complexity by allowing more non-linearities, and hence make the decision function more discriminative. Without spatial pooling in between convolutional layers, two $3 \times 3$ layers have an effective receptive field size of a single $5 \times 5$ layer. In addition, this results in a decrease of parameters (with an 81 \% reduction when replacing a $7 \times 7$ receptive field with three $3\times3$ layers). As a result, in addition to accuracy improvements, faster gradient back-propagation and hence training times were also achieved. This trend has continued in ILSVRC submissions, with winners of the [...] challenge consisting of CNNs with depth [5,16,32, and finally 152].
+A primary driving factor of progress in deep learning has been network depth. This was first formally addressed by Simonyan and Zisserman \cite{simonyan2014very} by steadily increasing the depth of the network by addition of convolutional layers, while fixing the remaining parameters of the architecture. This was feasible due to the use of very small convolution filters in all layers. The effect was to increase model complexity by allowing more non-linearities, and hence make the decision function more discriminative. Without spatial pooling in between convolutional layers, two $3 \times 3$ layers have an effective receptive field size of a single $5 \times 5$ layer. In addition, this results in a decrease of parameters (with an 81\,\% reduction when replacing a $7 \times 7$ receptive field with three $3\times3$ layers). As a result, in addition to accuracy improvements, faster gradient back-propagation and hence training times were also achieved. This trend has continued in ILSVRC submissions, with challenge winners employing CNNs with depth 3, 19, and finally 152 \cite{krizhevsky2012imagenet,simonyan2014very,he2016deep} ranging from 2012 to 2016.
 
 
 % Up to 2014:
@@ -320,14 +335,13 @@ A primary driving factor of progress in deep learning has been network depth. Th
 \subsection{Residual learning}
 A recent advancement was presented by He et al. \cite{he2016deep} as deep residual learning. Their submission resulted in first place placements on ImageNet detection, ImageNet localization, COCO detection, and COCO segmentation in ILSVRC \&
 COCO 2015 competitions. The authors argue that the breadth of categories in which excellent results are achieved is strong evidence that the method is applicable in other vision and non-vision problems. 
-\ikN{Need link here e.g. The causal mechanics are explained by the author as follows...}
-The authors define $\mathcal{H}(x)$ as an underlying mapping to be learnt by a few stacked layers of the network, with $x$ denoting the inputs to these layers. The authors argue that ``if one hypothesizes that multiple nonlinear layers can asymptotically approximate complicated functions, then it is equivalent to hypothesize that they can asymptotically approximate the residual functions, i.e., $\mathcal{H}(x) - x$". Instead of approximating $\mathcal{H}(x)$, the equivalent layers are approximating the residual function $F(x) := \mathcal{H}(x) - x$. The original function thus becomes $F(x)+x$. 
+The causal mechanics are explained as follows. The authors define $\mathcal{H}(x)$ as an underlying mapping to be learnt by a few stacked layers of the network, with $x$ denoting the inputs to these layers. The authors argue that ``if one hypothesizes that multiple nonlinear layers can asymptotically approximate complicated functions, then it is equivalent to hypothesize that they can asymptotically approximate the residual functions, i.e., $\mathcal{H}(x) - x$". Instead of approximating $\mathcal{H}(x)$, the equivalent layers are approximating the residual function $F(x) := \mathcal{H}(x) - x$. The original function thus becomes $F(x)+x$. 
 
-As a result, the mathematically equivalent formulations can be implemented with architecture modifications via identity mappings \cite[figx]{he2016deep}. The improved rate of learning deep architectures under this formulation allows the use of extremely deep networks. The 152-layer residual network was at the time of submission the deepest network ever presented at ImageNet, while still having lower complexity than VGG proposed in \cite{simonyan2014very}. The improvement is in line with the philosophy discussed in the previous sectio/by Simonyan and Zisserman.
+As a result, the mathematically equivalent formulations can be implemented with architecture modifications via identity shortcut mappings \cite[Figure3]{he2016deep}. The improved rate of learning deep architectures under this formulation allows the use of extremely deep networks. The 152-layer residual network was at the time of submission the deepest network ever presented at ImageNet, while still having lower complexity than VGG-19 proposed in \cite{simonyan2014very}. The improvement is in line with the philosophy discussed in the previous subsection.
 
 
 \subsection{Data augmentation}
-The prominent applications where neural networks significantly outperformed other means of classification all involved large datasets. Since its inception in 2009, the CIFAR10/100 dataset \cite{krizhevsky2009learning} served as an extremely useful testbed with over 1000 citations at the time of writing. The set contained 60,000 labelled samples, which were split into either 10 or 100 classes. At this date, since its introduction in [?] ImageNet contains over 14 million images, of which over a million come with bounding box annotations. For details of the ImageNet construction the interested reader is directed to \cite[Section 3]{ILSVRC15}, which discusses the crowdsourcing strategy for its three categories: image classification, single-object localisation, and object detection. Simonyan and Zisserman \cite{simonyan2014very} attribute much increase in performance due to computational hardware (GPU computing) and dataset availability. However with scarce data, and even with healthy datasets, it has been common practice to generate additional training data by applying transformations to the original data \cite{hinton2012improving}. The practice can be traced back to \cite{simard2003best}, where the authors note that synthesising plausible transformations of data is simple, however learning transformation invariance by a model can be arbitrarily complicated. If the data is both scarce, and the distribution to be learned has transformation-invariance properties, generating additional data using transformations may improve performance. Indeed this practice has become widely adopted in the neural network literature, with common transformations including translations, horizontal reflections, as well as warping functions [cit warp?]. In addition, modifications to intensities of RGB channels in training images \cite{krizhevsky2012imagenet} have been applied (similar to synthesising and adding various noise profiles for acoustics). The authors note that the transformations artificially increase the dataset size by over a factor of 2048 for the affine transformations alone. Despite the high inter-dependence of samples, the augmentation offers a form of normalisation, allowing the use of deeper networks while avoiding overfitting. As established, depth plays an important role in overall performance, which places great emphasis on producing as large of a training data set as possible. The augmentation has become common practice as evidenced in ILSVRC submission winners throughout the years \cite[check 3rd ref]{simonyan2014very,he2016deep,krizhevsky2012imagenet}.\ikN{Maybe link to proposal of data augmentations. Note also, this was performed in BirdCLEF}
+The prominent applications where neural networks significantly outperformed other means of classification all involved large datasets. Since its inception in 2009, the CIFAR10/100 dataset \cite{krizhevsky2009learning} served as an extremely useful testbed with over 1000 citations at the time of writing. The set contained 60,000 labelled samples, which were split into either 10 or 100 classes. At this date, since its introduction in [?] ImageNet contains over 14 million images, of which over a million come with bounding box annotations. For details of the ImageNet construction the interested reader is directed to \cite[Section 3]{ILSVRC15}, which discusses the crowdsourcing strategy for its three categories: image classification, single-object localisation, and object detection. Simonyan and Zisserman \cite{simonyan2014very} attribute much increase in performance due to computational hardware (GPU computing) and dataset availability. However with scarce data, and even with healthy datasets, it has been common practice to generate additional training data by applying transformations to the original data \cite{hinton2012improving}. The practice can be traced back to \cite{simard2003best}, where the authors note that synthesising plausible transformations of data is simple, however learning transformation invariance by a model can be arbitrarily complicated. If the data is both scarce, and the distribution to be learned has transformation-invariance properties, generating additional data using transformations may improve performance. Indeed this practice has become widely adopted in the neural network literature, with common transformations including translations, horizontal reflections, as well as warping functions [cit warp?]. In addition, modifications to intensities of RGB channels in training images \cite{krizhevsky2012imagenet} have been applied (similar to synthesising and adding various noise profiles for acoustics). The authors note that the transformations artificially increase the dataset size by over a factor of 2048 for the affine transformations alone. Despite the high inter-dependence of samples, the augmentation offers a form of normalisation, allowing the use of deeper networks while avoiding overfitting. As established, depth plays an important role in overall performance, which places great emphasis on producing as large of a training data set as possible. The augmentation has become common practice as evidenced in competition submission winners throughout the years \cite{simonyan2014very,he2016deep,krizhevsky2012imagenet}. This practice also served useful in audio applications (discussed in Section \ref{sec:birdrecognition}. Due to the scarcity of samples in our application, we propose to improve on our paper by augmenting our datasets with transformed versions of the training samples. This could include a variety of noise profiles, slight alterations in audio intensity, as well as minor pitch shifts.
 
 
 
@@ -337,9 +351,8 @@ The prominent applications where neural networks significantly outperformed othe
 To gain insight into understanding deep learning models, a less established practice that is gaining traction in recent years, is to view CNNs and other network configurations as instances of Gaussian Processes, or other kernel-learning methods [could be BS, find cit,cit,cit]. In transition to fully probabilistic models, some works attempt to build hybrid neural network/Gaussian process models to retain the performance benefit of deep learning methods, while also conforming to probabilistic predictions. Wilson et. al \cite{wilson2016deep} showed that jointly learning deep kernel parameters has advantages over training a GP applied to the output layer of a trained deep neural network. In addition, the jointly learned model outperformed the equivalent deep neural network, as well as more primitive CNN/DBN-GP combinations, on the MNIST dataset. The work forms the basis of a medium-term proposed goal addressed in Section \ref{sec:proposal}.
 
 
-\srN{point out that only very recently have techniques from image analysis come into the signal world}
 \subsection{Transferability}
-Despite immense popularity in image recognition, until recently there were relatively few convincing applications in signal processing. Similarly to how handcrafted scale-invariant features, Difference of Gaussians, and Histograms of Oriented Gradients [cit,cit,cit] were phased out with deep learning, handcrafted feature descriptors are beginning to undergo the same fate in acoustic signal processing. We illustrate this in Section \ref{sec:birdrecognition} with a bird recognition case study equivalent to ILSVRC. We further support this claim by reviewing advancements in the general field of acoustic event detection in Section \ref{sec:AED}.
+Despite immense popularity in image recognition, until recently there were relatively few convincing applications in signal processing. Similarly to how handcrafted scale-invariant features, Difference of Gaussians, and Histograms of Oriented Gradients [cit,cit,cit] were phased out with the advent of deep learning, handcrafted feature descriptors are beginning to undergo the same fate in acoustic signal processing. We illustrate this in Section \ref{sec:birdrecognition} with a bird recognition case study equivalent to ILSVRC. We further support this claim by reviewing advancements in the general field of acoustic event detection in Section \ref{sec:AED}.
 
 
 
@@ -364,7 +377,7 @@ To draw further parallels to our application\ikn{address explicitly}, we study r
 
 
 
-The increased attention to deep learning methods can be evidenced at the Music Information Retrieval Evaluation eXchange (MIREX). Amongst many, example tasks include recognising musical chords, tempos, and genres \cite{mirex2016}. The majority of challenges require detecting a specific composition of frequencies localised in time. For instance, classifying musical instruments that play identical notes requires detection of the harmonic structure of the tones produced. This is analogous to many real-world problems, as the ratios of amplitudes of harmonics define particular sounds. Correct detection could allow discrimination of information-bearing harmonic stacks from background noise occurring at the same fundamental frequency. For example, the task may be to identify an insect flying in a room with constant noise produced by a fan at the same fundamental frequency. As part of our candidate challenge of accurately detecting mosquitoes in our paper [ref], this case was evidenced in our collected training data.\ikN{Making specific reference to mosquito detection but nowhere else?}
+The increased attention to deep learning methods can be evidenced at the Music Information Retrieval Evaluation eXchange (MIREX). Amongst many, example tasks include recognising musical chords, tempos, and genres \cite{mirex2016}. The majority of challenges require detecting a specific composition of frequencies localised in time. For instance, classifying musical instruments that play identical notes requires detection of the harmonic structure of the tones produced. This is analogous to many real-world problems, as the ratios of amplitudes of harmonics define particular sounds. Correct detection could allow discrimination of information-bearing harmonic stacks from background noise occurring at the same fundamental frequency. For example, the task may be to identify an insect flying in a room with constant noise produced by a fan at the same fundamental frequency. As part of our candidate challenge of accurately detecting mosquitoes in our paper \cite{kiskin2017mosquito}, this case was evidenced in our collected training data.\ikN{Making specific reference to mosquito detection but nowhere else?}
 A meta-analysis of MIREX concluded that the state of the art stagnated in a variety of such classification and detection tasks (Humphrey et al. \cite{humphrey2013feature}) between 2007 and 2012. 
 This was attributed to the use of traditional methods for feature extraction and classification. It was suggested deep learning can help overcome three deficiencies associated with traditional methods: 
 \begin{enumerate}
@@ -379,7 +392,7 @@ Evidence for (\ref{bullet:1}) in this field was presented by Espi et al. \cite{e
 Indeed, since the assessment, there has been a paradigm shift. As an example, in 2016 challenge results \cite{mirex2016}, every (all-time) top performer in the four chord recognition challenges (Korzienowski, Widmer \cite{korzeniowski2016feature,mirex2016chord}) featured forms of deep networks operating on simple feature representations. Their contribution was the ability to discover feature representations from a basic frequency representation (the STFT or constant-Q transform) that were better suited to use with a conditional random field than hand-crafted representations. The authors note that hand-crafted representations benefited from using a further transform on the STFT (a logarithmic tiling by means of a constant-Q transform \cite{brown1991calculation}), whereas the neural network was insensitive to the base representation.
 
 
-Further evidence for (\ref{bullet:1}) is presented by Espi et al. \cite{espi2015exploiting} in a meta-study of acoustic events. The authors noted that pooling, especially in frequency, seemed to degrade the network's ability to detect events. As a result, use of salient features (MFCCs) would result in worse overall performance than learning features with deep models directly from the spectrogram (STFT). Additionally, multiple time-frequency resolutions may be required to parameterise the STFT, which underpins a shortcoming of the windowed Fourier transform: a fixed time-frequency resolution. This shortcoming has been well-studied in the signal processing community, yet it is rare to find considerations of this at the intersection of acoustics-based deep learning research. Therefore we believe this warrants basis for further research, as addressed in the Proposal in Section \ref{sec:proposal}. For our application of mosquito detection we addressed this shortcoming in Section [ref] of the paper [ref].
+Further evidence for (\ref{bullet:1}) is presented by Espi et al. \cite{espi2015exploiting} in a meta-study of acoustic events. The authors noted that pooling, especially in frequency, seemed to degrade the network's ability to detect events. As a result, use of salient features (MFCCs) would result in worse overall performance than learning features with deep models directly from the spectrogram (STFT). Additionally, multiple time-frequency resolutions may be required to parameterise the STFT, which underpins a shortcoming of the windowed Fourier transform: a fixed time-frequency resolution. This shortcoming has been well-studied in the signal processing community, yet it is rare to find considerations of this at the intersection of acoustics-based deep learning research. Therefore we believe this warrants basis for further research, as addressed in the Proposal in Section \ref{sec:proposal}. For our application of mosquito detection we addressed this shortcoming in our paper \cite[Section 2.2]{kiskin2017mosquito}.
 
 
 Additional support for (\ref{bullet:1}) is presented by Phan et al. \cite{phan2016robust}, where the authors compare popular traditional classifier combinations to CNNs and DNNs. 
@@ -428,7 +441,7 @@ Further CNN proponents (and support for claim (\ref{bullet:3})) include the abil
 
 Taking Humphrey's claim (\ref{bullet:1}) to the limit and to further facilitate autonomous behaviour, the next potential research challenge would be to operate on raw data, rather than raw ``spectrogram'' data, as alluded to by [cit cit cit]. Spectrogram representations are not ``raw'', as they require both a parameterised Fourier transform, as well as a smoothing window at a fixed resolution (or in some case multiple transforms at different resolutions to detect events occurring over differing time scales \cite{espi2015exploiting}) to construct.
 
-While few papers have achieved noteworthy results in this field, Dieleman et al. \cite{dieleman2014end} show promising results in a range of music information retrieval tasks. The authors note that while raw performance of STFT methods was not matched, the networks were able to autonomously discover frequency decompositions from raw audio, as well as phase and translation-invariant feature representations. Furthermore, successful applications have arisen in raw audio \emph{generation} \cite{van2016wavenet}. The authors employed a .... architecture to synthesise speech and music sequences with remarkable results. A possible stepping stone towards moving towards fully autonomous feature extraction may be learning wavelet bases that suit the data [cit]. We address this in our research proposal, and demonstrate practical performance improvements in our paper [ref].
+While few papers have achieved noteworthy results in this field, Dieleman et al. \cite{dieleman2014end} show promising results in a range of music information retrieval tasks. The authors note that while raw performance of STFT methods was not matched, the networks were able to autonomously discover frequency decompositions from raw audio, as well as phase and translation-invariant feature representations. Furthermore, successful applications have arisen in raw audio \emph{generation} \cite{van2016wavenet}. The authors employed a .... architecture to synthesise speech and music sequences with remarkable results. A possible stepping stone towards moving towards fully autonomous feature extraction may be learning wavelet bases that suit the data [cit]. We address this in our research proposal, and demonstrate practical performance improvements in our paper \cite[Section 5]{kiskin2017mosquito}.
 
 
 
@@ -534,11 +547,11 @@ General:
 \section{Proposal}
 \label{sec:proposal}
 \subsection{Completed Work}
-Our completed work presents an application of deep learning for acoustic event detection in a challenging, data-scare, real-world problem. Our candidate challenge was to accurately detect the presence of a mosquito from its acoustic signature. We developed convolutional neural networks (CNNs) operating on wavelet transformations of audio recordings. This was accomplished with the aid of a continuous wavelet transform with the bump mother wavelet -- a popular choice in traditional time-frequency analysis methods in signal processing [cite]. Furthermore, we interrogated network predictive power by visualising the statistics of network-excitatory samples. The visualisations offered insights into relative informativeness of components in the detection problem. It was shown that the network correctly learned acoustic properties of the mosquito, rather than peculiarities of the recording (such as microphone noise). Detection was achieved with performance metrics significantly surpassing those of existing algorithmic methods, as well as marginally exceeding those attained by individual human experts. The existing algorithmic methods trialled included Support Vector Machines, Random Forests, Naive Bayes classifiers, and Gaussian processes.
+Completed work to date presents an application of deep learning for acoustic event detection in a challenging, data-scarce, real-world problem. Our candidate challenge was to accurately detect the presence of a mosquito from its acoustic signature. To this end we developed convolutional neural networks operating on wavelet transformations of audio recordings. This was accomplished with the aid of a continuous wavelet transform with the bump mother wavelet -- a popular choice in traditional time-frequency analysis methods in signal processing \cite{daubechies2011synchrosqueezed}. Furthermore, we interrogated network predictive power by visualising the statistics of network-excitatory samples. The visualisations offered insights into relative informativeness of components in the detection problem. It was shown that the network correctly learned acoustic properties of the mosquito, rather than peculiarities of the recording (such as microphone noise). Detection was achieved with performance metrics significantly surpassing those of existing algorithmic methods, as well as marginally exceeding those attained by individual human experts. The existing algorithmic methods trialled included Support Vector Machines, Random Forests, Naive Bayes classifiers, and Gaussian processes.
 
 
 \subsection{Further Work}
-The proposal is structured by approximate timelines. We define short-term goals as targets to address in two to three months, medium-term as three to nine months, and long-term as over nine months.
+Future proposed work is structured by approximate timelines. We define short-term goals as targets to address in two to three months, medium-term as three to ten months, and long-term as over ten months. The goals and dependencies are given in the Gantt chart below. 
 
 \begin{ganttchart}[vgrid, hgrid]{1}{24}
 \gantttitle{2017}{6} 
@@ -553,10 +566,10 @@ The proposal is structured by approximate timelines. We define short-term goals 
 \ganttbar{2. Data augmentation}{1}{3} \ganttnewline
 \ganttgroup{Medium-term}{4}{10} \\
 \ganttbar{2. NN automation}{6}{10} \\
-\ganttbar{1. DKL}{4}{8} \\
+\ganttbar{1. Deep Kernel Learning}{4}{8} \\
 \ganttgroup{Long-term}{1}{24} \\
 \ganttbar{1. DKL-wavelet}{11}{16} \\
-\ganttbar{2. Dynamic detector}{1}{24} \ganttnewline
+\ganttbar{2. Dynamic detector}{1}{24} 
 %\ganttmilestone{Milestone}{7} \ganttnewline
 %\ganttbar{Final Task}{8}{12}
 \ganttlink{elem2}{elem5}
@@ -606,9 +619,9 @@ The proposal is structured by approximate timelines. We define short-term goals 
 \item Following our work on mosquito detection with the use of wavelet-conditioned Convolutional Neural Networks, it is hypothesised that the wavelet transform is more effective than the STFT from an information-theoretic viewpoint. We wish to explore this hypothesis formally. 
 \begin{enumerate}
 \item If proven true, this may have a profound effect on the deep learning literature, where the baseline state-of-art method involves taking the STFT before further learning. A possible way to test this would involve taking a pre-trained network from a paper, repeating all the steps with both STFT as a baseline, as well as the wavelet transform.
-\item In the abundance of data, if it turns out that deep networks automatically learn more salient representations neglecting the benefits of wavelets, there is still valuable research to be made for data-scarce scenarios. As applications in the real world often involve expensive data collection and labelling, we consider this research avenue worthy of pursuit. 
+\item With the abundance of data, if deep representations learned from STFTs outperform those learned from wavelets, there is still valuable research to be made for data-scarce scenarios. As applications in the real world often involve expensive data collection and labelling, we consider this research avenue worthy of pursuit. 
 \end{enumerate}
-Should benefits be demonstrated in either scenario, the focus of work will be to improve on computational efficiency of the CWT algorithm implementation. A suitable alternative may be to use a discrete wavelet transform (DWT) that can be executed at the same computational complexity as the FFT [cit needed].
+Should benefits be demonstrated in either scenario, the focus of work will be to improve on computational efficiency of the CWT algorithm implementation. A suitable alternative may be to use a discrete wavelet transform (DWT) that can be executed at the same (or even lower) computational complexity than the FFT \cite{rioul1992fast}.
 \item A further short term goal involves utilising data augmentation for training neural networks. In our mosquito detection application data is very expensive, so being able to generate data probabilistically using a scaffold model may help scale performance for multiple species and remain competitive with traditional classification methods, even in extremely data-limited scenarios. \ikN{look into GANs, also consider that we could generate representative samples from our network. Maybe we can make use of those to create new data}
 \srN{this is a good idea and would really help alleviate the poverty of some data}
 
@@ -673,9 +686,14 @@ We provide a risk assessment to identify critical points or uncertainties, and i
 
 \section{Conclusion}
 \label{sec:litreviewconclusion}
-Paradigm shift from hand-crafted to DNN to CNN. Image analysis moving towards RNNs/hybrid LSTM/CNN. Work seeing CNNs as deep kernel methods. Our target for future research. Furthermore, all signal detection performed in frequency domain with simple STFTs, we can use a more general transform with wavelets [need something about wavelets in lit review]. Perhaps there is a move towards raw data: unlikely to happen in future x years because [evidence of poor raw performance, despite small success stories]. Deepmind finds a way to get stuff to work where it doesn't make sense. Non-intuitive methodology, unclear how architectures came to light etc.
+In the fields of Image Recognition, Acoustic Event Detection, and Speech Recognition, there has been a paradigm shift in two general areas. 
 
+The first area is the feature representation. Representations have evolved from meticulously hand-crafted descriptors, such as the HoG in images, and  MFCCs in acoustics, to being learned fully autonomously. Autonomous representations are discovered from raw images in image recognition, and from simple spectral representations in acoustics. However, these simple representations are often not as simple as they are portrayed, requiring numerous parameters, and sometimes multiple resolutions, for full effect. This is most commonly seen with the overwhelming practice of using Short-Time Fourier transforms. 
 
+The second major evolution has taken place in integrating classification and feature extraction into one pipeline. In recent years, the most common solution is fully end-to-end trained convolutional neural networks, used to replace classification algorithms such as SVMs and random forests operating on hand-crafted feature representations. 
+
+Our research is focused on both improving and automating learning of the feature space, as well as network architectures. Improvement 
+asd
 
 
 \bibliography{TransferBib}

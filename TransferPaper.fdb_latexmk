@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex TransferPaper"] 1497351152 "TransferPaper.aux" "TransferPaper.bbl" "TransferPaper" 1497351154
+["bibtex TransferPaper"] 1499698079 "TransferPaper.aux" "TransferPaper.bbl" "TransferPaper" 1499698081
   "./splncs03.bst" 1245061022 33098 4ef5df5462ae7c3cec476a39dec1b7bb ""
-  "TransferBib.bib" 1497351112 19553 31a5dbf0a709f2562a236a841765aeb8 ""
-  "TransferPaper.aux" 1497351153 13950 09a650c4ba73fb2069ec42b282b3f270 ""
+  "TransferBib.bib" 1499698067 30626 f60c4085b955bfca56f238434661eca5 ""
+  "TransferPaper.aux" 1499698080 13950 88a0599db41fa6b48717e62e80181f24 ""
   "TransferPaper.bcf" 0 -1 0 ""
   (generated)
   "TransferPaper.bbl"
   "TransferPaper.blg"
-["pdflatex"] 1497351153 "TransferPaper.tex" "TransferPaper.pdf" "TransferPaper" 1497351154
+["pdflatex"] 1499698079 "TransferPaper.tex" "TransferPaper.pdf" "TransferPaper" 1499698081
   "../../Papers/ECML/Images/DataLabel.pdf" 1495626892 144988 7ff71c94aba39fbd94d032665e52986a ""
   "../../Papers/ECML/Images/MeanMosquito.pdf" 1492726536 251576 2c05eb76016283bc23df8799a8b19a65 ""
   "../../Papers/ECML/Images/SpectrogramChunk.pdf" 1495627162 172632 940747612b9b88f1ad3efbaf1a6aa389 ""
@@ -47,7 +47,6 @@
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmtt9.tfm" 1136768653 764 c98a2af25c99b73a368cf7336e255190 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm" 1229303445 688 37338d6ab346c2f1466b29e195316aa4 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
-  "/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1248133631 36741 fa121aac0049305630cf160b86157ee4 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
@@ -169,6 +168,7 @@
   "/usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg" 1279039959 678 4792914a8f45be57bb98413425e4c7af ""
   "/usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/hyperref.cfg" 1254097189 235 6031e5765137be07eed51a510b2b8fb7 ""
   "/usr/local/texlive/2016/texmf-dist/tex/latex/ms/everyshi.sty" 1177890616 3878 6aa7c08ff2621006e0603349e40a30a8 ""
+  "/usr/local/texlive/2016/texmf-dist/tex/latex/multirow/multirow.sty" 1137110401 7374 f7c1f13fc632dd5c9b220a247d233082 ""
   "/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/aliascnt.sty" 1463608860 2511 9250ac9a7cafca5bf9264add9b635239 ""
   "/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/auxhook.sty" 1463608860 3834 4363110eb0ef1eb2b71c8fcbcdb6c357 ""
   "/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/bkm-pdftex.def" 1463608860 8382 0a22ccdc6917ea0b2837a2b9112290e3 ""
@@ -207,12 +207,12 @@
   "/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1486047434 1888048 f2c5faed5981a516f406b2ccc20bff71 ""
   "/usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt" 1486047486 3873396 e547337f49f8ee9a4316ef9797c779e9 ""
   "/usr/local/texlive/2016/texmf.cnf" 1463979140 577 2938757e76f31531e65cc647e3507693 ""
-  "TransferPaper.aux" 1497351153 13950 09a650c4ba73fb2069ec42b282b3f270 ""
-  "TransferPaper.bbl" 1497351153 8399 fc82eadb1455fa08280867e1fac1b513 "bibtex TransferPaper"
-  "TransferPaper.tex" 1497351151 64908 105381ddb55ec1c544d62fa664960e66 ""
+  "TransferPaper.aux" 1499698080 13950 88a0599db41fa6b48717e62e80181f24 ""
+  "TransferPaper.bbl" 1499698079 8399 fc82eadb1455fa08280867e1fac1b513 "bibtex TransferPaper"
+  "TransferPaper.tex" 1499026910 65146 44baafed81609f59729355765fedc997 ""
   "llncs.cls" 1435147238 42910 21b15ca036d6c144fc14b6b7fb201290 ""
   "remreset.sty" 1327597438 1096 6a75275ca00e32428c6f059d2f618ea7 ""
   (generated)
   "TransferPaper.aux"
-  "TransferPaper.log"
   "TransferPaper.pdf"
+  "TransferPaper.log"

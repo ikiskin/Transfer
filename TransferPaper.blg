@@ -1,5 +1,48 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: TransferPaper.aux
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: TransferPaper.aux
 The style file: splncs03.bst
 Database file #1: TransferBib.bib
 Warning--empty journal in clemins2002automatic
+You've used 36 entries,
+            2785 wiz_defined-function locations,
+            818 strings with 12500 characters,
+and the built_in function-call counts, 22993 in all, are:
+= -- 1919
+> -- 827
+< -- 53
++ -- 341
+- -- 302
+* -- 1512
+:= -- 2926
+add.period$ -- 43
+call.type$ -- 36
+change.case$ -- 271
+chr.to.int$ -- 0
+cite$ -- 37
+duplicate$ -- 1961
+empty$ -- 1865
+format.name$ -- 333
+if$ -- 4969
+int.to.chr$ -- 0
+int.to.str$ -- 36
+missing$ -- 422
+newline$ -- 113
+num.names$ -- 72
+pop$ -- 713
+preamble$ -- 1
+purify$ -- 221
+quote$ -- 0
+skip$ -- 657
+stack$ -- 0
+substring$ -- 1353
+swap$ -- 1223
+text.length$ -- 53
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 140
+warning$ -- 1
+while$ -- 190
+width$ -- 38
+write$ -- 365
 (There was 1 warning)

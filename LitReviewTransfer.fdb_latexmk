@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex LitReviewTransfer"] 1499435485 "LitReviewTransfer.aux" "LitReviewTransfer.bbl" "LitReviewTransfer" 1499435487
+["bibtex LitReviewTransfer"] 1499709381 "LitReviewTransfer.aux" "LitReviewTransfer.bbl" "LitReviewTransfer" 1499709384
   "./splncs03.bst" 1245061022 33098 4ef5df5462ae7c3cec476a39dec1b7bb ""
-  "LitReviewTransfer.aux" 1499435487 16049 f22635d4d7dbcd2f6ebb6eb2ea9b326e ""
+  "LitReviewTransfer.aux" 1499709383 14567 b5c1f1c3898e8ff05274ad5bb9799e3d ""
   "LitReviewTransfer.bcf" 0 -1 0 ""
-  "TransferBib.bib" 1499263306 30301 bed72a98ae965692cca9ce3d1e4913cc ""
+  "TransferBib.bib" 1499703475 30893 22f17c9019ef221ec1a023d30489ce1e ""
   (generated)
   "LitReviewTransfer.blg"
   "LitReviewTransfer.bbl"
-["pdflatex"] 1499435485 "LitReviewTransfer.tex" "LitReviewTransfer.pdf" "LitReviewTransfer" 1499435487
+["pdflatex"] 1499709381 "LitReviewTransfer.tex" "LitReviewTransfer.pdf" "LitReviewTransfer" 1499709384
   "/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -16,6 +16,7 @@
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm" 1136768653 4524 6bce29db5bc272ba5f332261583fee9c ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm" 1136768653 2124 2601a75482e9426d33db523edf23570a ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm" 1136768653 4408 25b74d011a4c66b7f212c0cc3c90061b ""
+  "/usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/times/ptmrc7t.tfm" 1136768653 2680 312a2d12b1f1df8ee0212e7ba1962402 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm" 1136768653 2288 f478fc8fed18759effb59f3dad7f3084 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm" 1136768653 4640 532ca3305aad10cc01d769f3f91f1029 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/times/zptmcm7m.tfm" 1136768653 2232 db256afffc8202da192b4641df14d602 ""
@@ -30,7 +31,6 @@
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1136768653 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmtt9.tfm" 1136768653 764 c98a2af25c99b73a368cf7336e255190 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm" 1229303445 688 37338d6ab346c2f1466b29e195316aa4 ""
-  "/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb" 1248133631 29078 718ea4567ceff944262b0f5b0800e1d9 ""
@@ -40,6 +40,7 @@
   "/usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb" 1136849748 45458 a3faba884469519614ca56ba5f6b1de1 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf" 1136768653 1372 788387fea833ef5963f4c5bffe33eb89 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf" 1136768653 1380 0ea3a3370054be6da6acd929ec569f06 ""
+  "/usr/local/texlive/2016/texmf-dist/fonts/vf/adobe/times/ptmrc7t.vf" 1136768653 1948 7330aeef3af211edff3b35fb2c12a0fd ""
   "/usr/local/texlive/2016/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf" 1136768653 1384 a9d8adaf491ce34e5fba99dc7bbe5f39 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf" 1136768653 1132 27520247d3fe18d4266a226b461885c2 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/vf/adobe/times/zptmcm7t.vf" 1136768653 1108 d271d6f9de4122c3f8d3b65666167fac ""
@@ -190,12 +191,15 @@
   "/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1486047434 1888048 f2c5faed5981a516f406b2ccc20bff71 ""
   "/usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt" 1486047486 3873396 e547337f49f8ee9a4316ef9797c779e9 ""
   "/usr/local/texlive/2016/texmf.cnf" 1463979140 577 2938757e76f31531e65cc647e3507693 ""
-  "LitReviewTransfer.aux" 1499435487 16049 f22635d4d7dbcd2f6ebb6eb2ea9b326e ""
-  "LitReviewTransfer.bbl" 1499435485 9612 26f5505c9c8d869cd18157c49b29c9e5 "bibtex LitReviewTransfer"
-  "LitReviewTransfer.tex" 1499435482 61496 0fd798919ef2684b2312254e989c1ffa ""
+  "LitReviewTransfer.aux" 1499709383 14567 b5c1f1c3898e8ff05274ad5bb9799e3d ""
+  "LitReviewTransfer.bbl" 1499709381 10038 0fdbc818746e36b15defceaaebc07625 "bibtex LitReviewTransfer"
+  "LitReviewTransfer.tex" 1499709378 61159 58c0db7d0bd94e77af819515661260c3 ""
+  "aims-logo.pdf" 1474754024 8056 199b46386d3c5e82fb928db9c0f8ac0c ""
   "llncs.cls" 1435147238 42910 21b15ca036d6c144fc14b6b7fb201290 ""
+  "ox_brand_cmyk_pos-eps-converted-to.pdf" 1487018011 34051 e42c2605c69ec6ca1e3f553603fe884d ""
   "remreset.sty" 1327597438 1096 6a75275ca00e32428c6f059d2f618ea7 ""
   (generated)
-  "LitReviewTransfer.log"
-  "LitReviewTransfer.aux"
   "LitReviewTransfer.pdf"
+  "TransferPaper.aux"
+  "LitReviewTransfer.aux"
+  "LitReviewTransfer.log"
