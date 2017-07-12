@@ -18,6 +18,11 @@ Dahl, G.E., Yu, D., Deng, L., Acero, A.: {Context-Dependent Pre-Trained Deep
   Neural Networks for Large-Vocabulary Speech Recognition}. IEEE Transactions
   on Audio, Speech, and Language Processing  20(1),  30--42 (2012)
 
+\bibitem{dalal2005histograms}
+Dalal, N., Triggs, B.: {Histograms of Oriented Gradients for Human Detection}.
+  In: Computer Vision and Pattern Recognition, 2005. CVPR 2005. IEEE Computer
+  Society Conference on. vol.~1, pp. 886--893. IEEE (2005)
+
 \bibitem{daubechies2011synchrosqueezed}
 Daubechies, I., Lu, J., Wu, H.T.: Synchrosqueezed wavelet transforms: An
   empirical mode decomposition-like tool. Applied and computational harmonic
@@ -37,6 +42,10 @@ Denker, J.S., Lecun, Y.: {Transforming Neural-Net Output Levels to Probability
 Dieleman, S., Schrauwen, B.: End-to-end learning for music audio. In: 2014 IEEE
   International Conference on Acoustics, Speech and Signal Processing (ICASSP).
   pp. 6964--6968. IEEE (2014)
+
+\bibitem{duvenaud2014automatic}
+Duvenaud, D.: Automatic model construction with Gaussian processes. Ph.D.
+  thesis, University of Cambridge (2014)
 
 \bibitem{espi2015exploiting}
 Espi, M., Fujimoto, M., Kinoshita, K., Nakatani, T.: Exploiting
@@ -75,11 +84,6 @@ Graves, A., Schmidhuber, J.: {Offline Handwriting Recognition with
   Multidimensional Recurrent Neural Networks}. In: Advances in Neural
   Information Processing Systems. pp. 545--552 (2009)
 
-\bibitem{gwardys2014deep}
-Gwardys, G., Grzywczak, D.: {Deep Image Features in Music Information
-  Retrieval}. International Journal of Electronics and Telecommunications
-  60(4),  321--326 (2014)
-
 \bibitem{he2016deep}
 He, K., Zhang, X., Ren, S., Sun, J.: {Deep Residual Learning for Image
   Recognition}. In: Proceedings of the IEEE Conference on Computer Vision and
@@ -87,9 +91,9 @@ He, K., Zhang, X., Ren, S., Sun, J.: {Deep Residual Learning for Image
 
 \bibitem{hinton2012deep}
 Hinton, G., Deng, L., Yu, D., Dahl, G.E., Mohamed, A.r., Jaitly, N., Senior,
-  A., Vanhoucke, V., Nguyen, P., Sainath, T.N., et~al.: Deep neural networks
-  for acoustic modeling in speech recognition: The shared views of four
-  research groups. IEEE Signal Processing Magazine  29(6),  82--97 (2012)
+  A., Vanhoucke, V., Nguyen, P., Sainath, T.N., et~al.: {Deep Neural Networks
+  for Acoustic Modeling in Speech Recognition: The Shared Views of Four
+  Research Groups}. IEEE Signal Processing Magazine  29(6),  82--97 (2012)
 
 \bibitem{hinton2012improving}
 Hinton, G.E., Srivastava, N., Krizhevsky, A., Sutskever, I., Salakhutdinov,
@@ -97,14 +101,14 @@ Hinton, G.E., Srivastava, N., Krizhevsky, A., Sutskever, I., Salakhutdinov,
   detectors. arXiv preprint arXiv:1207.0580  (2012)
 
 \bibitem{humphrey2013feature}
-Humphrey, E.J., Bello, J.P., LeCun, Y.: Feature learning and deep
-  architectures: new directions for music informatics. Journal of Intelligent
+Humphrey, E.J., Bello, J.P., LeCun, Y.: {Feature Learning and Deep
+  Architectures: New Directions for Music Informatics}. Journal of Intelligent
   Information Systems  41(3),  461--481 (2013)
 
 \bibitem{joly2016lifeclef}
 Joly, A., Go{\"e}au, H., Glotin, H., Spampinato, C., Bonnet, P., Vellinga,
-  W.P., Champ, J., Planqu{\'e}, R., Palazzo, S., M{\"u}ller, H.: {LifeCLEF}
-  2016: multimedia life species identification challenges. In: International
+  W.P., Champ, J., Planqu{\'e}, R., Palazzo, S., M{\"u}ller, H.: {LifeCLEF
+  2016: Multimedia Life Species Identification Challenges}. In: International
   Conference of the Cross-Language Evaluation Forum for European Languages. pp.
   286--310. Springer (2016)
 
@@ -115,71 +119,87 @@ Juang, B.H., Rabiner, L.R.: {Automatic Speech Recognition--A Brief History of
 
 \bibitem{kiskin2017mosquito}
 Kiskin, I., Orozco, B.P., Windebank, T., Zilli, D., Sinka, M., Willis, K.,
-  Roberts, S.: Mosquito detection with neural networks: The buzz of deep
-  learning. arXiv preprint arXiv:1705.05180  (2017)
+  Roberts, S.: {Mosquito Detection with Neural Networks: The Buzz of Deep
+  Learning}. arXiv preprint arXiv:1705.05180  (2017)
 
 \bibitem{korzeniowski2016feature}
-Korzeniowski, F., Widmer, G.: Feature learning for chord recognition: the deep
-  chroma extractor. arXiv preprint arXiv:1612.05065  (2016)
+Korzeniowski, F., Widmer, G.: {Feature Learning for Chord Recognition: The Deep
+  Chroma Extractor}. arXiv preprint arXiv:1612.05065  (2016)
 
 \bibitem{krizhevsky2009learning}
-Krizhevsky, A., Hinton, G.: Learning multiple layers of features from tiny
-  images  (2009)
+Krizhevsky, A., Hinton, G.: {Learning Multiple Layers of Features from Tiny
+  Images}  (2009)
 
 \bibitem{krizhevsky2012imagenet}
-Krizhevsky, A., Sutskever, I., Hinton, G.E.: Imagenet classification with deep
-  convolutional neural networks. In: Advances in Neural Information Processing
+Krizhevsky, A., Sutskever, I., Hinton, G.E.: {Imagenet Classification with Deep
+  Convolutional Neural Networks}. In: Advances in Neural Information Processing
   Systems. pp. 1097--1105 (2012)
+
+\bibitem{lee2009unsupervised}
+Lee, H., Pham, P., Largman, Y., Ng, A.Y.: Unsupervised feature learning for
+  audio classification using convolutional deep belief networks. In: Advances
+  in Neural Information Processing Systems. pp. 1096--1104 (2009)
 
 \bibitem{li2013hybrid}
 Li, L., Zhao, Y., Jiang, D., Zhang, Y., Wang, F., Gonzalez, I., Valentin, E.,
-  Sahli, H.: Hybrid deep neural network--hidden markov model (dnn-hmm) based
-  speech emotion recognition. In: Affective Computing and Intelligent
+  Sahli, H.: {Hybrid Deep Neural Network--Hidden Markov Model (DNN-HMM) Based
+  Speech Emotion Recognition}. In: Affective Computing and Intelligent
   Interaction (ACII), 2013 Humaine Association Conference on. pp. 312--317.
   IEEE (2013)
 
 \bibitem{lindsay1995mixture}
-Lindsay, B.G.: Mixture models: theory, geometry and applications. In: NSF-CBMS
-  regional conference series in probability and statistics. pp. i--163. JSTOR
-  (1995)
+Lindsay, B.G.: {Mixture models: Theory, Geometry and Applications}. In:
+  NSF-CBMS Regional Conference Series in Probability and Statistics. pp.
+  i--163. JSTOR (1995)
 
-\bibitem{mirex2016}
-MIREX: 2016 results (2016),
-  \url{http://www.music-ir.org/mirex/results/2016/mirex_2016_poster.pdf},
-  accessed: 2017-04-07
+\bibitem{lowe1999object}
+Lowe, D.G.: {Object Recognition from Local Scale-Invariant Features}. In:
+  Computer vision, 1999. The proceedings of the seventh IEEE international
+  conference on. vol.~2, pp. 1150--1157. IEEE (1999)
 
 \bibitem{mirex2016chord}
-MIREX: 2016 results (2016),
+MIREX: 2016 results abstracts (2016),
   \url{http://www.music-ir.org/mirex/abstracts/2016/FK2.pdf}, accessed:
   2017-04-07
 
+\bibitem{mirex2016}
+MIREX: 2016 results summary (2016),
+  \url{http://www.music-ir.org/mirex/results/2016/mirex_2016_poster.pdf},
+  accessed: 2017-04-07
+
 \bibitem{mohamed2012acoustic}
-Mohamed, A.r., Dahl, G.E., Hinton, G.: Acoustic modeling using deep belief
-  networks. IEEE Transactions on Audio, Speech, and Language Processing  20(1),
-   14--22 (2012)
+Mohamed, A.R., Dahl, G.E., Hinton, G.: {Acoustic Modeling using Deep Belief
+  Networks}. IEEE Transactions on Audio, Speech, and Language Processing
+  20(1),  14--22 (2012)
 
 \bibitem{mostefa2007chil}
 Mostefa, D., Moreau, N., Choukri, K., Potamianos, G., Chu, S.M., Tyagi, A.,
-  Casas, J.R., Turmo, J., Cristoforetti, L., Tobia, F., et~al.: The chil
-  audiovisual corpus for lecture and meeting analysis inside smart rooms.
+  Casas, J.R., Turmo, J., Cristoforetti, L., Tobia, F., et~al.: {The CHIL
+  audiovisual corpus for lecture and meeting analysis inside smart rooms}.
   Language Resources and Evaluation  41(3-4),  389--407 (2007)
 
 \bibitem{van2016wavenet}
 van~den Oord, A., Dieleman, S., Zen, H., Simonyan, K., Vinyals, O., Graves, A.,
-  Kalchbrenner, N., Senior, A., Kavukcuoglu, K.: Wavenet: A generative model
-  for raw audio. CoRR abs/1609.03499  (2016)
+  Kalchbrenner, N., Senior, A., Kavukcuoglu, K.: {Wavenet: A Generative Model
+  for Raw Audio}. CoRR abs/1609.03499  (2016)
 
 \bibitem{phan2016robust}
-Phan, H., Hertel, L., Maass, M., Mertins, A.: Robust audio event recognition
-  with 1-max pooling convolutional neural networks. arXiv preprint
+Phan, H., Hertel, L., Maass, M., Mertins, A.: {Robust Audio Event Recognition
+  with 1-Max Pooling Convolutional Neural Networks}. arXiv preprint
   arXiv:1604.06338  (2016)
 
 \bibitem{rabiner1989tutorial}
-Rabiner, L.R.: A tutorial on hidden markov models and selected applications in
-  speech recognition. Proceedings of the IEEE  77(2),  257--286 (1989)
+Rabiner, L.R.: {A tutorial on hidden Markov models and selected applications in
+  speech recognition}. Proceedings of the IEEE  77(2),  257--286 (1989)
 
 \bibitem{rabiner1993fundamentals}
-Rabiner, L.R., Juang, B.H.: Fundamentals of speech recognition  (1993)
+Rabiner, L.R., Juang, B.H.: Fundamentals of speech recognition. PTR Prentice
+  Hall (1993)
+
+\bibitem{radford2015unsupervised}
+Radford, A., Metz, L., Chintala, S.: {Unsupervised Representation Learning with
+  Deep Convolutional Generative Adversarial Networks}. arXiv preprint
+  arXiv:1511.06434  (2015)
 
 \bibitem{rioul1992fast}
 Rioul, O., Duhamel, P.: Fast algorithms for discrete and continuous wavelet
@@ -193,32 +213,32 @@ Russakovsky, O., Deng, J., Su, H., Krause, J., Satheesh, S., Ma, S., Huang, Z.,
 
 \bibitem{russakovsky2014imagenet}
 Russakovsky, O., Deng, J., Su, H., Krause, J., Satheesh, S., Ma, S., Huang, Z.,
-  Karpathy, A., Khosla, A., Bernstein, M., et~al.: Imagenet large scale visual
-  recognition challenge. arXiv preprint arXiv:1409.0575  (2014)
+  Karpathy, A., Khosla, A., Bernstein, M., et~al.: {ImageNet Large Scale Visual
+  Recognition Challenge}. arXiv preprint arXiv:1409.0575  (2014)
 
 \bibitem{sainath2015deep}
-Sainath, T.N., Kingsbury, B., Saon, G., Soltau, H., Mohamed, A.r., Dahl, G.,
-  Ramabhadran, B.: Deep convolutional neural networks for large-scale speech
-  tasks. Neural Networks  64,  39--48 (2015)
+Sainath, T.N., Kingsbury, B., Saon, G., Soltau, H., Mohamed, A.R., Dahl, G.,
+  Ramabhadran, B.: {Deep Convolutional Neural Networks for Large-Scale Speech
+  Tasks}. Neural Networks  64,  39--48 (2015)
 
 \bibitem{simard2003best}
-Simard, P.Y., Steinkraus, D., Platt, J.C., et~al.: Best practices for
-  convolutional neural networks applied to visual document analysis. In: ICDAR.
-  vol.~3, pp. 958--962 (2003)
+Simard, P.Y., Steinkraus, D., Platt, J.C., et~al.: {Best Practices for
+  Convolutional Neural Networks Applied to Visual Document Analysis}. In:
+  ICDAR. vol.~3, pp. 958--962 (2003)
 
 \bibitem{simonyan2014very}
-Simonyan, K., Zisserman, A.: Very deep convolutional networks for large-scale
-  image recognition. arXiv preprint arXiv:1409.1556  (2014)
+Simonyan, K., Zisserman, A.: {Very Deep Convolutional Networks for Large-Scale
+  Image Recognition}. arXiv preprint arXiv:1409.1556  (2014)
 
 \bibitem{snoek2012practical}
-Snoek, J., Larochelle, H., Adams, R.P.: Practical bayesian optimization of
-  machine learning algorithms. In: Advances in Neural Information Processing
+Snoek, J., Larochelle, H., Adams, R.P.: {Practical Bayesian Optimization of
+  Machine Learning Algorithms}. In: Advances in Neural Information Processing
   Systems. pp. 2951--2959 (2012)
 
 \bibitem{soltau2010ibm}
-Soltau, H., Saon, G., Kingsbury, B.: The ibm attila speech recognition toolkit.
-  In: Spoken Language Technology Workshop (SLT), 2010 IEEE. pp. 97--102. IEEE
-  (2010)
+Soltau, H., Saon, G., Kingsbury, B.: {The IBM Attila speech recognition
+  toolkit}. In: Spoken Language Technology Workshop (SLT), 2010 IEEE. pp.
+  97--102. IEEE (2010)
 
 \bibitem{stowell2014automatic}
 Stowell, D., Plumbley, M.D.: Automatic large-scale classification of bird
@@ -226,13 +246,13 @@ Stowell, D., Plumbley, M.D.: Automatic large-scale classification of bird
   (2014)
 
 \bibitem{swersky2014raiders}
-Swersky, K., Duvenaud, D., Snoek, J., Hutter, F., Osborne, M.A.: Raiders of the
-  lost architecture: Kernels for bayesian optimization in conditional parameter
-  spaces. arXiv preprint arXiv:1409.4011  (2014)
+Swersky, K., Duvenaud, D., Snoek, J., Hutter, F., Osborne, M.A.: {Raiders of
+  the Lost Architecture: Kernels for Bayesian Optimization in Conditional
+  Parameter Spaces}. arXiv preprint arXiv:1409.4011  (2014)
 
 \bibitem{wilson2016deep}
-Wilson, A.G., Hu, Z., Salakhutdinov, R., Xing, E.P.: Deep kernel learning. In:
-  Proceedings of the 19th International Conference on Artificial Intelligence
-  and Statistics. pp. 370--378 (2016)
+Wilson, A.G., Hu, Z., Salakhutdinov, R., Xing, E.P.: {Deep Kernel Learning}.
+  In: Proceedings of the 19th International Conference on Artificial
+  Intelligence and Statistics. pp. 370--378 (2016)
 
 \end{thebibliography}

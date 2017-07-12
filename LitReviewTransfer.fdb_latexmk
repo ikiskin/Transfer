@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex LitReviewTransfer"] 1499709381 "LitReviewTransfer.aux" "LitReviewTransfer.bbl" "LitReviewTransfer" 1499709384
+["bibtex LitReviewTransfer"] 1499894780 "LitReviewTransfer.aux" "LitReviewTransfer.bbl" "LitReviewTransfer" 1499894782
   "./splncs03.bst" 1245061022 33098 4ef5df5462ae7c3cec476a39dec1b7bb ""
-  "LitReviewTransfer.aux" 1499709383 14567 b5c1f1c3898e8ff05274ad5bb9799e3d ""
+  "LitReviewTransfer.aux" 1499894782 9770 c06135123f9f2671bb8162e8fcf781af ""
   "LitReviewTransfer.bcf" 0 -1 0 ""
-  "TransferBib.bib" 1499703475 30893 22f17c9019ef221ec1a023d30489ce1e ""
+  "TransferBib.bib" 1499876637 32369 53abc539981f068f398af6ea5cb06b67 ""
   (generated)
-  "LitReviewTransfer.blg"
   "LitReviewTransfer.bbl"
-["pdflatex"] 1499709381 "LitReviewTransfer.tex" "LitReviewTransfer.pdf" "LitReviewTransfer" 1499709384
+  "LitReviewTransfer.blg"
+["pdflatex"] 1499894780 "LitReviewTransfer.tex" "LitReviewTransfer.pdf" "LitReviewTransfer" 1499894782
   "/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -191,15 +191,15 @@
   "/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1486047434 1888048 f2c5faed5981a516f406b2ccc20bff71 ""
   "/usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt" 1486047486 3873396 e547337f49f8ee9a4316ef9797c779e9 ""
   "/usr/local/texlive/2016/texmf.cnf" 1463979140 577 2938757e76f31531e65cc647e3507693 ""
-  "LitReviewTransfer.aux" 1499709383 14567 b5c1f1c3898e8ff05274ad5bb9799e3d ""
-  "LitReviewTransfer.bbl" 1499709381 10038 0fdbc818746e36b15defceaaebc07625 "bibtex LitReviewTransfer"
-  "LitReviewTransfer.tex" 1499709378 61159 58c0db7d0bd94e77af819515661260c3 ""
+  "LitReviewTransfer.aux" 1499894782 9770 c06135123f9f2671bb8162e8fcf781af ""
+  "LitReviewTransfer.bbl" 1499894780 11480 236ca624b7a7ff6d57caa714c92edbec "bibtex LitReviewTransfer"
+  "LitReviewTransfer.tex" 1499894778 61483 9b940c50b402402e6e02b6ae398f8338 ""
   "aims-logo.pdf" 1474754024 8056 199b46386d3c5e82fb928db9c0f8ac0c ""
   "llncs.cls" 1435147238 42910 21b15ca036d6c144fc14b6b7fb201290 ""
   "ox_brand_cmyk_pos-eps-converted-to.pdf" 1487018011 34051 e42c2605c69ec6ca1e3f553603fe884d ""
   "remreset.sty" 1327597438 1096 6a75275ca00e32428c6f059d2f618ea7 ""
   (generated)
   "LitReviewTransfer.pdf"
-  "TransferPaper.aux"
   "LitReviewTransfer.aux"
+  "TransferPaper.aux"
   "LitReviewTransfer.log"

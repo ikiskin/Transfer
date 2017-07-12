@@ -1,6 +1,48 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: LitReviewTransfer.aux
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: LitReviewTransfer.aux
 The style file: splncs03.bst
 Database file #1: TransferBib.bib
 Warning--empty journal in krizhevsky2009learning
-Warning--empty journal in rabiner1993fundamentals
-(There were 2 warnings)
+You've used 51 entries,
+            2785 wiz_defined-function locations,
+            848 strings with 14818 characters,
+and the built_in function-call counts, 30417 in all, are:
+= -- 2507
+> -- 1132
+< -- 50
++ -- 463
+- -- 412
+* -- 1931
+:= -- 3973
+add.period$ -- 75
+call.type$ -- 51
+change.case$ -- 394
+chr.to.int$ -- 0
+cite$ -- 52
+duplicate$ -- 2609
+empty$ -- 2556
+format.name$ -- 454
+if$ -- 6577
+int.to.chr$ -- 0
+int.to.str$ -- 51
+missing$ -- 563
+newline$ -- 158
+num.names$ -- 102
+pop$ -- 1059
+preamble$ -- 1
+purify$ -- 303
+quote$ -- 0
+skip$ -- 817
+stack$ -- 0
+substring$ -- 1611
+swap$ -- 1462
+text.length$ -- 50
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 198
+warning$ -- 1
+while$ -- 245
+width$ -- 53
+write$ -- 507
+(There was 1 warning)
