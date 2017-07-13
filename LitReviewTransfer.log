@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.2.2)  12 JUL 2017 22:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.2.2)  13 JUL 2017 12:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1083,17 +1083,19 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [12]
 Excluding 'comment' comment. Excluding 'comment' comment. [13] [14] [15]
-[16] [17] (./LitReviewTransfer.bbl [18] [19]
+Underfull \vbox (badness 6047) has occurred while \output is active []
+
+ [16]
+[17] (./LitReviewTransfer.bbl [18] [19]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 162.
  [20]) [21]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 693.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 693.
-
-(./LitReviewTransfer.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 693.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 693.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 693.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 691.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 691.
+ (./LitReviewTransfer.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 691.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 691.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 691.
  ) 
 Here is how much of TeX's memory you used:
  22127 strings out of 493014
@@ -1102,7 +1104,7 @@ Here is how much of TeX's memory you used:
  25128 multiletter control sequences out of 15000+600000
  36601 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,10n,77p,2976b,920s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,10n,77p,2981b,920s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/tex
 live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
@@ -1111,10 +1113,10 @@ e/2016/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2016/t
 exmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/
 fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
 1/urw/times/utmri8a.pfb>
-Output written on LitReviewTransfer.pdf (21 pages, 154777 bytes).
+Output written on LitReviewTransfer.pdf (21 pages, 154829 bytes).
 PDF statistics:
- 501 PDF objects out of 1000 (max. 8388607)
- 383 compressed objects within 4 object streams
+ 499 PDF objects out of 1000 (max. 8388607)
+ 382 compressed objects within 4 object streams
  124 named destinations out of 1000 (max. 500000)
  143 words of extra memory for PDF output out of 10000 (max. 10000000)
 
